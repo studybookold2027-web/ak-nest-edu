@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AK NEST EDU</title>
+<meta name="application-name" content="AK NEST EDU">
+<meta name="apple-mobile-web-app-title" content="AK NEST EDU">
+<meta name="description" content="AK NEST EDU: Learn • Grow • Succeed. पढ़ाई, Routine, Typing Practice और Online Test एक ही जगह।">
+<meta name="theme-color" content="#2E2FB8">
+<meta property="og:site_name" content="AK NEST EDU">
+<meta property="og:title" content="AK NEST EDU">
+<meta property="og:description" content="Learn • Grow • Succeed">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AK NEST EDU">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235B3FD8'/%3E%3Cstop offset='1' stop-color='%232E2FB8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='800' text-anchor='middle' fill='white'%3EAK%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F6FB;--ink:#1B1F3B;--mute:#586081;--card:#fff;--line:#E1E4F0;--pri:#3B3FD8;--priink:#fff;--acc:#FF9F1C;--ok:#1E8E5A;--bad:#D14343;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1126;--ink:#EEF0FF;--mute:#A3AACB;--card:#171B38;--line:#272C52;--pri:#8C95FF;--priink:#0E1126;--acc:#FFB547;--ok:#4CC38A;--bad:#FF8080;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1126;--ink:#EEF0FF;--mute:#A3AACB;--card:#171B38;--line:#272C52;--pri:#8C95FF;--priink:#0E1126;--acc:#FFB547;--ok:#4CC38A;--bad:#FF8080;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Hind,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:30}
+/* ---- Sidebar navigation (desktop) / drawer (mobile) ---- */
+html.nolock{overflow:hidden}
+.side{position:fixed;top:0;left:0;bottom:0;width:272px;max-width:86vw;z-index:40;display:flex;flex-direction:column;background:linear-gradient(180deg,#1B1D6B 0%,#2B2DA8 58%,#4A34C6 100%);color:#E8EAFF;overflow:hidden;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);transform:translateX(-102%);visibility:hidden;transition:transform .25s ease,visibility 0s linear .25s;box-shadow:6px 0 24px rgba(10,12,40,.35)}
+.side.open{transform:none;visibility:visible;transition:transform .25s ease,visibility 0s}
+.sbrand{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:18px 14px 12px 16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.logo{display:flex;align-items:center;gap:10px;font:800 1.18rem/1.1 "Baloo 2",Hind,sans-serif;color:var(--pri);text-decoration:none}
+.logo .lg{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#5B3FD8,#2E2FB8);color:#fff;font:800 1.08rem/1 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.02em;flex:none}
+.side .logo{color:#fff}.side .logo .lg{background:rgba(255,255,255,.18)}
+.sclose{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:10px;width:36px;height:36px;font-size:1.1rem;cursor:pointer;flex:none}
+#nav{flex:1;min-height:0;display:flex;flex-direction:column;overflow-x:hidden;overflow-y:auto;padding:6px 10px 14px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent}
+.ngw.last{margin-top:auto;position:sticky;bottom:0;background:#4A34C6;border-top:1px solid rgba(255,255,255,.16);padding-bottom:2px}
+.ng{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#B9BEFA;font-weight:600;padding:11px 12px 3px}
+#nav a{display:flex;align-items:center;gap:12px;padding:8px 12px;margin:1px 0;border-radius:10px;color:#E8EAFF;text-decoration:none;font-weight:500;line-height:1.3;white-space:normal;overflow-wrap:anywhere}
+#nav a:hover{background:rgba(255,255,255,.12)}
+#nav a[aria-current="page"]{background:rgba(255,255,255,.22);color:#fff;font-weight:600;box-shadow:inset 4px 0 0 var(--acc)}
+#nav a:focus-visible,.sclose:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.ni{width:26px;flex:none;text-align:center;font-size:1.2rem}
+.mtop{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:12px;background:var(--card);border-bottom:1px solid var(--line);padding:9px 14px}
+#mbtn{background:none;color:var(--ink);border:1.5px solid var(--line);border-radius:10px;width:42px;height:42px;font-size:1.3rem;line-height:1;cursor:pointer;flex:none}
+#scrim{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,12,40,.55);z-index:35}
+#scrim[hidden]{display:none}
+.authbrand{text-align:center;margin:6px 0 18px}
+.authbrand .lg{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#5B3FD8,#2E2FB8);color:#fff;font:800 1.6rem/1 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.02em;margin-bottom:8px}
+.authbrand h1{font-size:clamp(1.6rem,6vw,2.2rem);font-weight:800;color:var(--pri)}
+.authbrand .tl{font-weight:600;color:var(--acc);letter-spacing:.05em;margin-top:2px}
+.authbrand p{margin:4px 0 0;color:var(--mute)}
+body.authonly .side,body.authonly .mtop,body.authonly footer,body.authonly #scrim{display:none!important}
+body.authonly .mainwrap{margin-left:0}
+body.authonly main{max-width:480px;padding-top:36px}
+body.authonly #app .card{margin-left:auto;margin-right:auto;max-width:none!important}
+/* ---- Diwali fireworks: ONE full-screen fixed canvas + glow effects (visual only, no sound) ---- */
+#fx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:45;pointer-events:none;display:none;background:transparent}
+html.fx-on #fx{display:block}
+#fxbtn{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:46;display:inline-flex;align-items:center;gap:6px;background:rgba(27,29,107,.94);color:#fff;border:1.5px solid rgba(255,190,60,.85);border-radius:99px;padding:8px 14px;font:600 .9rem Hind,system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 16px rgba(10,12,40,.35)}
+#fxbtn[aria-pressed="false"]{border-color:rgba(255,255,255,.4);opacity:.9}
+.dvg{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#1B1D6B 0%,#2E2FB8 55%,#4A34C6 100%);border:1px solid rgba(255,200,90,.6);border-radius:18px;padding:22px 14px;margin:0 0 20px;box-shadow:0 6px 22px rgba(46,47,184,.28)}
+.dvt{position:relative;z-index:1;display:inline-block;max-width:100%;font:800 clamp(1.7rem,6.4vw,3.3rem)/1.25 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.01em;text-wrap:balance;color:#FFD86B;background:linear-gradient(100deg,#FFD86B 0%,#FFB020 25%,#FFF3B0 50%,#FFB020 75%,#FFD86B 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 7px rgba(255,176,32,.8)) drop-shadow(0 0 18px rgba(255,120,30,.5))}
+.dvt .em{-webkit-text-fill-color:initial;display:inline-block}
+.dvg .sp{display:none;position:absolute;left:var(--x);top:var(--y);width:1em;height:1em;font-size:var(--s,16px);line-height:1;color:var(--c,#FFE08A);pointer-events:none;opacity:0}
+.dvg .sp::before{content:"\2726";position:absolute;left:0;top:0;text-shadow:0 0 8px currentColor}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.2) rotate(0deg)}45%{opacity:1;transform:scale(1.15) rotate(70deg)}70%{opacity:.7;transform:scale(.8) rotate(130deg)}}
+@keyframes shim{0%{background-position:0 0}100%{background-position:200% 0}}
+@keyframes dvpulse{0%,100%{box-shadow:0 6px 22px rgba(46,47,184,.28),0 0 0 rgba(255,176,32,0)}50%{box-shadow:0 6px 26px rgba(46,47,184,.35),0 0 26px rgba(255,176,32,.55)}}
+html.fx-on .dvg .sp{display:block;animation:twinkle var(--t,2.6s) ease-in-out infinite;animation-delay:var(--d,0s)}
+html.fx-on .dvt{animation:shim 5s linear infinite}
+html.fx-on .dvg{animation:dvpulse 3.2s ease-in-out infinite}
+@keyframes diya{0%,100%{filter:drop-shadow(0 0 2px rgba(255,205,90,.6));transform:scale(1)}50%{filter:drop-shadow(0 0 7px rgba(255,200,70,1)) drop-shadow(0 0 15px rgba(255,120,40,.65));transform:scale(1.14)}}
+@keyframes lgglow{0%,100%{box-shadow:0 0 0 2px rgba(255,200,80,.5),0 0 12px rgba(255,190,60,.6)}50%{box-shadow:0 0 0 2px rgba(255,210,100,.9),0 0 26px rgba(255,170,40,.95)}}
+html.fx-on .ni{animation:diya 2.6s ease-in-out infinite;animation-delay:var(--d,0s)}
+html.fx-on .lg{animation:lgglow 2.8s ease-in-out infinite}
+html.fx-on .card .ic{animation:diya 3.2s ease-in-out infinite}
+html.fx-on .hero .tag{box-shadow:0 0 16px rgba(255,159,28,.85)}
+@media (max-height:820px){#nav a{padding:6px 12px}.ng{padding:8px 12px 2px}.sbrand{padding-top:12px;padding-bottom:10px}}
+@media (min-width:900px){
+  .side{transform:none;visibility:visible;max-width:none;box-shadow:none;transition:none}
+  .mainwrap{margin-left:272px}
+  .mtop,.sclose,#scrim{display:none!important}
+}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 56px}
+h1,h2,h3{font-family:"Baloo 2",Hind,sans-serif;line-height:1.2;margin:0 0 8px}
+h2{font-size:1.7rem;font-weight:800}h3{font-size:1.15rem;font-weight:600}
+.lead{color:var(--mute);margin:0 0 20px}
+.hero{background:linear-gradient(135deg,#2E2FB8,#5B3FD8);color:#fff;border-radius:16px;padding:40px 24px;margin-bottom:24px}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:800;color:#fff}
+.hero p{margin:6px 0;max-width:560px;color:#E6E7FF}
+.tag{display:inline-block;background:#FF9F1C;color:#1B1F3B;font-weight:600;border-radius:99px;padding:2px 14px;margin-bottom:12px}
+.btn{display:inline-block;background:var(--pri);color:var(--priink);border:0;border-radius:8px;padding:10px 18px;font:600 1rem Hind,sans-serif;text-decoration:none;cursor:pointer;margin:4px 6px 4px 0}
+.btn.alt{background:transparent;color:inherit;border:1.5px solid currentColor}
+.hero .btn{background:#FF9F1C;color:#1B1F3B}.hero .btn.alt{background:transparent;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;color:inherit;text-decoration:none;display:block}
+a.card:hover{border-color:var(--pri)}
+.card .ic{font-size:1.8rem}
+.card p{margin:4px 0 0;color:var(--mute);font-size:.95rem}
+.card ul{margin:6px 0 0;padding-left:20px;color:var(--mute)}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+textarea{resize:vertical;min-height:90px}
+label{display:block;font-size:.9rem;color:var(--mute);margin:10px 0 3px}
+:focus-visible{outline:3px solid var(--pri);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}.row>*{flex:1 1 140px}
+.big{font:800 3rem/1 "Baloo 2",sans-serif;text-align:center;margin:6px 0}
+.sample{font-size:1.3rem;line-height:2;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:12px 0}
+.sample .ok{color:var(--ok)}.sample .bad{color:var(--bad);background:rgba(209,67,67,.15)}.sample .cur{border-bottom:3px solid var(--acc)}
+.stats{display:flex;gap:18px;flex-wrap:wrap;color:var(--mute);margin:8px 0}.stats b{color:var(--ink)}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0;font:inherit;cursor:pointer}
+.opt.right{border-color:var(--ok);background:rgba(30,142,90,.14)}.opt.wrong{border-color:var(--bad);background:rgba(209,67,67,.14)}
+.prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:10px 0}.prog i{display:block;height:100%;background:var(--acc)}
+.task{display:flex;gap:10px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.task input[type=checkbox]{width:20px;height:20px;flex:none;accent-color:var(--pri)}
+.task.d .t{text-decoration:line-through;color:var(--mute)}.task .t{flex:1}
+.x{background:none;border:0;color:var(--mute);font-size:1.2rem;cursor:pointer}
+table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 8px;border-top:1px solid var(--line)}th{color:var(--mute);font-weight:500}
+.seg button{background:var(--card);color:var(--ink);border:1px solid var(--line);padding:8px 16px;font:inherit;cursor:pointer}
+.seg button:first-child{border-radius:8px 0 0 8px}.seg button:last-child{border-radius:0 8px 8px 0}
+.seg button[aria-pressed="true"]{background:var(--pri);color:var(--priink);border-color:var(--pri)}
+.rec th{background:var(--pri);color:var(--priink);font-weight:500;white-space:nowrap}.rec td{white-space:nowrap}.rec tr.d td{color:var(--mute);text-decoration:line-through}
+.clock{background:linear-gradient(135deg,#1E40AF,#2563EB);color:#fff;border-radius:16px;padding:20px 12px;text-align:center;margin-bottom:24px;box-shadow:0 6px 20px rgba(37,99,235,.25)}
+.clock .lbl{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#DBEAFE}
+.clock .hms{display:flex;justify-content:center;gap:8px;align-items:flex-end;margin:10px 0;flex-wrap:wrap}
+.clock .u{background:rgba(255,255,255,.14);border-radius:12px;padding:8px 10px;min-width:72px}
+.clock .u b{display:block;font:800 clamp(2rem,9vw,3.6rem)/1.05 "Baloo 2",sans-serif;font-variant-numeric:tabular-nums}
+.clock .u small{color:#DBEAFE;font-size:.75rem}
+.clock .ap{font:600 1.1rem "Baloo 2",sans-serif;background:#fff;color:#1E40AF;border-radius:8px;padding:2px 10px;margin-bottom:10px}
+.tm{font:800 clamp(2.6rem,10vw,4.2rem)/1 "Baloo 2",sans-serif;font-variant-numeric:tabular-nums;text-align:center;margin:10px 0;color:var(--pri)}
+.sbar{display:flex;gap:6px;align-items:flex-end;height:90px;margin-top:10px}
+.sbar div{flex:1;text-align:center;font-size:.72rem;color:var(--mute)}
+.sbar i{display:block;background:var(--pri);border-radius:4px 4px 0 0;min-height:2px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.wd{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;padding:4px 12px;margin:3px;cursor:pointer;color:var(--ink);font-size:.95rem}
+.wd input{width:auto;margin:0 6px 0 0}
+#toasts{position:fixed;left:0;right:0;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;align-items:center;z-index:50;padding:0 12px;pointer-events:none}
+.toast{pointer-events:auto;background:#1E40AF;color:#fff;border-radius:12px;padding:12px 16px;max-width:520px;width:100%;box-shadow:0 6px 20px rgba(0,0,0,.3);display:flex;gap:10px;align-items:center;justify-content:space-between}
+.toast button{background:#fff;color:#1E40AF;border:0;border-radius:8px;padding:6px 12px;font:600 .95rem Hind,sans-serif;cursor:pointer}
+footer{text-align:center;color:var(--mute);padding:20px;font-size:.9rem}
+.msg{color:var(--mute);min-height:1.5em}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" id="side" aria-label="Sidebar">
+  <div class="sbrand"><a class="logo" href="#home"><span class="lg" aria-hidden="true">AK</span><span>AK NEST EDU</span></a><button class="sclose" id="sclose" type="button" aria-label="Menu बंद करें">✕</button></div>
+  <nav id="nav" aria-label="Main"></nav>
+</aside>
+<div class="mainwrap">
+  <header class="mtop"><button id="mbtn" type="button" aria-label="Menu खोलें" aria-expanded="false" aria-controls="side">☰</button><a class="logo" href="#home"><span class="lg" aria-hidden="true">AK</span><span>AK NEST EDU</span></a></header>
+  <main id="app"></main>
+  <footer>© AK NEST EDU · Learn • Grow • Succeed</footer>
+</div>
+</div>
+<div id="scrim" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.78.0/dist/umd/supabase.js"></script>
+<script>window.supabase||document.write('<script src="https://unpkg.com/@supabase/supabase-js@2.78.0/dist/umd/supabase.js"><\/script>');</script>
+<script>
+var EMAIL='studybookold2027@gmail.com';
+var PAGES=[['home','Home'],['dashboard','📊 Dashboard'],['routine','🗓️ Routine'],['study-room','📚 Study Room'],['time','⏱️ Study Timer'],['typing','⌨️ Typing'],['typing-test','🎯 Typing Test'],['test','📝 Online Test'],['planner','📅 Planner'],['notes','📖 Notes'],['career','💼 Career'],['leaderboard','🏆 Leaderboard'],['contact','📞 Contact'],['account','👤 Account']];
+var mem={},UP='sba.';
+/* Local (on-device) data is kept per logged-in user: key = sba.u.<user id>.<name>. Nobody logged in -> nothing readable. */
+function get(k,d){if(UP===null)return d;try{var v=localStorage.getItem(UP+k);if(v!==null)return JSON.parse(v);}catch(e){}return (UP+k) in mem?mem[UP+k]:d;}
+function put(k,v){if(UP===null)return;mem[UP+k]=v;try{localStorage.setItem(UP+k,JSON.stringify(v));}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+var $=function(id){return document.getElementById(id);};
+var app=$('app'),timers=[];
+function clearT(){timers.forEach(clearInterval);timers=[];}
+
+var SUBJ=[['🔢','गणित',['संख्या पद्धति','प्रतिशत और अनुपात','क्षेत्रमिति']],['🔬','विज्ञान',['गति और बल','अम्ल, क्षार और लवण','कोशिका']],['📖','हिंदी',['संधि और समास','मुहावरे और लोकोक्तियाँ','अपठित गद्यांश']],['🔤','English',['Tenses','Articles & Prepositions','Reading Comprehension']],['🌏','सामान्य ज्ञान',['भारतीय संविधान','इतिहास','भूगोल']],['💻','कंप्यूटर',['कंप्यूटर बेसिक्स','MS Word / Excel','इंटरनेट सुरक्षा']]];
+var TXT={hi:['पढ़ाई से ही भविष्य बनता है और मेहनत कभी बेकार नहीं जाती।','रोज़ थोड़ा अभ्यास करने से टाइपिंग की गति बढ़ती है।','समय का सही उपयोग करने वाला ही सफलता पाता है।','हर दिन एक नया सबक सीखना ही असली तरक्की है।','लगातार कोशिश करने वाले को मंज़िल ज़रूर मिलती है।'],en:['Practice every day and your typing speed will improve steadily.','Small steps taken daily lead to big results over time.','Focus on accuracy first, and speed will follow naturally.','Good habits are built one day at a time.','Read a little, write a little, and review everything.']};
+var BANK=[['भारत की राजधानी क्या है?',['मुंबई','नई दिल्ली','कोलकाता','चेन्नई'],1],['12 × 12 = ?',['124','132','144','156'],2],['पानी का रासायनिक सूत्र क्या है?',['CO₂','H₂O','O₂','NaCl'],1],['भारत का राष्ट्रीय पशु कौन-सा है?',['शेर','हाथी','बाघ','तेंदुआ'],2],['सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?',['पृथ्वी','मंगल','शनि','बृहस्पति'],3],['भारत का संविधान कब लागू हुआ?',['15 अगस्त 1947','26 जनवरी 1950','2 अक्टूबर 1949','26 नवंबर 1949'],1],['भारत के पहले प्रधानमंत्री कौन थे?',['सरदार पटेल','जवाहरलाल नेहरू','महात्मा गांधी','राजेंद्र प्रसाद'],1],['पृथ्वी का एकमात्र प्राकृतिक उपग्रह कौन-सा है?',['सूर्य','चंद्रमा','मंगल','शुक्र'],1],['200 का 15% कितना होता है?',['20','25','30','35'],2],['Which word is a noun?',['quickly','happiness','run','beautiful'],1],['What is the past tense of “go”?',['goed','went','gone','going'],1],['CPU का पूरा नाम क्या है?',['Central Processing Unit','Computer Personal Unit','Central Program Utility','Control Processing Unit'],0],['प्रकाश संश्लेषण में पौधे कौन-सी गैस लेते हैं?',['ऑक्सीजन','कार्बन डाइऑक्साइड','नाइट्रोजन','हाइड्रोजन'],1],['कंप्यूटर में Ctrl + C किसके लिए होता है?',['कट','कॉपी','पेस्ट','सेव'],1],['√144 = ?',['10','11','12','14'],2]];
+var QS=BANK.slice(0,6);
+
+var TZ='Asia/Kolkata';
+var fT=new Intl.DateTimeFormat('en-IN',{timeZone:TZ,hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}),
+fD=new Intl.DateTimeFormat('en-IN',{timeZone:TZ,day:'numeric',month:'long',year:'numeric'}),
+fW=new Intl.DateTimeFormat('en-IN',{timeZone:TZ,weekday:'long'}),
+fI=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}),
+fH=new Intl.DateTimeFormat('en-IN',{timeZone:TZ,hour:'2-digit',minute:'2-digit',hour12:true});
+var fN=new Intl.DateTimeFormat('en-GB',{timeZone:TZ,hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+var SB_URL='https://stuurisxijbwdwnqnxji.supabase.co',SB_KEY='sb_publishable_XAVUtieGjYOrFziMa5RTNA_8SzIbSxU'; // Paste your Supabase Project URL and the anon (public) key. NEVER paste a service_role key here.
+var sb=null,me=null,recov=false;
+try{if(window.supabase&&SB_URL&&SB_KEY)sb=window.supabase.createClient(SB_URL,SB_KEY);}catch(e){sb=null;}
+var CFG=!!(SB_URL&&SB_KEY),LIBFAIL=CFG&&!sb;   /* keys are set but the login library did not load: keep the site CLOSED */
+function cloudNote(t){var m=$('sm');if(m)m.textContent=t;}
+function cloudSession(r){
+  if(!sb||!me)return;
+  sb.from('study_sessions').insert({day:r.date,subject:r.subj,title:r.title||null,started_at:new Date(r.t0).toISOString(),ended_at:new Date(r.t1).toISOString(),duration_sec:Math.round(r.dur/1000)}).then(function(x){cloudNote(x.error?'Saved on this device only. Cloud save failed.':'Saved to your account ✓');});
+}
+function cloudTyping(m,l,w,a,e){
+  if(!sb||!me)return;
+  sb.from('typing_results').insert({day:istDay(Date.now()),minutes:m,lang:l,wpm:w,accuracy:a,errors:e}).then(function(x){if(x.error)console.warn(x.error.message);});
+}
+function gate(t){
+  if(!sb)return '<h2>'+t+'</h2><div class="card"><p>Cloud खाते अभी चालू नहीं हैं। SETUP.md के अनुसार Supabase URL और anon key भरें, फिर पेज दोबारा खोलें।</p></div>';
+  if(!me)return '<h2>'+t+'</h2><div class="card"><p>यह आपका निजी पेज है। कृपया पहले Login करें या नया खाता बनाएँ।</p><a class="btn" href="#login">Login</a><a class="btn alt" href="#signup">Sign up</a></div>';
+  return '';
+}
+function authMsg(er){
+  var m=((er&&er.message)||'').toLowerCase(),c=(er&&er.code)||'',st=er&&er.status;
+  if(c==='invalid_credentials'||/invalid login credentials/.test(m))return 'ईमेल या पासवर्ड गलत है। कृपया दोबारा जाँचें।';
+  if(c==='email_not_confirmed'||/email not confirmed/.test(m))return 'आपका ईमेल अभी कन्फर्म नहीं हुआ है। ईमेल में आया कन्फर्मेशन लिंक खोलिए।';
+  if(c==='user_already_exists'||/already (been )?registered/.test(m))return 'यह ईमेल पहले से रजिस्टर है। कृपया Login करें।';
+  if(st===429||/rate limit|too many|security purposes/.test(m))return 'अभी बहुत ज़्यादा कोशिशें हो गई हैं। कुछ मिनट रुककर दोबारा कोशिश करें।';
+  if(c==='email_address_not_authorized'||/not authorized|error sending (confirmation|recovery|magic|otp)? ?email|sending .*email/.test(m))return 'अभी इस ईमेल पर कोड भेजा नहीं जा सका, क्योंकि वेबसाइट का ईमेल भेजने वाला सिस्टम (SMTP) पूरा सेट नहीं है। कृपया वेबसाइट एडमिन को बताइए।';
+  if(c==='otp_expired'||/token has expired|otp.*(expired|invalid)|expired or is invalid/.test(m))return 'कोड गलत है या पुराना हो गया है। कृपया सही कोड डालिए या नया कोड मँगवाइए।';
+  if(c==='over_email_send_rate_limit'||c==='over_request_rate_limit')return 'अभी बहुत ज़्यादा कोशिशें हो गई हैं। कुछ मिनट रुककर दोबारा कोशिश करें।';
+  if(c==='weak_password'||(/password/.test(m)&&/(weak|short|least|characters)/.test(m)))return 'पासवर्ड कमज़ोर है। कम से कम 8 अक्षर रखें।';
+  if(/valid email|invalid.*email|unable to validate email/.test(m))return 'कृपया सही ईमेल पता लिखें।';
+  if(/failed to fetch|network|load failed/.test(m))return 'सर्वर से कनेक्शन नहीं हो पाया। इंटरनेट जाँचकर दोबारा कोशिश करें।';
+  return 'कुछ गड़बड़ हुई: '+((er&&er.message)||'अज्ञात त्रुटि');
+}
+
+var RC=null,WD=['रविवार','सोमवार','मंगलवार','बुधवार','गुरुवार','शुक्रवार','शनिवार'],WS=['रवि','सोम','मंगल','बुध','गुरु','शुक्र','शनि'];
+function wdOf(day){return new Date(day+'T00:00:00Z').getUTCDay();}
+function occurs(r,day){
+  if(day<r.start_date)return false;
+  if(r.recurrence==='daily')return true;
+  if(r.recurrence==='weekly'){
+    if(r.weekdays&&r.weekdays.length)return r.weekdays.indexOf(wdOf(day))>=0;
+    return wdOf(day)===wdOf(r.start_date);
+  }
+  return r.start_date===day;
+}
+function hm(t){return t?t.slice(0,5):'';}
+function toMin(t){var p=hm(t).split(':');return (+p[0])*60+(+p[1]);}
+function nowMin(){var p=fN.format(Date.now()).split(':');return (+p[0])*60+(+p[1]);}
+function cloudOn(){return !!(sb&&me);}
+function byTime(a,b){return ((a.start_time||'99')+a.name).localeCompare((b.start_time||'99')+b.name);}
+function ldone(){var d=get('rdone',{});return d&&typeof d==='object'&&!Array.isArray(d)?d:{};}
+function lroutines(){var a=get('routines',[]);return Array.isArray(a)?a:[];}
+async function rList(){
+  if(cloudOn()){
+    var r=await sb.from('routines').select('*').order('start_time',{nullsFirst:false}).order('sort_order');
+    if(r.error)throw new Error(r.error.message);
+    return r.data;
+  }
+  return lroutines().slice().sort(byTime);
+}
+async function rDone(a,b){
+  var m={};
+  if(cloudOn()){
+    var r=await sb.from('routine_done').select('routine_id,day').gte('day',a).lte('day',b);
+    if(r.error)throw new Error(r.error.message);
+    r.data.forEach(function(x){m[x.routine_id+'|'+x.day]=1;});
+  }else{
+    var d=ldone();
+    Object.keys(d).forEach(function(k){var day=k.split('|')[1];if(day>=a&&day<=b)m[k]=1;});
+  }
+  return m;
+}
+async function rSave(o,old){
+  RC=null;
+  var obj={name:o.name,subject:o.subject,start_date:o.start_date,start_time:o.start_time,end_time:o.end_time,recurrence:o.recurrence,notes:o.notes};
+  if(cloudOn()){
+    ['weekdays','remind_min'].forEach(function(k){if(o[k]!=null||(old&&old[k]!=null))obj[k]=o[k];});
+    var r=old?await sb.from('routines').update(obj).eq('id',old.id):await sb.from('routines').insert(obj);
+    return r.error?r.error.message:'';
+  }
+  obj.weekdays=o.weekdays;obj.remind_min=o.remind_min;
+  var L=lroutines();
+  if(old)L=L.map(function(x){return x.id===old.id?Object.assign({},x,obj):x;});
+  else{obj.id='L'+Date.now()+Math.floor(Math.random()*1000);L.push(obj);}
+  put('routines',L);
+  return '';
+}
+async function rDel(id){
+  RC=null;
+  if(cloudOn()){var r=await sb.from('routines').delete().eq('id',id);return r.error?r.error.message:'';}
+  put('routines',lroutines().filter(function(x){return x.id!==id;}));
+  var d=ldone();Object.keys(d).forEach(function(k){if(k.indexOf(id+'|')===0)delete d[k];});put('rdone',d);
+  return '';
+}
+async function rToggle(id,day,on){
+  RC=null;
+  if(cloudOn()){
+    var r=on?await sb.from('routine_done').upsert({routine_id:id,day:day}):await sb.from('routine_done').delete().eq('routine_id',id).eq('day',day);
+    return r.error?r.error.message:'';
+  }
+  var d=ldone();if(on)d[id+'|'+day]=1;else delete d[id+'|'+day];put('rdone',d);
+  return '';
+}
+async function dayData(day){
+  var L=await rList(),D=await rDone(day,day);
+  return L.filter(function(r){return occurs(r,day);}).map(function(r){var c=Object.assign({},r);c.pday=day;c.done=!!D[r.id+'|'+day];return c;});
+}
+async function pendingList(){
+  var days=[],i,rows=[];
+  for(i=6;i>=0;i--)days.push(istDay(Date.now()-i*864e5));
+  var L=await rList(),D=await rDone(days[0],days[6]);
+  days.forEach(function(d){L.forEach(function(r){if(occurs(r,d)&&!D[r.id+'|'+d]){var c=Object.assign({},r);c.pday=d;c.done=false;rows.push(c);}});});
+  return rows;
+}
+function rtxt(r){
+  if(r.recurrence==='daily')return 'हर दिन';
+  if(r.recurrence==='weekly')return r.weekdays&&r.weekdays.length?r.weekdays.slice().sort(function(a,b){return (a||7)-(b||7);}).map(function(d){return WS[d];}).join(', '):'हर '+WD[wdOf(r.start_date)];
+  return r.start_date.slice(8)+'/'+r.start_date.slice(5,7)+'/'+r.start_date.slice(0,4);
+}
+function meta(r){return hm(r.start_time)+(r.end_time?'–'+hm(r.end_time):'')+(r.subject?' · '+esc(r.subject):'')+(r.remind_min!=null?' · 🔔':'');}
+function ctls(r){return '<button class="x" data-ed="'+esc(r.id)+'" aria-label="बदलें">✎</button><button class="x" data-rm="'+esc(r.id)+'" aria-label="हटाएँ">×</button>';}
+function rrow(r,ctl,showDay){
+  var lab=showDay?' <small class="msg">· '+(r.pday===istDay(Date.now())?'आज':WD[wdOf(r.pday)]+' '+r.pday.slice(8)+'/'+r.pday.slice(5,7))+'</small>':'';
+  return '<div class="task'+(r.done?' d':'')+'"><input type="checkbox" data-dn="'+esc(r.id)+'" data-day="'+(r.pday||'')+'"'+(r.done?' checked':'')+' aria-label="पूरा हुआ"><span class="t"><b>'+esc(r.name)+'</b> <small class="msg">'+meta(r)+'</small>'+lab+(r.notes?'<br><small class="msg">'+esc(r.notes)+'</small>':'')+'</span>'+(ctl?ctls(r):'')+'</div>';
+}
+function srow(r){
+  return '<div class="task"><span class="t"><b>'+esc(r.name)+'</b> <small class="msg">'+meta(r)+'</small><br><small class="msg">'+rtxt(r)+'</small></span>'+ctls(r)+'</div>';
+}
+// ----- Reminders: work only while the website is open in a browser tab -----
+function toast(msg){
+  var c=document.getElementById('toasts');
+  if(!c){c=document.createElement('div');c.id='toasts';document.body.appendChild(c);}
+  var d=document.createElement('div'),t=document.createElement('span'),b=document.createElement('button');
+  d.className='toast';d.setAttribute('role','alert');t.textContent=msg;b.textContent='ठीक है';
+  b.onclick=function(){d.remove();};d.appendChild(t);d.appendChild(b);c.appendChild(d);
+}
+function notify(r,left){
+  var m=(left>0?r.name+' '+left+' मिनट में शुरू होगा':r.name+' का समय हो गया')+' ('+hm(r.start_time)+')';
+  toast('⏰ '+m);
+  try{if(window.Notification&&window.Notification.permission==='granted')new window.Notification('AK NEST EDU',{body:m});}catch(e){}
+}
+async function remTick(){
+  try{
+    var day=istDay(Date.now());
+    if(!RC||RC.day!==day||Date.now()-RC.t>120000)RC={t:Date.now(),day:day,L:await rList(),D:await rDone(day,day)};
+    var f=get('fired',{}),n=nowMin(),ch=false,cut0=Date.now()-3*864e5;
+    if(!f||typeof f!=='object'||Array.isArray(f))f={};
+    RC.L.forEach(function(r){
+      if(r.remind_min==null||!r.start_time||!occurs(r,day)||RC.D[r.id+'|'+day])return;
+      var st=toMin(r.start_time),k=r.id+'|'+day+'|'+r.remind_min;
+      if(n>=st-r.remind_min&&n<=st+10&&!f[k]){f[k]=Date.now();ch=true;notify(r,st-n);}
+    });
+    Object.keys(f).forEach(function(k){if(f[k]<cut0){delete f[k];ch=true;}});
+    if(ch)put('fired',f);
+  }catch(e){}
+}
+function startRem(){remTick();setInterval(remTick,30000);}
+/* ---- Idle auto-logout: warn at 9 min, logout at 10 min of no activity (shared across tabs) ---- */
+var IDLE_MS=600000,WARN_MS=540000,IK='sba.lastActive',NK='sba.idleNote',idleTimer=null,idleBox=null,idleMem=Date.now(),idleW=0;
+function idleLast(){try{var v=parseInt(localStorage.getItem(IK),10);if(v>0)return v;}catch(e){}return idleMem;}
+function idleMark(){var n=Date.now();idleMem=n;idleW=n;try{localStorage.setItem(IK,String(n));}catch(e){}}
+function idleActivity(){
+  if(!me)return;
+  var n=Date.now();
+  if(n-idleLast()>=WARN_MS)return;   /* warning is open: only the Continue Session button counts */
+  if(n-idleW<1000)return;            /* write at most once a second */
+  idleMark();
+}
+['mousemove','mousedown','keydown','scroll','touchstart','click','wheel'].forEach(function(ev){window.addEventListener(ev,idleActivity,{passive:true,capture:true});});
+function idleHide(){if(idleBox&&idleBox.style.display!=='none')idleBox.style.display='none';}
+function idleShow(sec){
+  if(!idleBox){
+    idleBox=document.createElement('div');
+    idleBox.id='idlebox';
+    idleBox.setAttribute('role','alertdialog');idleBox.setAttribute('aria-modal','true');idleBox.setAttribute('aria-labelledby','idlemsg');
+    idleBox.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.5);padding:16px';
+    idleBox.innerHTML='<div style="background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;max-width:380px;width:100%;padding:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3)"><p id="idlemsg" style="margin:0 0 8px;font-weight:600">You will be logged out in 1 minute due to inactivity.</p><p style="margin:0 0 14px">Logging out in <b id="idlesec">60</b> s</p><button class="btn" id="idleok" type="button">Continue Session</button></div>';
+    document.body.appendChild(idleBox);
+    $('idleok').onclick=function(){idleMark();idleTick();};
+  }
+  $('idlesec').textContent=sec;
+  if(idleBox.style.display!=='flex'){idleBox.style.display='flex';$('idleok').focus();}
+}
+function idleLogout(){
+  idleStop();
+  try{localStorage.setItem(NK,String(Date.now()));}catch(e){}
+  function go(){if(location.hash!=='#login')location.hash='#login';}
+  if(!sb){go();return;}
+  sb.auth.signOut({scope:'local'}).then(function(r){
+    if(r&&r.error){ /* sign-out call failed (e.g. offline): clear the stored session and reload so nobody stays logged in */
+      try{Object.keys(localStorage).forEach(function(k){if(/^sb-.*-auth-token/.test(k))localStorage.removeItem(k);});}catch(e){}
+      me=null;location.hash='#login';location.reload();return;
+    }
+    go();
+  },function(){
+    try{Object.keys(localStorage).forEach(function(k){if(/^sb-.*-auth-token/.test(k))localStorage.removeItem(k);});}catch(e){}
+    me=null;location.hash='#login';location.reload();
+  });
+}
+function idleTick(){
+  if(!me){idleHide();return;}
+  var age=Date.now()-idleLast();
+  if(age>=IDLE_MS){idleLogout();return;}
+  if(age>=WARN_MS)idleShow(Math.max(1,Math.ceil((IDLE_MS-age)/1000)));else idleHide();
+}
+function idleStart(){idleMark();if(!idleTimer)idleTimer=setInterval(idleTick,1000);}
+function idleStop(){if(idleTimer){clearInterval(idleTimer);idleTimer=null;}idleHide();}
+var authReady=!sb,loginNote='';
+if(sb)UP=null;
+function setUser(u){
+  RC=null;
+  if(!sb){UP='sba.';return;}
+  if(!u){UP=null;mem={};return;}
+  UP='sba.u.'+u.id+'.';
+  /* data saved on this device before login existed goes to the first person who logs in, then the old copy is removed */
+  try{Object.keys(localStorage).forEach(function(k){
+    if(k.indexOf('sba.')!==0||k.indexOf('sba.u.')===0||k==='sba.lastActive'||k==='sba.idleNote')return;
+    var nk=UP+k.slice(4);
+    if(localStorage.getItem(nk)===null)localStorage.setItem(nk,localStorage.getItem(k));
+    localStorage.removeItem(k);
+  });}catch(e){}
+}
+function wipeSb(){try{Object.keys(localStorage).forEach(function(k){if(/^sb-.*-auth-token/.test(k))localStorage.removeItem(k);});}catch(e){}}
+var LOGIN_URL=location.pathname+location.search+'#login';
+function manualLogout(){
+  idleStop();
+  sb.auth.signOut().then(function(r){
+    if(r&&r.error){wipeSb();me=null;setUser(null);location.replace(LOGIN_URL);location.reload();return;}
+    me=null;setUser(null);location.replace(LOGIN_URL);route();
+  },function(){wipeSb();me=null;setUser(null);location.replace(LOGIN_URL);location.reload();});
+}
+if(sb){
+  sb.auth.getSession().then(function(r){me=r.data.session?r.data.session.user:null;setUser(me);authReady=true;if(me)idleStart();route();},function(){me=null;setUser(null);authReady=true;route();});
+  setTimeout(function(){if(!authReady){authReady=true;route();}},6000);
+  window.addEventListener('pageshow',function(ev){
+    if(!ev.persisted)return;
+    sb.auth.getSession().then(function(r){var u=r.data.session?r.data.session.user:null;if((u&&u.id)!==(me&&me.id)){me=u;setUser(me);}route();});
+  });
+  sb.auth.onAuthStateChange(function(ev,ss){
+    var prev=me&&me.id;me=ss?ss.user:null;
+    if((me&&me.id)!==prev)setUser(me);
+    if(me&&!prev)idleStart();else if(!me)idleStop();
+    if(ev==='PASSWORD_RECOVERY'){recov=true;location.hash='#account';route();}
+    else if((me&&me.id)!==prev)route();
+  });
+}
+function istDay(ts){return fI.format(ts);}
+function p2(n){return String(n).padStart(2,'0');}
+function hms(ms){var t=Math.max(0,Math.floor(ms/1000));return p2(Math.floor(t/3600))+':'+p2(Math.floor(t%3600/60))+':'+p2(t%60);}
+function dur(ms){var m=Math.round(ms/60000);return m>=60?Math.floor(m/60)+'h '+(m%60)+'m':m+' min';}
+function arr(k){var a=get(k,[]);return Array.isArray(a)?a:[];}
+function ST(){var s=get('st',null);if(!s||typeof s!=='object'||['idle','running','paused'].indexOf(s.status)<0||!(s.acc>=0))s={status:'idle',acc:0,at:0,t0:0,subj:'',title:''};return s;}
+function el(s){return s.acc+(s.status==='running'?Math.max(0,Date.now()-s.at):0);}
+function clockCard(){return '<div class="clock" role="timer" aria-label="Live IST clock"><div class="lbl">Indian Standard Time (IST)</div><div class="hms"><div class="u"><b id="ch">--</b><small>Hours</small></div><div class="u"><b id="cm">--</b><small>Minutes</small></div><div class="u"><b id="cs">--</b><small>Seconds</small></div><span class="ap" id="cp"></span></div><div><b id="cw"></b> · <span id="cd"></span></div></div>';}
+function startClock(){
+  function tick(){
+    if(!$('ch'))return;
+    var n=Date.now(),p={};
+    fT.formatToParts(n).forEach(function(x){p[x.type]=x.value;});
+    $('ch').textContent=p.hour;$('cm').textContent=p.minute;$('cs').textContent=p.second;
+    $('cp').textContent=(p.dayPeriod||'').toUpperCase();$('cw').textContent=fW.format(n);$('cd').textContent=fD.format(n);
+  }
+  tick();timers.push(setInterval(tick,500));
+}
+function stat(){
+  var th=get('best-hi',null),te=get('best-en',null),w=Math.max(th?th.wpm:0,te?te.wpm:0),q=get('best-test',null),d=get('tasks',[]).filter(function(t){return t.done;}).length,n=get('name','');
+  function c(a,b){return '<div class="card" style="text-align:center"><div class="big" style="font-size:2rem">'+a+'</div><p>'+b+'</p></div>';}
+  return '<h3>'+(n?'नमस्ते, '+esc(n)+'! ':'')+'आपकी प्रगति</h3><div class="grid" style="margin:8px 0 24px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">'+c(w||'—','सर्वश्रेष्ठ WPM')+c(q!==null?q+'/'+QS.length:'—','टेस्ट स्कोर')+c(d,'पूरे किए रिकॉर्ड')+'</div>';
+}
+var V={
+home:function(){
+  var h='<div class="dvg"><span class="dvt">शुभ दीपावली <span class="em">🪔</span> Happy Diwali <span class="em">✨</span></span><span aria-hidden="true"><i class="sp" style="--x:6%;--y:30%;--c:#FFE08A;--s:14px;--d:0s;--t:2.4s"></i><i class="sp" style="--x:12%;--y:76%;--c:#FFFFFF;--s:11px;--d:0.5s;--t:2.9s"></i><i class="sp" style="--x:21%;--y:16%;--c:#FFD86B;--s:16px;--d:1.1s;--t:2.6s"></i><i class="sp" style="--x:29%;--y:80%;--c:#FFB020;--s:12px;--d:0.3s;--t:3.1s"></i><i class="sp" style="--x:43%;--y:8%;--c:#FFFFFF;--s:13px;--d:1.7s;--t:2.5s"></i><i class="sp" style="--x:55%;--y:84%;--c:#FFE08A;--s:15px;--d:0.9s;--t:2.8s"></i><i class="sp" style="--x:67%;--y:14%;--c:#FFB020;--s:12px;--d:2.1s;--t:3s"></i><i class="sp" style="--x:77%;--y:78%;--c:#FFFFFF;--s:14px;--d:0.2s;--t:2.6s"></i><i class="sp" style="--x:88%;--y:24%;--c:#FFD86B;--s:16px;--d:1.4s;--t:2.7s"></i><i class="sp" style="--x:94%;--y:68%;--c:#FFE08A;--s:11px;--d:0.7s;--t:3.2s"></i><i class="sp" style="--x:2%;--y:56%;--c:#FFFFFF;--s:10px;--d:1.9s;--t:2.4s"></i><i class="sp" style="--x:97%;--y:44%;--c:#FFB020;--s:13px;--d:1.2s;--t:2.9s"></i><i class="sp" style="--x:36%;--y:48%;--c:#FFFFFF;--s:9px;--d:2.4s;--t:3.3s"></i><i class="sp" style="--x:62%;--y:50%;--c:#FFE08A;--s:10px;--d:0.6s;--t:3.1s"></i></span></div><section class="hero"><span class="tag">Learn • Grow • Succeed</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><p><a class="btn" href="#study-room">📚 Start Learning</a><a class="btn alt" href="#typing">⌨️ Typing Practice</a><a class="btn alt" href="#test">📝 Online Test</a></p></section>'+clockCard()+stat()+'<div class="grid">';
+  [['📚','Study Room','सभी विषयों की पढ़ाई करें और फोकस टाइमर के साथ पढ़ें।','study-room'],['⌨️','Typing Practice','हिंदी और अंग्रेज़ी टाइपिंग सीखें, स्पीड और सटीकता जाँचें।','typing'],['📝','Online Test','छोटा क्विज़ दें और तुरंत स्कोर देखें।','test'],['📅','Study Planner','अपने रोज़ के टास्क बनाएँ और प्रोग्रेस ट्रैक करें।','planner'],['📖','Notes & Resources','भरोसेमंद सरकारी प्लेटफ़ॉर्म से मुफ़्त पढ़ाई सामग्री।','notes'],['💼','Career Guidance','पढ़ाई के बाद के रास्ते और सरकारी परीक्षाओं की जानकारी।','career']].forEach(function(c){
+    h+='<a class="card" href="#'+c[3]+'"><div class="ic">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></a>';});
+  return h+'</div>';
+},
+'study-room':function(){
+  var h='<h2>📚 Study Room</h2><p class="lead">विषय चुनें, और नीचे दिए टाइमर से 25 मिनट बिना रुके पढ़ें।</p><div class="card" style="margin-bottom:18px;text-align:center"><div class="seg"><button id="m25" aria-pressed="true">Focus 25</button><button id="m5" aria-pressed="false">Break 5</button></div><div class="big" id="clock">25:00</div><button class="btn" id="go">Start</button><button class="btn alt" id="rs" style="color:var(--ink)">Reset</button><p class="msg" id="tmsg"></p></div><div class="grid">';
+  SUBJ.forEach(function(s){h+='<div class="card"><div class="ic">'+s[0]+'</div><h3>'+s[1]+'</h3><ul>'+s[2].map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div>';});
+  return h+'</div>';
+},
+typing:function(){
+  return '<h2>⌨️ Typing Practice</h2><p class="lead">नीचे का वाक्य टाइप करें। हिंदी के लिए अपने कीबोर्ड पर हिंदी इनपुट चालू रखें।</p><div class="seg"><button id="lhi" aria-pressed="true">हिंदी</button><button id="len" aria-pressed="false">English</button></div><div class="sample" id="sample" aria-live="off"></div><textarea id="ta" placeholder="यहाँ टाइप करना शुरू करें…" aria-label="Typing area"></textarea><div class="stats"><span>Speed: <b id="wpm">0</b> WPM</span><span>Accuracy: <b id="acc">100</b>%</span><span id="best"></span></div><button class="btn" id="nw">नया वाक्य</button>';
+},
+test:function(){return '<h2>📝 Online Test</h2><p class="lead">हर बार 16 में से 6 नए सवाल, एक-एक करके। जवाब चुनते ही सही उत्तर दिख जाएगा।</p><div id="qz"></div>';},
+planner:function(){
+  var o=SUBJ.map(function(s){return '<option>'+s[1]+'</option>';}).join('')+'<option>अन्य</option>';
+  return '<h2>📅 Study Planner</h2><p class="lead">अपनी पढ़ाई का रिकॉर्ड भरें और पूरा होने पर टिक करें।</p><div class="card"><div class="row"><div><label for="pn">Student Name</label><input id="pn" placeholder="आपका नाम"></div><div><label for="ps">Subject</label><select id="ps">'+o+'</select></div><div style="flex:2 1 200px"><label for="pt">Topic</label><input id="pt" placeholder="जैसे: प्रतिशत"></div></div><div class="row"><div><label for="pd">Study Date</label><input id="pd" type="date"></div><div><label for="p1">Start Time</label><input id="p1" type="time"></div><div><label for="p2">End Time</label><input id="p2" type="time"></div><div><label for="pg">Daily Target</label><input id="pg" placeholder="जैसे: 20 सवाल"></div></div><p><button class="btn" id="pa">रिकॉर्ड जोड़ें</button></p><p class="msg" id="pm" role="status"></p></div><div class="card" style="margin-top:14px"><h3>Study Records</h3><div class="prog"><i id="pb"></i></div><p class="msg" id="pc"></p><div style="overflow-x:auto"><table class="rec" style="min-width:860px"><thead><tr><th>Timestamp</th><th>Student Name</th><th>Subject</th><th>Topic</th><th>Study Date</th><th>Start Time</th><th>End Time</th><th>Daily Target</th><th>Done</th><th></th></tr></thead><tbody id="pl"></tbody></table></div></div>';
+},
+notes:function(){
+  var L=[['NCERT','कक्षा 1–12 की किताबें मुफ़्त PDF में।','https://ncert.nic.in'],['SWAYAM','सरकारी प्लेटफ़ॉर्म पर मुफ़्त ऑनलाइन कोर्स।','https://swayam.gov.in'],['DIKSHA','स्कूल पाठ्यक्रम पर आधारित डिजिटल सामग्री।','https://diksha.gov.in'],['NPTEL','IIT और IISc के प्रोफ़ेसरों के लेक्चर।','https://nptel.ac.in']],h='<h2>📖 Notes & Resources</h2><p class="lead">पढ़ाई के लिए भरोसेमंद सरकारी स्रोत।</p><div class="grid">';
+  L.forEach(function(l){h+='<a class="card" href="'+l[2]+'" target="_blank" rel="noopener"><h3>'+l[0]+' ↗</h3><p>'+l[1]+'</p></a>';});
+  return h+'</div><div class="card" style="margin-top:18px"><h3>✍️ मेरे नोट्स</h3><p class="msg">जो लिखेंगे, अपने-आप सेव होगा।</p><textarea id="mn" style="min-height:180px" aria-label="मेरे नोट्स"></textarea><p class="msg" id="mnm"></p></div>';
+},
+career:function(){
+  var C=[['🎓','12वीं के बाद','अपनी रुचि के हिसाब से स्ट्रीम चुनें: इंजीनियरिंग, मेडिकल, कॉमर्स, आर्ट्स या वोकेशनल कोर्स। पहले 2–3 विकल्प शॉर्टलिस्ट करें।'],['🏛️','सरकारी परीक्षाएँ','SSC, रेलवे, बैंकिंग और UPSC जैसी परीक्षाओं के लिए पहले सिलेबस और पिछले साल के पेपर देखें।'],['💻','कंप्यूटर और टाइपिंग','बेसिक कंप्यूटर, MS Office और टाइपिंग स्पीड कई नौकरियों में पहली ज़रूरत होती है।'],['🗣️','Spoken English','रोज़ 15 मिनट पढ़ना, बोलना और लिखना आत्मविश्वास बढ़ाता है।'],['🛠️','नई स्किल्स','डिज़ाइन, डिजिटल मार्केटिंग, कोडिंग या कोई ट्रेड सीखकर फ्रीलांस या नौकरी दोनों के रास्ते खुलते हैं।'],['🧭','सही सलाह','किसी भी कोर्स में पैसा लगाने से पहले उसकी मान्यता और असली रिज़ल्ट ज़रूर जाँचें।']],h='<h2>💼 Career Guidance</h2><p class="lead">पढ़ाई के बाद के रास्ते समझने की शुरुआत।</p><div class="grid">';
+  C.forEach(function(c){h+='<div class="card"><div class="ic">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></div>';});
+  return h+'</div>';
+},
+leaderboard:function(){
+  var th=get('best-hi',null),te=get('best-en',null),q=get('best-test',null),pl=get('tasks',[]).filter(function(t){return t.done;}).length;
+  return '<h2>🏆 Leaderboard</h2><p class="lead">आपके अपने सर्वश्रेष्ठ रिकॉर्ड, इसी डिवाइस पर सेव।</p><div class="card"><label for="nm">आपका नाम</label><input id="nm" value="'+esc(get('name',''))+'" placeholder="नाम लिखें"><table style="margin-top:12px"><tr><th>रिकॉर्ड</th><th>सर्वश्रेष्ठ</th></tr><tr><td>हिंदी टाइपिंग</td><td>'+(th?th.wpm+' WPM · '+th.acc+'%':'—')+'</td></tr><tr><td>English Typing</td><td>'+(te?te.wpm+' WPM · '+te.acc+'%':'—')+'</td></tr><tr><td>Online Test</td><td>'+(q!==null?q+' / '+QS.length:'—')+'</td></tr><tr><td>पूरे किए टास्क</td><td>'+pl+'</td></tr></table></div><div class="card" style="margin-top:14px"><h3>🌍 Global Typing Leaderboard</h3><p class="msg">Score = WPM × accuracy ÷ 100. Only tests with 85% accuracy or higher count. Your best score is ranked; ties go to the higher WPM.</p><div id="gb"></div></div>';
+},
+account:function(){
+  if(!sb&&LIBFAIL)return failHTML();
+  if(!sb)return '<h2>👤 Account</h2><div class="card"><p>Cloud खाते अभी चालू नहीं हैं। <b>index.html</b> में <code>SB_URL</code> और <code>SB_KEY</code> (Supabase की Project URL और anon public key) भरें, फिर पेज दोबारा खोलें। पूरे कदम SETUP.md में हैं।</p></div>';
+  if(recov)return '<h2>👤 नया पासवर्ड बनाएँ</h2><div class="card" style="max-width:420px"><label for="np">नया पासवर्ड (कम से कम 8 अक्षर)</label><input id="np" type="password" autocomplete="new-password"><p><button class="btn" id="npb">पासवर्ड बदलें</button></p><p class="msg" id="am" role="status"></p></div>';
+  if(me)return '<h2>👤 मेरा खाता</h2><div class="card" style="max-width:480px"><p>Login किया हुआ ईमेल: <b>'+esc(me.email||'')+'</b></p><p class="msg">आपके Routine, पढ़ाई के सेशन और टाइपिंग रिज़ल्ट आपके खाते में सेव होते हैं और सिर्फ़ आपको दिखते हैं।</p><a class="btn" href="#dashboard">मेरा Dashboard</a><button class="btn alt" id="lo">Logout</button></div>';
+  return '<h2>👤 Login / Sign up</h2><div class="card" style="max-width:420px"><div class="seg" id="sg"><button data-m="in" aria-pressed="true">Login</button><button data-m="up" aria-pressed="false">Sign up</button><button data-m="fp" aria-pressed="false">पासवर्ड भूल गए?</button></div><div id="nmw" hidden><label for="an">आपका नाम</label><input id="an" autocomplete="name" maxlength="40"></div><label for="ae">ईमेल</label><input id="ae" type="email" autocomplete="email"><div id="cdw" hidden><label for="ac">ईमेल में आया सत्यापन कोड</label><input id="ac" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="______"></div><div id="pww"><label for="ap">पासवर्ड (कम से कम 8 अक्षर)</label><input id="ap" type="password" autocomplete="current-password"></div><p><button class="btn" id="ab">Login</button></p><p id="rsw" hidden><button class="btn alt" id="rs" type="button">कोड दोबारा भेजें</button></p><p class="msg" id="am" role="status" aria-live="polite"></p></div>';
+},
+dashboard:function(){
+  var nm=(me&&me.user_metadata&&me.user_metadata.name)||'';
+  return '<h2>📊 मेरा Dashboard</h2><p class="lead">नमस्ते'+(nm?', '+esc(nm):'')+'! आज की पढ़ाई एक नज़र में।</p>'+clockCard()+'<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:14px"><div class="card" style="text-align:center"><div class="big" id="dp">–</div><p>आज का काम पूरा</p></div><div class="card" style="text-align:center"><div class="big" id="dc">–</div><p>पूरे / बाकी (आज)</p></div><div class="card" style="text-align:center"><div class="big" id="dq">–</div><p>पिछले दिनों के छूटे काम</p></div><div class="card" style="text-align:center"><div class="big" id="ds">–</div><p>आज की पढ़ाई</p></div></div><div class="card" id="dn">लोड हो रहा है…</div><div class="card" style="margin-top:14px"><h3>आज का Routine</h3><div id="dl">लोड हो रहा है…</div><p><a class="btn" href="#routine">+ काम जोड़ें / देखें</a> <a class="btn alt" style="color:var(--ink)" href="#time">⏱️ स्टडी टाइमर</a></p></div>';
+},
+routine:function(){
+  var dl=SUBJ.map(function(s){return '<option value="'+s[1]+'">';}).join('');
+  var wk=[[1,'सोम'],[2,'मंगल'],[3,'बुध'],[4,'गुरु'],[5,'शुक्र'],[6,'शनि'],[0,'रवि']].map(function(d){return '<label class="wd"><input type="checkbox" value="'+d[0]+'">'+d[1]+'</label>';}).join('');
+  return '<h2>🗓️ मेरा Routine</h2><p class="lead">रोज़ का या हफ़्ते का Routine बनाएँ, और काम पूरा होने पर टिक करें।</p><div class="card" id="rmode"></div><div class="card" style="margin-top:14px"><h3 id="rh">नया काम जोड़ें</h3><div class="row"><div style="flex:2 1 220px"><label for="rn">काम का नाम</label><input id="rn" maxlength="120" placeholder="जैसे: गणित के 20 सवाल"></div><div><label for="rs">Subject (विषय)</label><input id="rs" list="sl2" maxlength="60" placeholder="जैसे: गणित"><datalist id="sl2">'+dl+'</datalist></div></div><div class="row"><div><label for="rd">तारीख <span id="rdw"></span></label><input id="rd" type="date"></div><div><label for="r1">शुरू होने का समय</label><input id="r1" type="time"></div><div><label for="r2">खत्म होने का समय</label><input id="r2" type="time"></div></div><div class="row"><div><label for="rr">कितनी बार?</label><select id="rr"><option value="none">सिर्फ़ इसी दिन</option><option value="daily">रोज़</option><option value="weekly">हफ़्ते के चुने हुए दिन</option></select></div><div><label for="rm2">याद दिलाना</label><select id="rm2"><option value="">नहीं</option><option value="0">समय पर</option><option value="5">5 मिनट पहले</option><option value="10">10 मिनट पहले</option><option value="15">15 मिनट पहले</option></select></div></div><div id="rwb" hidden><label>कौन-से दिन?</label><div id="rw">'+wk+'</div></div><label for="ro">नोट्स</label><textarea id="ro" maxlength="500" style="min-height:60px"></textarea><p><button class="btn" id="rb">सेव करें</button><button class="btn alt" id="rc" style="color:var(--ink)" hidden>रद्द करें</button></p><p class="msg" id="rm" role="status"></p></div><div class="card" style="margin-top:14px"><div class="seg" id="rtabs"><button data-t="today" aria-pressed="true">आज / दिन चुनें</button><button data-t="pending" aria-pressed="false">बाकी काम</button><button data-t="all" aria-pressed="false">मेरे सभी Routine</button></div><div id="rday" class="row" style="margin-top:10px"><div><label for="rv">दिन देखें</label><input id="rv" type="date"></div></div><div class="prog"><i id="rp"></i></div><p class="msg" id="rt"></p><div id="rl">लोड हो रहा है…</div></div>';
+},
+time:function(){
+  var o=SUBJ.map(function(s){return '<option>'+s[1]+'</option>';}).join('')+'<option>अन्य</option>';
+  return '<h2>⏱️ Study Timer</h2><p class="lead">Subject चुनें, session का नाम लिखें और Start दबाएँ। Page refresh करने या tab बदलने पर भी timer सही चलता रहेगा।</p>'+clockCard()+'<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div class="card"><h3>Study Session</h3><label for="ss">Subject</label><select id="ss">'+o+'</select><label for="sl">Session title</label><input id="sl" placeholder="जैसे: Percentage practice"><div class="tm" id="sd">00:00:00</div><p class="msg" id="sm" role="status" style="text-align:center"></p><div style="text-align:center"><button class="btn" id="sa">Start</button><button class="btn" id="sf">Finish &amp; Save</button><button class="btn alt" id="sr" style="color:var(--ink)">Reset</button></div></div><div class="card"><h3>Today</h3><div class="big" id="td">0 min</div><p class="msg" id="tg" style="text-align:center"></p><div class="prog"><i id="tp"></i></div><label for="gl">Daily goal (minutes)</label><input id="gl" type="number" min="10" max="1440"><h3 style="margin-top:14px">Last 7 days</h3><div class="sbar" id="wk"></div></div></div><div class="card" style="margin-top:14px"><h3>Study History</h3><div style="overflow-x:auto"><table class="rec" style="min-width:640px"><thead><tr><th>Date</th><th>Subject</th><th>Title</th><th>Start</th><th>End</th><th>Duration</th></tr></thead><tbody id="sh"></tbody></table></div></div>';
+},
+'typing-test':function(){
+  return '<h2>🎯 Typing Test</h2><p class="lead">समय चुनें और टाइप करना शुरू करें। पहली key दबाते ही countdown अपने-आप शुरू होगा और समय पूरा होते ही टेस्ट रुक जाएगा। हिंदी के लिए Hindi input चालू रखें।</p><div class="card"><div class="row"><div><label for="tt">Test time</label><select id="tt"><option value="1">1 minute</option><option value="3">3 minutes</option><option value="5">5 minutes</option><option value="10">10 minutes</option></select></div><div><label for="tl">Language</label><select id="tl"><option value="hi">हिंदी</option><option value="en">English</option></select></div></div><div class="tm" id="tc" role="timer">01:00</div><div class="sample" id="tp2"></div><textarea id="tx" aria-label="Typing test area"></textarea><p><button class="btn" id="tr">Restart</button></p><div id="trs" role="status"></div></div><div class="card" style="margin-top:14px"><h3>Recent tests</h3><div id="th"></div></div>';
+},
+contact:function(){
+  return '<h2>📞 Contact Us</h2><p class="lead">सवाल, सुझाव या फ़ीडबैक भेजें।</p><div class="card" style="max-width:520px"><label for="cn">नाम</label><input id="cn"><label for="cm">संदेश</label><textarea id="cm"></textarea><p><button class="btn" id="cs">भेजें</button></p><p class="msg" id="cmsg"></p></div>';
+}
+};
+
+var I={
+home:function(){startClock();},
+'study-room':function(){
+  var secs=1500,mode=25,run=false;
+  function draw(){$('clock').textContent=String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0');}
+  function setM(m){mode=m;secs=m*60;run=false;$('go').textContent='Start';$('m25').setAttribute('aria-pressed',m===25);$('m5').setAttribute('aria-pressed',m===5);$('tmsg').textContent='';draw();}
+  $('m25').onclick=function(){setM(25);};$('m5').onclick=function(){setM(5);};
+  $('go').onclick=function(){run=!run;this.textContent=run?'Pause':'Start';};
+  $('rs').onclick=function(){setM(mode);};
+  timers.push(setInterval(function(){if(!run)return;secs--;if(secs<=0){secs=0;run=false;$('go').textContent='Start';$('tmsg').textContent=mode===25?'शाबाश! अब 5 मिनट का ब्रेक लें।':'ब्रेक खत्म, फिर से पढ़ाई शुरू करें।';}draw();},1000));
+},
+typing:function(){
+  var lang='hi',tgt='',t0=0,done=false,ta=$('ta');
+  function best(){var b=get('best-'+lang,null);$('best').innerHTML=b?'Best: <b>'+b.wpm+'</b> WPM':'';}
+  function paint(){
+    var v=ta.value,h='';
+    for(var i=0;i<tgt.length;i++){var c=esc(tgt[i]);h+=i<v.length?'<span class="'+(v[i]===tgt[i]?'ok':'bad')+'">'+c+'</span>':(i===v.length?'<span class="cur">'+c+'</span>':c);}
+    $('sample').innerHTML=h;
+  }
+  function newT(){var a=TXT[lang];tgt=a[Math.floor(Math.random()*a.length)];ta.value='';ta.disabled=false;t0=0;done=false;$('wpm').textContent='0';$('acc').textContent='100';paint();best();ta.placeholder=lang==='hi'?'यहाँ टाइप करना शुरू करें…':'Start typing here…';}
+  ta.addEventListener('paste',function(e){e.preventDefault();});
+  ta.addEventListener('input',function(){
+    if(done)return;
+    if(!t0)t0=Date.now();
+    var v=ta.value,ok=0;
+    for(var i=0;i<v.length;i++)if(v[i]===tgt[i])ok++;
+    var m=Math.max((Date.now()-t0)/60000,1/600);
+    $('wpm').textContent=Math.round(ok/5/m);
+    $('acc').textContent=v.length?Math.round(ok/v.length*100):100;
+    paint();
+    if(v.length>=tgt.length){
+      done=true;ta.disabled=true;
+      var r={wpm:Math.round(ok/5/m),acc:Math.round(ok/v.length*100)},b=get('best-'+lang,null);
+      if(!b||r.wpm>b.wpm)put('best-'+lang,r);
+      best();
+    }
+  });
+  function setL(l){lang=l;$('lhi').setAttribute('aria-pressed',l==='hi');$('len').setAttribute('aria-pressed',l==='en');newT();}
+  $('lhi').onclick=function(){setL('hi');};$('len').onclick=function(){setL('en');};$('nw').onclick=newT;
+  newT();
+},
+test:function(){
+  QS=BANK.slice().sort(function(){return Math.random()-.5;}).slice(0,6);
+  var qi=0,sc=0,box=$('qz');
+  function show(){
+    if(qi>=QS.length){
+      var b=get('best-test',null);if(b===null||sc>b)put('best-test',sc);
+      box.innerHTML='<div class="card" style="text-align:center"><div class="big">'+sc+' / '+QS.length+'</div><p>'+(sc>=5?'शानदार प्रदर्शन!':sc>=3?'अच्छा प्रयास, थोड़ा और अभ्यास करें।':'चिंता न करें, दोबारा कोशिश करें।')+'</p><button class="btn" id="rt">फिर से दें</button></div>';
+      $('rt').onclick=route;return;
+    }
+    var q=QS[qi];
+    box.innerHTML='<div class="card"><div class="prog"><i style="width:'+(qi/QS.length*100)+'%"></i></div><p class="msg">सवाल '+(qi+1)+' / '+QS.length+'</p><h3>'+q[0]+'</h3>'+q[1].map(function(o,i){return '<button class="opt" data-i="'+i+'">'+o+'</button>';}).join('')+'</div>';
+    var locked=false;
+    Array.prototype.forEach.call(box.querySelectorAll('.opt'),function(b){b.onclick=function(){
+      if(locked)return;locked=true;
+      var i=+b.getAttribute('data-i');
+      if(i===q[2])sc++;else b.classList.add('wrong');
+      box.querySelectorAll('.opt')[q[2]].classList.add('right');
+      var n=document.createElement('button');n.className='btn';n.textContent=qi===QS.length-1?'रिज़ल्ट देखें':'अगला सवाल';
+      n.onclick=function(){qi++;show();};box.firstChild.appendChild(n);
+    };});
+  }
+  show();
+},
+planner:function(){
+  var T=get('tasks',[]);
+  function draw(){
+    var d=T.filter(function(t){return t.done;}).length;
+    $('pb').style.width=(T.length?d/T.length*100:0)+'%';
+    var td=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10),tm=0,am=0;
+    T.forEach(function(t){var a=(t.st||'').split(':'),b=(t.et||'').split(':'),m=(t.st&&t.et&&t.et>t.st)?(b[0]*60+ +b[1])-(a[0]*60+ +a[1]):0;am+=m;if(t.date===td)tm+=m;});
+    $('pc').textContent=T.length?d+' / '+T.length+' रिकॉर्ड पूरे · आज: '+tm+' मिनट · कुल: '+Math.round(am/6)/10+' घंटे':'अभी कोई रिकॉर्ड नहीं है। ऊपर से पहला जोड़ें।';
+    T.sort(function(a,b){return ((a.date||'9')+(a.st||'')).localeCompare((b.date||'9')+(b.st||''));});
+    $('pl').innerHTML=T.map(function(t){return '<tr class="'+(t.done?'d':'')+'"><td>'+esc(t.ts||'')+'</td><td>'+esc(t.name||'')+'</td><td>'+esc(t.subj||'')+'</td><td>'+esc(t.topic||t.t||'')+'</td><td>'+esc(t.date||'')+'</td><td>'+esc(t.st||'')+'</td><td>'+esc(t.et||'')+'</td><td>'+esc(t.goal||'')+'</td><td><input type="checkbox" data-c="'+t.id+'"'+(t.done?' checked':'')+' aria-label="पूरा"></td><td><button class="x" data-x="'+t.id+'" aria-label="हटाएँ">×</button></td></tr>';}).join('');
+  }
+  $('pa').onclick=function(){
+    var v=$('pt').value.trim(),a=$('p1').value,b=$('p2').value,m=$('pm');
+    if(!v){m.textContent='पहले Topic लिखें।';return;}
+    if(a&&b&&b<=a){m.textContent='End Time, Start Time के बाद का होना चाहिए।';return;}
+    var n=$('pn').value.trim();put('name',n);
+    T.push({id:String(Date.now()),ts:new Date().toLocaleString('en-IN'),name:n,subj:$('ps').value,topic:v,date:$('pd').value,st:a,et:b,goal:$('pg').value.trim(),done:false});
+    $('pt').value='';$('pg').value='';m.textContent='रिकॉर्ड जुड़ गया।';put('tasks',T);draw();
+  };
+  $('pl').onclick=function(e){
+    var c=e.target.getAttribute('data-c'),x=e.target.getAttribute('data-x');
+    if(c){T.forEach(function(t){if(t.id===c)t.done=e.target.checked;});}
+    if(x)T=T.filter(function(t){return t.id!==x;});
+    if(c||x){put('tasks',T);draw();}
+  };
+  $('pn').value=get('name','');
+  $('pd').value=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+  draw();
+},
+notes:function(){var n=$('mn');n.value=get('notes','');n.oninput=function(){put('notes',n.value);$('mnm').textContent='सेव हो गया ✓';};},
+account:function(init){
+  if(!sb)return;
+  var am=$('am'),mode='in';
+  function say(t,ok){am.textContent=t;am.style.color=ok?'var(--ok)':'var(--bad)';}
+  function done(b){if(b)b.disabled=false;}
+  if($('npb')){
+    $('npb').onclick=function(){
+      var p=$('np').value,b=$('npb');
+      if(p.length<8){say('पासवर्ड कम से कम 8 अक्षर का होना चाहिए।');return;}
+      b.disabled=true;
+      sb.auth.updateUser({password:p}).then(function(r){done(b);if(r.error){say(authMsg(r.error));return;}recov=false;location.hash='#dashboard';route();}).catch(function(e){done(b);say(authMsg(e));});
+    };
+    return;
+  }
+  if($('lo')){$('lo').onclick=manualLogout;return;}
+  var sg=$('sg');
+  var rsT=null;
+  function cool(sec){
+    var rb=$('rs');if(!rb)return;
+    var left=sec;rb.disabled=true;rb.textContent='दोबारा भेजें ('+left+' s)';
+    if(rsT)clearInterval(rsT);
+    rsT=setInterval(function(){
+      var x=$('rs');if(!x){clearInterval(rsT);return;}
+      left--;
+      if(left<=0){clearInterval(rsT);x.disabled=false;x.textContent='कोड दोबारा भेजें';}
+      else x.textContent='दोबारा भेजें ('+left+' s)';
+    },1000);
+    timers.push(rsT);
+  }
+  function setMode(m){
+    mode=m;
+    Array.prototype.forEach.call(sg.children,function(x){x.setAttribute('aria-pressed',x.getAttribute('data-m')===m);});
+    $('nmw').hidden=m!=='up';$('pww').hidden=(m==='fp'||m==='vf');$('cdw').hidden=m!=='vf';$('rsw').hidden=m!=='vf';
+    $('ap').setAttribute('autocomplete',m==='up'?'new-password':'current-password');
+    $('ab').textContent=m==='in'?'Login':(m==='up'?'खाता बनाएँ':(m==='vf'?'कोड जाँचें':'रीसेट लिंक भेजें'));
+    say('');
+  }
+  $('rs').onclick=function(){
+    var e=$('ae').value.trim(),b=$('rs');
+    if(e.indexOf('@')<1){say('कृपया ऊपर सही ईमेल लिखें।');return;}
+    b.disabled=true;
+    sb.auth.resend({type:'signup',email:e,options:{emailRedirectTo:location.origin+location.pathname}}).then(function(r){
+      if(r.error){b.disabled=false;say(authMsg(r.error));return;}
+      say('नया कोड भेज दिया गया है। कृपया इनबॉक्स और स्पैम देखें।',true);cool(60);
+    }).catch(function(x){b.disabled=false;say(authMsg(x));});
+  };
+  Array.prototype.forEach.call(sg.children,function(b){b.onclick=function(){setMode(b.getAttribute('data-m'));};});
+  if(loginNote){say(loginNote);loginNote='';}
+  try{var nt=parseInt(localStorage.getItem(NK),10);if(nt>0){localStorage.removeItem(NK);if(Date.now()-nt<1800000)say('10 मिनट निष्क्रिय रहने के कारण आपको Logout कर दिया गया। कृपया फिर से Login करें।');}}catch(e){}
+  ['an','ae','ap','ac'].forEach(function(id){$(id).onkeydown=function(ev){if(ev.key==='Enter')$('ab').click();};});
+  if(init==='up'||init==='fp')setMode(init);
+  $('ab').onclick=function(){
+    var b=$('ab'),e=$('ae').value.trim(),p=$('ap').value,n=$('an').value.trim();
+    if(e.indexOf('@')<1){say('कृपया सही ईमेल लिखें।');return;}
+    if(mode==='fp'){
+      b.disabled=true;
+      sb.auth.resetPasswordForEmail(e,{redirectTo:location.origin+location.pathname}).then(function(r){done(b);if(r.error)say(authMsg(r.error));else say('अगर इस ईमेल से खाता है, तो पासवर्ड रीसेट का लिंक भेज दिया गया है। इनबॉक्स और स्पैम फ़ोल्डर देखें।',true);}).catch(function(x){done(b);say(authMsg(x));});
+      return;
+    }
+    if(mode==='vf'){
+      var cd=$('ac').value.replace(/\s+/g,'');
+      if(!/^\d{6,10}$/.test(cd)){say('कृपया ईमेल में आया कोड (सिर्फ़ अंक) डालिए।');return;}
+      b.disabled=true;
+      sb.auth.verifyOtp({email:e,token:cd,type:'signup'}).then(function(r){
+        done(b);
+        if(r.error){say(authMsg(r.error));return;}
+        say('ईमेल सत्यापित हो गया। आपको Dashboard पर ले जा रहे हैं…',true);
+        location.hash='#dashboard';route();
+      }).catch(function(x){done(b);say(authMsg(x));});
+      return;
+    }
+    if(mode==='up'&&n.length<1){say('कृपया अपना नाम लिखें।');return;}
+    if(p.length<8){say('पासवर्ड कम से कम 8 अक्षर का होना चाहिए।');return;}
+    b.disabled=true;
+    if(mode==='in'){
+      sb.auth.signInWithPassword({email:e,password:p}).then(function(r){done(b);if(r.error){if(r.error.code==='email_not_confirmed'||/email not confirmed/i.test(r.error.message||'')){setMode('vf');say('आपका ईमेल अभी कन्फर्म नहीं हुआ है। ईमेल में आया कोड डालिए, या नया कोड मँगवाइए।');}else say(authMsg(r.error));}else{location.hash='#dashboard';route();}}).catch(function(x){done(b);say(authMsg(x));});
+    }else{
+      sb.auth.signUp({email:e,password:p,options:{data:{name:n},emailRedirectTo:location.origin+location.pathname}}).then(function(r){
+        done(b);
+        if(r.error){say(authMsg(r.error));return;}
+        if(r.data&&r.data.user&&r.data.user.identities&&r.data.user.identities.length===0){say('यह ईमेल पहले से रजिस्टर है। कृपया Login करें।');return;}
+        if(r.data&&r.data.session){location.hash='#dashboard';route();}
+        else{setMode('vf');say('खाता बन गया। ईमेल में आया कोड नीचे डालिए। (कोड न दिखे तो स्पैम देखिए, या थोड़ी देर बाद नया कोड मँगवाइए। अगर ईमेल में कोड की जगह लिंक है, तो उसे खोलकर Login कीजिए।)',true);cool(60);}
+      }).catch(function(x){done(b);say(authMsg(x));});
+    }
+  };
+  
+},
+dashboard:async function(){
+  startClock();
+  var day=istDay(Date.now());
+  try{
+    var L=await dayData(day),P=await pendingList(),tot=0;
+    if(cloudOn()){var ss=await sb.from('study_sessions').select('duration_sec').eq('day',day);(ss.data||[]).forEach(function(x){tot+=x.duration_sec;});}
+    else arr('sess').forEach(function(x){if(x.date===day)tot+=x.dur/1000;});
+    if(!$('dl'))return;
+    var d=L.filter(function(r){return r.done;}).length,n=fN.format(Date.now());
+    $('dp').textContent=(L.length?Math.round(d/L.length*100):0)+'%';
+    $('dc').textContent=d+' / '+(L.length-d);
+    $('dq').textContent=P.filter(function(r){return r.pday!==day;}).length;
+    $('ds').textContent=dur(tot*1000);
+    var cur=L.filter(function(r){return !r.done&&r.start_time&&hm(r.start_time)<=n&&(!r.end_time||n<hm(r.end_time));})[0],
+        nx=L.filter(function(r){return !r.done&&r.start_time&&hm(r.start_time)>n;})[0];
+    $('dn').innerHTML='<h3>अभी और आगे</h3><p><b>अभी:</b> '+(cur?esc(cur.name)+' ('+hm(cur.start_time)+(cur.end_time?'–'+hm(cur.end_time):'')+')':'अभी कोई काम तय नहीं')+'</p><p><b>अगला:</b> '+(nx?esc(nx.name)+' — '+hm(nx.start_time)+' बजे':'आज और कुछ बाकी नहीं')+'</p>';
+    $('dl').innerHTML=L.length?L.map(function(r){return rrow(r,false,false);}).join(''):'<p class="msg">आज के लिए अभी कोई काम नहीं जोड़ा गया।</p>';
+    $('dl').onchange=async function(e){var id=e.target.getAttribute('data-dn');if(!id)return;await rToggle(id,day,e.target.checked);route();};
+  }catch(e){if($('dl'))$('dl').textContent='लोड नहीं हो सका: '+e.message;}
+},
+routine:function(){
+  var tab='today',edit=null,armed=null,rows=[],today=istDay(Date.now());
+  $('rd').value=today;$('rv').value=today;
+  function say(t){$('rm').textContent=t;}
+  function wdText(){$('rdw').textContent=$('rd').value?'('+WD[wdOf($('rd').value)]+')':'';}
+  function vis(){$('rwb').hidden=$('rr').value!=='weekly';$('rday').hidden=tab!=='today';}
+  function nstat(){
+    var N=window.Notification;
+    $('ns').textContent=!N?'इस ब्राउज़र में उपलब्ध नहीं। ऐप के अंदर रिमाइंडर फिर भी दिखेंगे।':(N.permission==='granted'?'चालू ✓':(N.permission==='denied'?'ब्लॉक है। ब्राउज़र की साइट सेटिंग में अनुमति दें।':'अभी चालू नहीं।'));
+  }
+  function banner(){
+    var n=lroutines().length,h;
+    if(cloudOn())h='☁️ आप लॉग-इन हैं ('+esc(me.email||'')+'). आपका Routine आपके अकाउंट में सेव होता है और सिर्फ़ आपको दिखता है।'+(n?'<p><button class="btn alt" id="imp" style="color:var(--ink)">इस डिवाइस के '+n+' Routine अकाउंट में भेजें</button></p>':'');
+    else h='💾 अभी Routine सिर्फ़ इसी फ़ोन/कंप्यूटर के ब्राउज़र में सेव हो रहा है'+(sb?'। हर डिवाइस पर पाने के लिए <a href="#account">लॉग-इन करें</a>।':'।');
+    h+='<p class="msg">🔔 रिमाइंडर तभी आएँगे जब वेबसाइट किसी टैब में खुली हो। साइट बंद होने पर या इंटरनेट/फ़ोन बंद होने पर रिमाइंडर नहीं आएगा।</p><p><button class="btn alt" id="nb" style="color:var(--ink)">🔔 नोटिफ़िकेशन चालू करें</button> <span class="msg" id="ns"></span></p>';
+    $('rmode').innerHTML=h;nstat();
+    $('nb').onclick=function(){var N=window.Notification;if(!N){nstat();return;}try{var p=N.requestPermission(nstat);if(p&&p.then)p.then(nstat);}catch(e){nstat();}};
+    if($('imp'))$('imp').onclick=importLocal;
+  }
+  async function importLocal(){
+    var L=lroutines(),i,err;
+    for(i=0;i<L.length;i++){err=await rSave(L[i],null);if(err){say('भेजना रुक गया: '+err);return;}}
+    put('routines',[]);put('rdone',{});
+    say(L.length+' Routine अकाउंट में भेज दिए गए ✓ (पुराने टिक के निशान नहीं भेजे गए)।');banner();draw();
+  }
+  async function draw(){
+    var day=$('rv').value||today;
+    try{
+      if(tab==='today'){
+        rows=await dayData(day);
+        var d=rows.filter(function(r){return r.done;}).length;
+        $('rp').style.width=(rows.length?d/rows.length*100:0)+'%';
+        $('rt').textContent=rows.length?WD[wdOf(day)]+': '+d+' / '+rows.length+' पूरे ('+Math.round(d/rows.length*100)+'%)':'इस दिन के लिए कोई काम नहीं है।';
+        $('rl').innerHTML=rows.map(function(r){return rrow(r,true,false);}).join('');
+      }else if(tab==='pending'){
+        rows=await pendingList();$('rp').style.width='0';
+        $('rt').textContent=rows.length?rows.length+' काम बाकी हैं (पिछले 7 दिन और आज)।':'कोई काम बाकी नहीं 🎉';
+        $('rl').innerHTML=rows.map(function(r){return rrow(r,false,true);}).join('');
+      }else{
+        rows=await rList();$('rp').style.width='0';
+        $('rt').textContent=rows.length?'कुल '+rows.length+' Routine।':'अभी कोई Routine नहीं बना है। ऊपर से पहला जोड़ें।';
+        $('rl').innerHTML=rows.map(srow).join('');
+      }
+    }catch(e){$('rl').textContent='लोड नहीं हो सका: '+e.message;}
+  }
+  function clear(){
+    edit=null;['rn','rs','ro','r1','r2'].forEach(function(i){$(i).value='';});
+    $('rr').value='none';$('rm2').value='';$('rd').value=today;
+    [].forEach.call($('rw').querySelectorAll('input'),function(x){x.checked=false;});
+    $('rh').textContent='नया काम जोड़ें';$('rb').textContent='सेव करें';$('rc').hidden=true;vis();wdText();
+  }
+  $('rb').onclick=async function(){
+    var n=$('rn').value.trim(),a=$('r1').value,b=$('r2').value,rr=$('rr').value,dd=$('rd').value;
+    if(!n){say('काम का नाम लिखें।');return;}
+    if(!dd){say('तारीख चुनें।');return;}
+    if(a&&b&&b<=a){say('खत्म होने का समय, शुरू होने के समय के बाद का होना चाहिए।');return;}
+    var rem=$('rm2').value===''?null:+$('rm2').value;
+    if(rem!==null&&!a){say('याद दिलाने के लिए शुरू होने का समय चुनें।');return;}
+    var wd=null;
+    if(rr==='weekly'){wd=[].filter.call($('rw').querySelectorAll('input'),function(x){return x.checked;}).map(function(x){return +x.value;});if(!wd.length)wd=[wdOf(dd)];}
+    var err=await rSave({name:n,subject:$('rs').value.trim()||null,start_date:dd,start_time:a||null,end_time:b||null,recurrence:rr,weekdays:wd,remind_min:rem,notes:$('ro').value.trim()||null},edit);
+    if(err){say(/weekdays|remind_min/.test(err)?'डेटाबेस अपडेट बाकी है: supabase-routine-upgrade.sql चलाएँ।':err);return;}
+    say(edit?'बदलाव सेव हो गया ✓':'Routine सेव हो गया ✓');clear();banner();draw();
+  };
+  $('rc').onclick=function(){clear();say('');};
+  $('rd').onchange=wdText;$('rr').onchange=vis;$('rv').onchange=draw;
+  $('rtabs').onclick=function(e){
+    var t=e.target.getAttribute('data-t');if(!t)return;
+    tab=t;[].forEach.call($('rtabs').children,function(x){x.setAttribute('aria-pressed',x===e.target);});vis();draw();
+  };
+  $('rl').onclick=async function(e){
+    var t=e.target,ed=t.getAttribute('data-ed'),rm=t.getAttribute('data-rm');
+    if(ed){
+      var r=rows.filter(function(x){return x.id===ed;})[0];if(!r)return;
+      edit=r;$('rn').value=r.name;$('rs').value=r.subject||'';$('rd').value=r.start_date;$('r1').value=hm(r.start_time);$('r2').value=hm(r.end_time);
+      $('rr').value=r.recurrence;$('rm2').value=r.remind_min==null?'':String(r.remind_min);$('ro').value=r.notes||'';
+      [].forEach.call($('rw').querySelectorAll('input'),function(x){x.checked=!!(r.weekdays&&r.weekdays.indexOf(+x.value)>=0);});
+      $('rh').textContent='काम बदलें (दोहराने वाले काम में पूरी सीरीज़ बदलती है)';$('rb').textContent='बदलाव सेव करें';$('rc').hidden=false;vis();wdText();window.scrollTo(0,0);
+    }
+    if(rm){
+      if(armed!==rm){armed=rm;t.textContent='पक्का?';return;}
+      armed=null;var err=await rDel(rm);
+      if(err)say(err);else{say('हटा दिया गया।');banner();draw();}
+    }
+  };
+  $('rl').onchange=async function(e){
+    var id=e.target.getAttribute('data-dn');if(!id)return;
+    var err=await rToggle(id,e.target.getAttribute('data-day')||today,e.target.checked);
+    if(err)say(err);draw();
+  };
+  banner();vis();wdText();draw();
+},
+time:function(){
+  startClock();
+  var ss=$('ss'),sl=$('sl'),armed=0,s0=ST(),blank={status:'idle',acc:0,at:0,t0:0,subj:'',title:''};
+  if(s0.subj)ss.value=s0.subj;
+  sl.value=s0.title||'';
+  $('gl').value=get('goal',120);
+  function msg(t){$('sm').textContent=t;}
+  function paint(){
+    if(!$('sd'))return;
+    var x=ST(),td=istDay(Date.now()),tot=0,g=Math.max(10,+get('goal',120)||120)*60000;
+    $('sd').textContent=hms(el(x));
+    $('sa').textContent=x.status==='running'?'Pause':(x.status==='paused'?'Resume':'Start');
+    $('sf').disabled=$('sr').disabled=x.status==='idle';
+    arr('sess').forEach(function(r){if(r.date===td)tot+=r.dur;});
+    if(x.status!=='idle'&&istDay(x.t0)===td)tot+=el(x);
+    $('td').textContent=dur(tot);
+    $('tg').textContent=Math.min(100,Math.round(tot/g*100))+'% of daily goal';
+    $('tp').style.width=Math.min(100,tot/g*100)+'%';
+  }
+  function drawHist(){
+    var all=arr('sess'),days={},a=[],i,k;
+    all.forEach(function(r){days[r.date]=(days[r.date]||0)+r.dur;});
+    for(i=6;i>=0;i--){k=istDay(Date.now()-i*864e5);a.push([k,days[k]||0]);}
+    var mx=Math.max.apply(null,a.map(function(r){return r[1];}).concat([60000]));
+    $('wk').innerHTML=a.map(function(r){return '<div title="'+dur(r[1])+'"><i style="height:'+Math.round(r[1]/mx*60)+'px"></i>'+r[0].slice(8)+'</div>';}).join('');
+    $('sh').innerHTML=all.length?all.slice(-10).reverse().map(function(r){return '<tr><td>'+esc(r.date)+'</td><td>'+esc(r.subj)+'</td><td>'+esc(r.title||'—')+'</td><td>'+esc(fH.format(r.t0).toUpperCase())+'</td><td>'+esc(fH.format(r.t1).toUpperCase())+'</td><td>'+hms(r.dur)+'</td></tr>';}).join(''):'<tr><td colspan="6">अभी कोई session सेव नहीं है।</td></tr>';
+  }
+  $('sa').onclick=function(){
+    var x=ST(),n=Date.now();
+    if(x.status==='idle'){x={status:'running',acc:0,at:n,t0:n,subj:ss.value,title:sl.value.trim()};msg('Timer शुरू हो गया।');}
+    else if(x.status==='running'){x.acc=el(x);x.status='paused';x.at=0;msg('Paused. आगे बढ़ने के लिए Resume दबाएँ।');}
+    else{x.status='running';x.at=n;msg('Resumed.');}
+    put('st',x);paint();
+  };
+  $('sf').onclick=function(){
+    var x=ST(),d=el(x),all=arr('sess');
+    if(x.status==='idle')return;
+    if(d<1000){msg('सेव करने के लिए कम से कम 1 सेकंड पढ़ाई ज़रूरी है।');return;}
+    all.push({date:istDay(x.t0),subj:ss.value||x.subj,title:sl.value.trim()||x.title,t0:x.t0,t1:Date.now(),dur:d});
+    put('sess',all.slice(-200));cloudSession(all[all.length-1]);put('st',blank);
+    sl.value='';msg('Session सेव हुआ: '+hms(d));paint();drawHist();
+  };
+  $('sr').onclick=function(){
+    var b=$('sr');
+    if(!armed){armed=1;b.textContent='Tap again to confirm';setTimeout(function(){armed=0;if($('sr'))$('sr').textContent='Reset';},3000);return;}
+    armed=0;b.textContent='Reset';put('st',blank);msg('Timer reset हुआ। कुछ सेव नहीं किया गया।');paint();
+  };
+  ss.onchange=sl.oninput=function(){var x=ST();x.subj=ss.value;x.title=sl.value.trim();if(x.status!=='idle')put('st',x);};
+  $('gl').onchange=function(){var v=Math.max(10,Math.min(1440,+this.value||120));put('goal',v);this.value=v;paint();};
+  paint();drawHist();
+  timers.push(setInterval(paint,250));
+  document.onvisibilitychange=paint;
+},
+'typing-test':function(){
+  var tx=$('tx'),dur0=60000,tgt='',t0=0,end=0,over=false,tm=null;
+  function mk(){var a=(TXT[$('tl').value]||TXT.hi).slice(),o='';while(o.length<5200){a.sort(function(){return Math.random()-.5;});o+=a.join(' ')+' ';}return o.trim();}
+  function paint(){
+    var v=tx.value,s=Math.max(0,v.length-40),e=Math.min(tgt.length,s+260),h='',i,c;
+    for(i=s;i<e;i++){c=esc(tgt[i]);h+=i<v.length?'<span class="'+(v[i]===tgt[i]?'ok':'bad')+'">'+c+'</span>':(i===v.length?'<span class="cur">'+c+'</span>':c);}
+    $('tp2').innerHTML=h;
+  }
+  function left(){return t0?Math.max(0,end-Date.now()):dur0;}
+  function show(){var l=Math.ceil(left()/1000);$('tc').textContent=p2(Math.floor(l/60))+':'+p2(l%60);}
+  function hist(){
+    var a=arr('tests').slice(-5).reverse();
+    $('th').innerHTML=a.length?'<div style="overflow-x:auto"><table class="rec" style="min-width:480px"><thead><tr><th>Date</th><th>Time</th><th>Language</th><th>WPM</th><th>Accuracy</th><th>Errors</th></tr></thead><tbody>'+a.map(function(r){return '<tr><td>'+esc(r.d)+'</td><td>'+r.m+' min</td><td>'+(r.l==='hi'?'हिंदी':'English')+'</td><td>'+r.wpm+'</td><td>'+r.acc+'%</td><td>'+r.err+'</td></tr>';}).join('')+'</tbody></table></div>':'<p class="msg">अभी कोई टेस्ट नहीं हुआ।</p>';
+  }
+  function fin(){
+    if(over)return;
+    over=true;clearInterval(tm);tx.disabled=true;
+    var v=tx.value,ok=0,i,lang=$('tl').value;
+    for(i=0;i<v.length;i++)if(v[i]===tgt[i])ok++;
+    var mins=dur0/60000,wpm=Math.round(ok/5/mins),acc=v.length?Math.round(ok/v.length*100):0,err=v.length-ok;
+    $('tc').textContent='00:00';
+    $('trs').innerHTML='<h3 style="margin-top:14px">Result</h3><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">'+[['WPM',wpm],['Accuracy',acc+'%'],['Errors',err],['Characters',v.length]].map(function(c){return '<div class="card" style="text-align:center"><div class="big" style="font-size:2rem">'+c[1]+'</div><p>'+c[0]+'</p></div>';}).join('')+'</div><p class="msg">Errors = वे characters जो आख़िर में गलत रह गए।</p>';
+    var h=arr('tests');h.push({d:istDay(Date.now()),m:mins,l:lang,wpm:wpm,acc:acc,err:err});put('tests',h.slice(-20));cloudTyping(mins,lang,wpm,acc,err);
+    var b=get('best-'+lang,null);if(!b||wpm>b.wpm)put('best-'+lang,{wpm:wpm,acc:acc});
+    hist();
+  }
+  function reset(){
+    clearInterval(tm);over=false;t0=0;end=0;dur0=(+$('tt').value||1)*60000;
+    tgt=mk();tx.value='';tx.disabled=false;$('trs').innerHTML='';show();paint();tx.focus();
+  }
+  tx.addEventListener('paste',function(e){e.preventDefault();});
+  tx.addEventListener('input',function(){
+    if(over)return;
+    if(!t0){t0=Date.now();end=t0+dur0;tm=setInterval(function(){show();if(left()<=0)fin();},200);timers.push(tm);}
+    if(Date.now()>=end){fin();return;}
+    paint();
+  });
+  $('tt').onchange=$('tl').onchange=$('tr').onclick=reset;
+  hist();reset();
+},
+leaderboard:function(){
+  $('nm').oninput=function(){put('name',this.value);};
+  var g=$('gb');
+  if(!sb){g.textContent='Cloud accounts are not switched on yet.';return;}
+  if(!me){g.innerHTML='<a href="#account">Log in</a> to see the global leaderboard and save your results.';return;}
+  sb.rpc('get_leaderboard').then(function(r){
+    if(!$('gb'))return;
+    if(r.error){g.textContent='Could not load the leaderboard.';return;}
+    g.innerHTML=r.data.length?'<table><tr><th>#</th><th>Name</th><th>Best score</th><th>Best WPM</th><th>Tests</th></tr>'+r.data.map(function(x,i){return '<tr><td>'+(i+1)+'</td><td>'+esc(x.display_name)+'</td><td>'+x.best_score+'</td><td>'+x.best_wpm+'</td><td>'+x.tests+'</td></tr>';}).join('')+'</table>':'No results yet. Take a timed typing test.';
+  });
+},
+contact:function(){
+  $('cs').onclick=function(){
+    var n=$('cn').value.trim(),m=$('cm').value.trim(),o=$('cmsg');
+    if(!m){o.textContent='पहले संदेश लिखें।';return;}
+    if(!EMAIL){o.textContent='संपर्क ईमेल अभी सेट नहीं है।';return;}
+    location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('AK NEST EDU: '+n)+'&body='+encodeURIComponent(m);
+  };
+}
+};
+
+var NG=[[null,['home','dashboard']],['पढ़ाई',['routine','study-room','time']],['अभ्यास',['typing','typing-test','test']],['टूल्स',['planner','notes','career']],['कम्युनिटी',['leaderboard']],['खाता और मदद',['contact','account']]];
+function navHTML(id,labelOf,extra){
+  var out='',k=0;
+  NG.forEach(function(g,gi){
+    var items='';
+    g[1].forEach(function(pid){
+      var lab=labelOf(pid);if(!lab)return;
+      var m=lab.match(/^(\S+)\s+(.+)$/),ic=m?m[1]:'🏠',tx=m?m[2]:lab;
+      items+='<a href="#'+pid+'"'+(pid===id?' aria-current="page"':'')+'><span class="ni" style="--d:'+((k++)*0.17).toFixed(2)+'s" aria-hidden="true">'+ic+'</span><span>'+tx+'</span></a>';
+    });
+    if(gi===NG.length-1)items+=extra;
+    out+='<div class="ngw'+(gi===NG.length-1?' last':'')+'">'+(g[0]?'<div class="ng">'+g[0]+'</div>':'')+items+'</div>';
+  });
+  return out;
+}
+var side=$('side'),scrim=$('scrim'),mbtn=$('mbtn');
+function showActive(){
+  var nv=$('nav'),a=nv.querySelector('a[aria-current="page"]');if(!a)return;
+  var nr=nv.getBoundingClientRect(),ar=a.getBoundingClientRect();if(!nr.height)return;
+  if(ar.top<nr.top+40)nv.scrollTop-=(nr.top+40-ar.top);else if(ar.bottom>nr.bottom-8)nv.scrollTop+=(ar.bottom-nr.bottom+8);
+  if(a===nv.querySelector('a'))nv.scrollTop=0;
+}
+function openMenu(){side.classList.add('open');scrim.hidden=false;mbtn.setAttribute('aria-expanded','true');document.documentElement.classList.add('nolock');showActive();var a=side.querySelector('a[aria-current="page"]')||side.querySelector('#nav a');if(a)a.focus();}
+function closeMenu(back){
+  var was=side.classList.contains('open');
+  side.classList.remove('open');scrim.hidden=true;mbtn.setAttribute('aria-expanded','false');document.documentElement.classList.remove('nolock');
+  if(was&&back)mbtn.focus();
+}
+mbtn.onclick=function(){side.classList.contains('open')?closeMenu(true):openMenu();};
+$('sclose').onclick=function(){closeMenu(true);};
+scrim.onclick=function(){closeMenu(true);};
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&side.classList.contains('open'))closeMenu(true);});
+window.addEventListener('resize',function(){if(window.innerWidth>=900)closeMenu(false);});
+$('nav').addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(a){if(window.FX)FX.burstAt(a.querySelector('.ni'));closeMenu(false);}});
+function failHTML(){
+  return '<div class="authbrand"><span class="lg" aria-hidden="true">AK</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>Login सेवा अभी लोड नहीं हो सकी।</p></div><div class="card"><p>सुरक्षा (Login) वाली लाइब्रेरी इंटरनेट या ad-blocker की वजह से लोड नहीं हुई। आपके डेटा की सुरक्षा के लिए पूरी साइट अभी बंद रखी गई है। कृपया इंटरनेट जाँचें, ad-blocker बंद करें और दोबारा कोशिश करें।</p><p><button class="btn" id="retry" type="button">दोबारा कोशिश करें</button></p></div>';
+}
+function route(){
+  clearT();RC=null;
+  if(LIBFAIL){document.body.classList.add('authonly');closeMenu(false);$('nav').innerHTML='';app.innerHTML=failHTML();var rb=$('retry');if(rb)rb.onclick=function(){location.reload();};return;}
+  var id=location.hash.slice(1),init='';
+  if(id==='logout'){if(sb&&me){manualLogout();}else if(sb){location.replace(LOGIN_URL);}else location.hash='#home';return;}
+  if(sb){
+    document.body.classList.toggle('authonly',!me);
+    if(!authReady){closeMenu(false);$('nav').innerHTML='';app.innerHTML='<div class="authbrand"><span class="lg" aria-hidden="true">AK</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>कृपया प्रतीक्षा करें…</p></div>';return;}
+    if(!me){
+      if(id!=='login'&&id!=='signup'&&id!=='forgot'){
+        if(/(^|&)error(_code|_description)?=/.test(id))loginNote='यह लिंक पुराना हो गया है या सही नहीं है। कृपया Login करें, या नया कोड/लिंक मँगवाइए।';
+        location.replace(LOGIN_URL);return;
+      }
+      closeMenu(false);$('nav').innerHTML='';
+      app.innerHTML='<div class="authbrand"><span class="lg" aria-hidden="true">AK</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>जारी रखने के लिए Login करें या नया खाता बनाएँ।</p></div>'+V.account();
+      I.account(id==='signup'?'up':(id==='forgot'?'fp':'in'));
+      window.scrollTo(0,0);return;
+    }
+    if(!recov&&(id==='login'||id==='signup'||id==='forgot'||/(^|&)(access_token|type|error)=/.test(id))){location.replace(location.pathname+location.search+'#dashboard');return;}
+  }
+  if(id==='login'||id==='signup'||id==='forgot'){init=id==='signup'?'up':(id==='forgot'?'fp':'in');id='account';}
+  if(!V[id])id='home';
+  var gated=(id==='dashboard'&&sb&&!me);
+  var PM={};PAGES.forEach(function(p){PM[p[0]]=p[1];});
+  $('nav').innerHTML=navHTML(id,function(pid){
+    var lab=PM[pid];
+    if(pid==='account'&&sb&&lab)lab=me?'👤 मेरा खाता':'🔐 Login / Sign up';
+    return lab;
+  },(sb&&me?'<a href="#logout"><span class="ni" aria-hidden="true">🚪</span><span>Logout</span></a>':''));
+  closeMenu(false);showActive();
+  app.innerHTML=gated?gate('📊 मेरा Dashboard'):V[id]();
+  if(!gated&&I[id])I[id](init);
+  window.scrollTo(0,0);
+}
+
+/* ===================== Diwali fireworks (canvas, visual effects only - no audio) ===================== */
+var FX=(function(){
+  var KEY='sbfx',cv=null,cx=null,btn=null,W=0,H=0,dpr=1,on=false,raf=0,last=0,nextL=0,nextI=0,nextF=0,
+      P=[],R=[],FL=[],pool=[],Q=1,ema=16.7,fr=0,nBurst=0,nIcon=0,dark=false,darkAt=0,icOrder=[],icPos=0,rz=0;
+  var mobile=function(){return W<700;};
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function pick(a){return a[(Math.random()*a.length)|0];}
+  var HUES=[48,28,350,300,205,150,12,185];       /* gold, orange, red, magenta, blue, green, flame, cyan */
+  function size(){
+    W=window.innerWidth;H=window.innerHeight;
+    dpr=Math.min(window.devicePixelRatio||1,W<700?1.25:1.5);
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+    cx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function lum(){
+    try{var m=getComputedStyle(document.body).backgroundColor.match(/\d+/g);if(m){dark=(0.2126*m[0]+0.7152*m[1]+0.0722*m[2])/255<0.4;}}catch(e){}
+  }
+  function spark(x,y,vx,vy,life,h,s,l,sz,g,drag,tw){
+    var p=pool.pop()||{};
+    p.x=x;p.y=y;p.vx=vx;p.vy=vy;p.l=life;p.m=life;p.h=h;p.s=s;p.L=l;p.z=dark?sz:sz*1.22;p.g=g;p.d=drag;p.t=tw?1:0;
+    P.push(p);
+  }
+  function maxP(){return Math.round((mobile()?360:900)*Q);}
+  function lite(h,gold){return dark?(gold?68:64):(gold?52:50);}   /* a little darker on light pages so sparks stay visible */
+  function sideW(){return W>=900?272:0;}
+  function explode(x,y,h,mini){
+    nBurst++;
+    var sc=Math.max(.65,Math.min(1.5,Math.min(W,H)/820))*(mini?.5:1),k=Q*(mobile()?.62:1)*(mini?.55:1),type=pick(['peony','peony','ring','willow','twin','peony']);
+    FL.push({x:x,y:y,r:Math.min(W,H)*.34*sc,l:9,m:9,h:h});
+    var n,i,a,v,h2=(h+rnd(70,150))%360;
+    if(type==='ring'){
+      n=Math.round(70*k);
+      for(i=0;i<n;i++){a=i/n*6.2832;v=4.4*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(62,82),h,100,lite(h),rnd(1.5,2.4),.04,.985,0);}
+      n=Math.round(34*k);
+      for(i=0;i<n;i++){a=i/n*6.2832+.1;v=2.3*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(60,76),48,100,lite(48,1),rnd(1.2,2),.04,.985,1);}
+    }else if(type==='willow'){
+      n=Math.round(120*k);
+      for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(1.2,4.3)*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(105,150),44,100,lite(44,1),rnd(1.1,2),.032,.99,1);}
+    }else if(type==='twin'){
+      n=Math.round(80*k);
+      for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(1.5,5)*sc;var c=i%2?h:h2;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(64,92),c,100,lite(c),rnd(1.4,2.5),.045,.985,i%5===0);}
+    }else{
+      n=Math.round(130*k);
+      for(i=0;i<n;i++){a=rnd(0,6.2832);v=Math.sqrt(Math.random())*5.2*sc;
+        var gold=i%6===0,c2=gold?48:(h+rnd(-14,14));
+        spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(60,96),c2,100,lite(c2,gold),rnd(1.3,2.6),.045,.985,i%7===0);}
+    }
+    n=Math.round(12*k);                                   /* bright white-gold core */
+    for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(.3,1.6)*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(14,26),50,100,dark?88:60,rnd(1.8,3),0,.95,0);}
+  }
+  function launch(){
+    if(P.length>maxP())return;
+    var sw=sideW(),left=sw>0&&Math.random()<.3;            /* some small rockets fly up beside the left menu icons */
+    var x=left?rnd(34,250):rnd(sw+36,W*.95),ty=rnd(H*.12,H*.52),fr2=rnd(50,76),dist=H+8-ty,vy=-2*dist/fr2;
+    R.push({x:x,y:H+8,vx:rnd(-.5,.5),vy:vy,ay:-vy/fr2,ty:ty,h:pick(HUES),n:0,mini:left});
+  }
+  function iconBurst(){
+    var side=document.getElementById('side');if(!side)return;
+    if(getComputedStyle(side).visibility!=='visible')return;
+    var list=side.querySelectorAll('.ni');if(!list.length)return;
+    if(icOrder.length!==list.length){icOrder=[];for(var q=0;q<list.length;q++)icOrder.push(q);icOrder.sort(function(){return Math.random()-.5;});icPos=0;}
+    burstAt(list[icOrder[icPos++%icOrder.length]]);
+  }
+  function burstAt(el){
+    if(!on||!el||!el.getBoundingClientRect)return;
+    var r=el.getBoundingClientRect();
+    if(!r.width||r.right<=0||r.bottom<=0||r.top>=H||r.left>=W)return;
+    nIcon++;
+    var x=r.left+r.width/2,y=r.top+r.height/2,h=pick(HUES),n=Math.round(22*Q),i,a,v;
+    FL.push({x:x,y:y,r:46,l:7,m:7,h:48});
+    for(i=0;i<n;i++){a=i/n*6.2832+rnd(-.1,.1);v=rnd(.9,2.3);var c=i%3===0?48:h;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(26,44),c,100,lite(c,c===48),rnd(.9,1.7),.012,.96,1);}
+  }
+  function frame(t){
+    raf=requestAnimationFrame(frame);
+    var dtMs=last?t-last:16.7;last=t;if(dtMs>250){dtMs=16.7;}
+    var dt=Math.min(3,dtMs/16.667);
+    fr++;ema=ema*.92+dtMs*.08;
+    if(fr%30===0){if(ema>27)Q=Math.max(.35,Q-.15);else if(ema<20)Q=Math.min(1,Q+.05);}
+    if(t-darkAt>3000){lum();darkAt=t;}
+    if(t>=nextL){launch();if(Math.random()<.22)setTimeout(launch,rnd(90,260));nextL=t+rnd(360,1050)/Math.max(.6,Q);}
+    if(t>=nextI){iconBurst();nextI=t+rnd(260,620);}
+    if(t>=nextF){var bx=rnd(sideW()+40,W*.96),by=rnd(H*.08,H*.92);explode(bx,by,pick(HUES));nextF=t+rnd(2600,5200);}   /* free bursts anywhere on screen */
+    cx.globalCompositeOperation='destination-out';cx.fillStyle='rgba(0,0,0,.2)';cx.fillRect(0,0,W,H);
+    cx.globalCompositeOperation=dark?'lighter':'source-over';
+    var i,p,r,f,a;
+    for(i=FL.length-1;i>=0;i--){f=FL[i];f.l-=dt;if(f.l<=0){FL.splice(i,1);continue;}
+      a=f.l/f.m;var g=cx.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r);
+      g.addColorStop(0,'hsla(48,100%,'+(dark?88:58)+'%,'+(.42*a)+')');g.addColorStop(.35,'hsla('+f.h+',100%,'+(dark?65:55)+'%,'+(.17*a)+')');g.addColorStop(1,'hsla('+f.h+',100%,60%,0)');
+      cx.fillStyle=g;cx.fillRect(f.x-f.r,f.y-f.r,f.r*2,f.r*2);}
+    for(i=R.length-1;i>=0;i--){r=R[i];r.n++;r.vy+=r.ay*dt;r.x+=r.vx*dt;r.y+=r.vy*dt;
+      spark(r.x,r.y,rnd(-.25,.25),rnd(.2,.8),rnd(14,24),44,100,lite(44,1),rnd(.9,1.5),.02,.95,1);
+      cx.fillStyle='hsla(48,100%,'+(dark?85:55)+'%,1)';cx.beginPath();cx.arc(r.x,r.y,2.2,0,6.2832);cx.fill();
+      cx.fillStyle='hsla(40,100%,60%,.28)';cx.beginPath();cx.arc(r.x,r.y,6,0,6.2832);cx.fill();
+      if(r.vy>=-.6||r.y<=r.ty){explode(r.x,r.y,r.h,r.mini);R.splice(i,1);}}
+    for(i=P.length-1;i>=0;i--){p=P[i];p.l-=dt;
+      if(p.l<=0){P.splice(i,1);pool.push(p);continue;}
+      p.vx*=Math.pow(p.d,dt);p.vy=p.vy*Math.pow(p.d,dt)+p.g*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;
+      a=p.l/p.m;a=a>.7?1:a/.7;if(p.t&&Math.random()<.35)a*=.25;if(!dark)a*=.88;
+      cx.fillStyle='hsla('+p.h+','+p.s+'%,'+p.L+'%,'+a+')';
+      cx.beginPath();cx.arc(p.x,p.y,p.z,0,6.2832);cx.fill();
+      if(p.z>1.5){cx.fillStyle='hsla('+p.h+',100%,'+p.L+'%,'+(a*(dark?.22:.14))+')';cx.beginPath();cx.arc(p.x,p.y,p.z*2.8,0,6.2832);cx.fill();}}
+  }
+  function start(){if(raf||!on||document.hidden)return;last=0;nextL=0;nextI=0;nextF=1200;lum();raf=requestAnimationFrame(frame);}
+  function stop(){if(raf){cancelAnimationFrame(raf);raf=0;}}
+  function clear(){P.length=0;R.length=0;FL.length=0;if(cx){cx.setTransform(1,0,0,1,0,0);cx.globalCompositeOperation='source-over';cx.clearRect(0,0,cv.width,cv.height);cx.setTransform(dpr,0,0,dpr,0,0);}}
+  function paint(){
+    document.documentElement.classList.toggle('fx-on',on);
+    if(btn){btn.setAttribute('aria-pressed',on?'true':'false');btn.lastChild.textContent=on?'ON':'OFF';
+      btn.setAttribute('aria-label','Diwali fireworks animation '+(on?'चालू है — बंद करने के लिए दबाइए':'बंद है — चालू करने के लिए दबाइए'));}
+  }
+  function set(v,save){
+    on=!!v;paint();
+    if(save){try{localStorage.setItem(KEY,on?'1':'0');}catch(e){}}
+    if(on)start();else{stop();clear();}
+  }
+  function init(){
+    cv=document.createElement('canvas');cv.id='fx';cv.setAttribute('aria-hidden','true');
+    document.body.appendChild(cv);cx=cv.getContext('2d');
+    btn=document.createElement('button');btn.id='fxbtn';btn.type='button';
+    btn.innerHTML='<span aria-hidden="true">🎆</span><span>ON</span>';
+    btn.onclick=function(){set(!on,true);};
+    document.body.appendChild(btn);
+    size();
+    window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){size();},120);});
+    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else if(on)start();});
+    var pref=null;try{pref=localStorage.getItem(KEY);}catch(e){}
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    set(pref===null?!reduce:pref==='1',false);
+  }
+  init();
+  return {burstAt:burstAt,set:function(v){set(v,true);},stats:function(){return {on:on,frames:fr,particles:P.length,rockets:R.length,bursts:nBurst,iconBursts:nIcon,Q:Q,W:W,H:H,ema:ema,raf:!!raf};}};
+})();
+
+window.addEventListener('hashchange',route);
+route();
+startRem();
+</script>
+</body>
+</html>
