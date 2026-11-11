@@ -138,6 +138,44 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 8px
 .toast button{background:#fff;color:#1E40AF;border:0;border-radius:8px;padding:6px 12px;font:600 .95rem Hind,sans-serif;cursor:pointer}
 footer{text-align:center;color:var(--mute);padding:20px;font-size:.9rem}
 .msg{color:var(--mute);min-height:1.5em}
+
+/* ---- Soft animated colour ambience across every screen ---- */
+body{
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(91,63,216,.16), transparent 38%),
+    radial-gradient(ellipse at 88% 22%, rgba(30,190,190,.11), transparent 36%),
+    radial-gradient(ellipse at 68% 88%, rgba(255,159,28,.10), transparent 40%),
+    radial-gradient(ellipse at 8% 92%, rgba(236,72,153,.08), transparent 34%);
+  background-size:180% 180%;
+  background-attachment:fixed;
+  animation:akAmbientColours 24s ease-in-out infinite alternate;
+}
+@keyframes akAmbientColours{
+  0%{background-position:0% 0%}
+  50%{background-position:100% 35%}
+  100%{background-position:20% 100%}
+}
+.side{
+  background-size:260% 260%;
+  animation:akSidebarColours 18s ease-in-out infinite alternate;
+}
+@keyframes akSidebarColours{
+  0%{background-position:0% 0%}
+  100%{background-position:100% 100%}
+}
+.hero{
+  background-size:240% 240%;
+  animation:akHeroColours 16s ease-in-out infinite alternate;
+}
+@keyframes akHeroColours{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+@media(prefers-reduced-motion:reduce){
+  body,.side,.hero{animation:none!important}
+}
+
 </style>
 </head>
 <body>
