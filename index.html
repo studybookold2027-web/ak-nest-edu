@@ -54,27 +54,27 @@ body.authonly .side,body.authonly .mtop,body.authonly footer,body.authonly #scri
 body.authonly .mainwrap{margin-left:0}
 body.authonly main{max-width:480px;padding-top:36px}
 body.authonly #app .card{margin-left:auto;margin-right:auto;max-width:none!important}
-/* ---- Diwali fireworks: ONE full-screen fixed canvas + glow effects (visual only, no sound) ---- */
-#fx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:45;pointer-events:none;display:none;background:transparent}
-html.fx-on #fx{display:block}
+/* ---- Festival banner and gentle brother-sister animation ---- */
 .festival-sub{position:relative;z-index:1;color:#fff;font-weight:600;margin-top:4px;font-size:clamp(.95rem,2.4vw,1.15rem)}
 .dvg{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#1B1D6B 0%,#2E2FB8 55%,#4A34C6 100%);border:1px solid rgba(255,200,90,.6);border-radius:18px;padding:22px 14px;margin:0 0 20px;box-shadow:0 6px 22px rgba(46,47,184,.28)}
-.dvt{position:relative;z-index:1;display:inline-block;max-width:100%;font:800 clamp(1.7rem,6.4vw,3.3rem)/1.25 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.01em;text-wrap:balance;color:#FFD86B;background:linear-gradient(100deg,#FFD86B 0%,#FFB020 25%,#FFF3B0 50%,#FFB020 75%,#FFD86B 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 7px rgba(255,176,32,.8)) drop-shadow(0 0 18px rgba(255,120,30,.5))}
+.dvt{position:relative;z-index:1;display:inline-block;max-width:100%;font:800 clamp(1.7rem,6.4vw,3.3rem)/1.25 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.01em;text-wrap:balance;color:#FFD86B;background:linear-gradient(100deg,#FFD86B 0%,#FFB020 25%,#FFF3B0 50%,#FFB020 75%,#FFD86B 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 7px rgba(255,176,32,.55))}
 .dvt .em{-webkit-text-fill-color:initial;display:inline-block}
 .dvg .sp{display:none;position:absolute;left:var(--x);top:var(--y);width:1em;height:1em;font-size:var(--s,16px);line-height:1;color:var(--c,#FFE08A);pointer-events:none;opacity:0}
 .dvg .sp::before{content:"\2726";position:absolute;left:0;top:0;text-shadow:0 0 8px currentColor}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.2) rotate(0deg)}45%{opacity:1;transform:scale(1.15) rotate(70deg)}70%{opacity:.7;transform:scale(.8) rotate(130deg)}}
 @keyframes shim{0%{background-position:0 0}100%{background-position:200% 0}}
-@keyframes dvpulse{0%,100%{box-shadow:0 6px 22px rgba(46,47,184,.28),0 0 0 rgba(255,176,32,0)}50%{box-shadow:0 6px 26px rgba(46,47,184,.35),0 0 26px rgba(255,176,32,.55)}}
-html.fx-on .dvg .sp{display:block;animation:twinkle var(--t,2.6s) ease-in-out infinite;animation-delay:var(--d,0s)}
-html.fx-on .dvt{animation:shim 5s linear infinite}
-html.fx-on .dvg{animation:dvpulse 3.2s ease-in-out infinite}
-@keyframes diya{0%,100%{filter:drop-shadow(0 0 2px rgba(255,205,90,.6));transform:scale(1)}50%{filter:drop-shadow(0 0 7px rgba(255,200,70,1)) drop-shadow(0 0 15px rgba(255,120,40,.65));transform:scale(1.14)}}
-@keyframes lgglow{0%,100%{box-shadow:0 0 0 2px rgba(255,200,80,.5),0 0 12px rgba(255,190,60,.6)}50%{box-shadow:0 0 0 2px rgba(255,210,100,.9),0 0 26px rgba(255,170,40,.95)}}
-html.fx-on .ni{animation:diya 2.6s ease-in-out infinite;animation-delay:var(--d,0s)}
-html.fx-on .lg{animation:lgglow 2.8s ease-in-out infinite}
-html.fx-on .card .ic{animation:diya 3.2s ease-in-out infinite}
-html.fx-on .hero .tag{box-shadow:0 0 16px rgba(255,159,28,.85)}
+.dvg .sp{display:block;animation:twinkle 3s ease-in-out infinite}
+.dvt{animation:shim 8s linear infinite}
+/* A warm, gentle sibling illustration used on Bhai Dooj; no fireworks or loud effects. */
+.sibling-scene{display:flex;justify-content:center;align-items:flex-end;gap:clamp(16px,5vw,42px);margin:12px auto 0;position:relative;z-index:1;min-height:82px}
+.sibling-person{display:flex;flex-direction:column;align-items:center;transform-origin:bottom center;animation:sibling-wave 2.8s ease-in-out infinite}
+.sibling-person.sis{animation-delay:.35s}
+.sibling-face{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.05;filter:drop-shadow(0 3px 3px rgba(0,0,0,.2))}
+.sibling-caption{font-size:.78rem;color:#fff;font-weight:600;line-height:1.2;margin-top:3px}
+.sibling-heart{align-self:center;font-size:1.25rem;animation:heart-float 2.2s ease-in-out infinite}
+@keyframes sibling-wave{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-5px) rotate(-3deg)}55%{transform:translateY(-2px) rotate(2deg)}75%{transform:translateY(-6px) rotate(-2deg)}}
+@keyframes heart-float{0%,100%{transform:translateY(2px) scale(.9);opacity:.75}50%{transform:translateY(-7px) scale(1.12);opacity:1}}
+@media(prefers-reduced-motion:reduce){.sibling-person,.sibling-heart,.dvg .sp,.dvt{animation:none!important}}
 @media (max-height:820px){#nav a{padding:6px 12px}.ng{padding:8px 12px 2px}.sbrand{padding-top:12px;padding-bottom:10px}}
 @media (min-width:900px){
   .side{transform:none;visibility:visible;max-width:none;box-shadow:none;transition:none}
@@ -510,8 +510,9 @@ function festivalBanner(){
   };
   var f=festivals[key] || recurring[p.month+'-'+p.day];
   if(!f) return '';
-  var palette = key.indexOf('Holi')>=0 ? '' : '';
-  return '<div class="dvg festival-banner" role="status" aria-label="'+f[0]+' celebration"><span class="dvt">'+f[0]+' <span class="em">'+f[2]+'</span> '+f[1]+'</span><div class="festival-sub">'+f[3]+'</div><span aria-hidden="true"><i class="sp" style="--x:8%;--y:28%;--c:#FFE08A;--s:14px;--d:0s;--t:2.4s"></i><i class="sp" style="--x:22%;--y:76%;--c:#FFFFFF;--s:11px;--d:.5s;--t:2.9s"></i><i class="sp" style="--x:43%;--y:12%;--c:#FFD86B;--s:16px;--d:1.1s;--t:2.6s"></i><i class="sp" style="--x:68%;--y:78%;--c:#FFB020;--s:12px;--d:.3s;--t:3.1s"></i><i class="sp" style="--x:91%;--y:24%;--c:#FFFFFF;--s:14px;--d:.8s;--t:2.6s"></i></span></div>';
+  var isBhaiDooj = f[0].indexOf('भाई दूज') >= 0;
+  var siblingArt = isBhaiDooj ? '<div class="sibling-scene" aria-label="भाई और बहन का प्यारा एनिमेशन"><div class="sibling-person bro"><span class="sibling-face" aria-hidden="true">👦🏻</span><span class="sibling-caption">भाई</span></div><span class="sibling-heart" aria-hidden="true">💗</span><div class="sibling-person sis"><span class="sibling-face" aria-hidden="true">👧🏻</span><span class="sibling-caption">बहन</span></div></div>' : '';
+  return '<div class="dvg festival-banner" role="status" aria-label="'+f[0]+' celebration"><span class="dvt">'+f[0]+' <span class="em">'+f[2]+'</span> '+f[1]+'</span><div class="festival-sub">'+f[3]+'</div>'+siblingArt+'<span aria-hidden="true"><i class="sp" style="--x:8%;--y:28%;--c:#FFE08A;--s:14px"></i><i class="sp" style="--x:22%;--y:76%;--c:#FFFFFF;--s:11px"></i><i class="sp" style="--x:43%;--y:12%;--c:#FFD86B;--s:16px"></i><i class="sp" style="--x:68%;--y:78%;--c:#FFB020;--s:12px"></i><i class="sp" style="--x:91%;--y:24%;--c:#FFFFFF;--s:14px"></i></span></div>';
 }
 
 var V={
@@ -1017,7 +1018,7 @@ $('sclose').onclick=function(){closeMenu(true);};
 scrim.onclick=function(){closeMenu(true);};
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&side.classList.contains('open'))closeMenu(true);});
 window.addEventListener('resize',function(){if(window.innerWidth>=900)closeMenu(false);});
-$('nav').addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(a){if(window.FX)FX.burstAt(a.querySelector('.ni'));closeMenu(false);}});
+$('nav').addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(a)closeMenu(false);});
 function failHTML(){
   return '<div class="authbrand"><span class="lg" aria-hidden="true">AK</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>Login सेवा अभी लोड नहीं हो सकी।</p></div><div class="card"><p>सुरक्षा (Login) वाली लाइब्रेरी इंटरनेट या ad-blocker की वजह से लोड नहीं हुई। आपके डेटा की सुरक्षा के लिए पूरी साइट अभी बंद रखी गई है। कृपया इंटरनेट जाँचें, ad-blocker बंद करें और दोबारा कोशिश करें।</p><p><button class="btn" id="retry" type="button">दोबारा कोशिश करें</button></p></div>';
 }
@@ -1055,137 +1056,6 @@ function route(){
   if(!gated&&I[id])I[id](init);
   window.scrollTo(0,0);
 }
-
-/* ===================== Diwali fireworks (canvas, visual effects only - no audio) ===================== */
-var FX=(function(){
-  var KEY='sbfx',cv=null,cx=null,btn=null,W=0,H=0,dpr=1,on=false,raf=0,last=0,nextL=0,nextI=0,nextF=0,
-      P=[],R=[],FL=[],pool=[],Q=1,ema=16.7,fr=0,nBurst=0,nIcon=0,dark=false,darkAt=0,icOrder=[],icPos=0,rz=0;
-  var mobile=function(){return W<700;};
-  function rnd(a,b){return a+Math.random()*(b-a);}
-  function pick(a){return a[(Math.random()*a.length)|0];}
-  var HUES=[48,28,350,300,205,150,12,185];       /* gold, orange, red, magenta, blue, green, flame, cyan */
-  function size(){
-    W=window.innerWidth;H=window.innerHeight;
-    dpr=Math.min(window.devicePixelRatio||1,W<700?1.25:1.5);
-    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
-    cx.setTransform(dpr,0,0,dpr,0,0);
-  }
-  function lum(){
-    try{var m=getComputedStyle(document.body).backgroundColor.match(/\d+/g);if(m){dark=(0.2126*m[0]+0.7152*m[1]+0.0722*m[2])/255<0.4;}}catch(e){}
-  }
-  function spark(x,y,vx,vy,life,h,s,l,sz,g,drag,tw){
-    var p=pool.pop()||{};
-    p.x=x;p.y=y;p.vx=vx;p.vy=vy;p.l=life;p.m=life;p.h=h;p.s=s;p.L=l;p.z=dark?sz:sz*1.22;p.g=g;p.d=drag;p.t=tw?1:0;
-    P.push(p);
-  }
-  function maxP(){return Math.round((mobile()?360:900)*Q);}
-  function lite(h,gold){return dark?(gold?68:64):(gold?52:50);}   /* a little darker on light pages so sparks stay visible */
-  function sideW(){return W>=900?272:0;}
-  function explode(x,y,h,mini){
-    nBurst++;
-    var sc=Math.max(.65,Math.min(1.5,Math.min(W,H)/820))*(mini?.5:1),k=Q*(mobile()?.62:1)*(mini?.55:1),type=pick(['peony','peony','ring','willow','twin','peony']);
-    FL.push({x:x,y:y,r:Math.min(W,H)*.34*sc,l:9,m:9,h:h});
-    var n,i,a,v,h2=(h+rnd(70,150))%360;
-    if(type==='ring'){
-      n=Math.round(70*k);
-      for(i=0;i<n;i++){a=i/n*6.2832;v=4.4*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(62,82),h,100,lite(h),rnd(1.5,2.4),.04,.985,0);}
-      n=Math.round(34*k);
-      for(i=0;i<n;i++){a=i/n*6.2832+.1;v=2.3*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(60,76),48,100,lite(48,1),rnd(1.2,2),.04,.985,1);}
-    }else if(type==='willow'){
-      n=Math.round(120*k);
-      for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(1.2,4.3)*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(105,150),44,100,lite(44,1),rnd(1.1,2),.032,.99,1);}
-    }else if(type==='twin'){
-      n=Math.round(80*k);
-      for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(1.5,5)*sc;var c=i%2?h:h2;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(64,92),c,100,lite(c),rnd(1.4,2.5),.045,.985,i%5===0);}
-    }else{
-      n=Math.round(130*k);
-      for(i=0;i<n;i++){a=rnd(0,6.2832);v=Math.sqrt(Math.random())*5.2*sc;
-        var gold=i%6===0,c2=gold?48:(h+rnd(-14,14));
-        spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(60,96),c2,100,lite(c2,gold),rnd(1.3,2.6),.045,.985,i%7===0);}
-    }
-    n=Math.round(12*k);                                   /* bright white-gold core */
-    for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(.3,1.6)*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(14,26),50,100,dark?88:60,rnd(1.8,3),0,.95,0);}
-  }
-  function launch(){
-    if(P.length>maxP())return;
-    var sw=sideW(),left=sw>0&&Math.random()<.3;            /* some small rockets fly up beside the left menu icons */
-    var x=left?rnd(34,250):rnd(sw+36,W*.95),ty=rnd(H*.12,H*.52),fr2=rnd(50,76),dist=H+8-ty,vy=-2*dist/fr2;
-    R.push({x:x,y:H+8,vx:rnd(-.5,.5),vy:vy,ay:-vy/fr2,ty:ty,h:pick(HUES),n:0,mini:left});
-  }
-  function iconBurst(){
-    var side=document.getElementById('side');if(!side)return;
-    if(getComputedStyle(side).visibility!=='visible')return;
-    var list=side.querySelectorAll('.ni');if(!list.length)return;
-    if(icOrder.length!==list.length){icOrder=[];for(var q=0;q<list.length;q++)icOrder.push(q);icOrder.sort(function(){return Math.random()-.5;});icPos=0;}
-    burstAt(list[icOrder[icPos++%icOrder.length]]);
-  }
-  function burstAt(el){
-    if(!on||!el||!el.getBoundingClientRect)return;
-    var r=el.getBoundingClientRect();
-    if(!r.width||r.right<=0||r.bottom<=0||r.top>=H||r.left>=W)return;
-    nIcon++;
-    var x=r.left+r.width/2,y=r.top+r.height/2,h=pick(HUES),n=Math.round(22*Q),i,a,v;
-    FL.push({x:x,y:y,r:46,l:7,m:7,h:48});
-    for(i=0;i<n;i++){a=i/n*6.2832+rnd(-.1,.1);v=rnd(.9,2.3);var c=i%3===0?48:h;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(26,44),c,100,lite(c,c===48),rnd(.9,1.7),.012,.96,1);}
-  }
-  function frame(t){
-    raf=requestAnimationFrame(frame);
-    var dtMs=last?t-last:16.7;last=t;if(dtMs>250){dtMs=16.7;}
-    var dt=Math.min(3,dtMs/16.667);
-    fr++;ema=ema*.92+dtMs*.08;
-    if(fr%30===0){if(ema>27)Q=Math.max(.35,Q-.15);else if(ema<20)Q=Math.min(1,Q+.05);}
-    if(t-darkAt>3000){lum();darkAt=t;}
-    if(t>=nextL){launch();if(Math.random()<.22)setTimeout(launch,rnd(90,260));nextL=t+rnd(360,1050)/Math.max(.6,Q);}
-    if(t>=nextI){iconBurst();nextI=t+rnd(260,620);}
-    if(t>=nextF){var bx=rnd(sideW()+40,W*.96),by=rnd(H*.08,H*.92);explode(bx,by,pick(HUES));nextF=t+rnd(2600,5200);}   /* free bursts anywhere on screen */
-    cx.globalCompositeOperation='destination-out';cx.fillStyle='rgba(0,0,0,.2)';cx.fillRect(0,0,W,H);
-    cx.globalCompositeOperation=dark?'lighter':'source-over';
-    var i,p,r,f,a;
-    for(i=FL.length-1;i>=0;i--){f=FL[i];f.l-=dt;if(f.l<=0){FL.splice(i,1);continue;}
-      a=f.l/f.m;var g=cx.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r);
-      g.addColorStop(0,'hsla(48,100%,'+(dark?88:58)+'%,'+(.42*a)+')');g.addColorStop(.35,'hsla('+f.h+',100%,'+(dark?65:55)+'%,'+(.17*a)+')');g.addColorStop(1,'hsla('+f.h+',100%,60%,0)');
-      cx.fillStyle=g;cx.fillRect(f.x-f.r,f.y-f.r,f.r*2,f.r*2);}
-    for(i=R.length-1;i>=0;i--){r=R[i];r.n++;r.vy+=r.ay*dt;r.x+=r.vx*dt;r.y+=r.vy*dt;
-      spark(r.x,r.y,rnd(-.25,.25),rnd(.2,.8),rnd(14,24),44,100,lite(44,1),rnd(.9,1.5),.02,.95,1);
-      cx.fillStyle='hsla(48,100%,'+(dark?85:55)+'%,1)';cx.beginPath();cx.arc(r.x,r.y,2.2,0,6.2832);cx.fill();
-      cx.fillStyle='hsla(40,100%,60%,.28)';cx.beginPath();cx.arc(r.x,r.y,6,0,6.2832);cx.fill();
-      if(r.vy>=-.6||r.y<=r.ty){explode(r.x,r.y,r.h,r.mini);R.splice(i,1);}}
-    for(i=P.length-1;i>=0;i--){p=P[i];p.l-=dt;
-      if(p.l<=0){P.splice(i,1);pool.push(p);continue;}
-      p.vx*=Math.pow(p.d,dt);p.vy=p.vy*Math.pow(p.d,dt)+p.g*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;
-      a=p.l/p.m;a=a>.7?1:a/.7;if(p.t&&Math.random()<.35)a*=.25;if(!dark)a*=.88;
-      cx.fillStyle='hsla('+p.h+','+p.s+'%,'+p.L+'%,'+a+')';
-      cx.beginPath();cx.arc(p.x,p.y,p.z,0,6.2832);cx.fill();
-      if(p.z>1.5){cx.fillStyle='hsla('+p.h+',100%,'+p.L+'%,'+(a*(dark?.22:.14))+')';cx.beginPath();cx.arc(p.x,p.y,p.z*2.8,0,6.2832);cx.fill();}}
-  }
-  function start(){if(raf||!on||document.hidden)return;last=0;nextL=0;nextI=0;nextF=1200;lum();raf=requestAnimationFrame(frame);}
-  function stop(){if(raf){cancelAnimationFrame(raf);raf=0;}}
-  function clear(){P.length=0;R.length=0;FL.length=0;if(cx){cx.setTransform(1,0,0,1,0,0);cx.globalCompositeOperation='source-over';cx.clearRect(0,0,cv.width,cv.height);cx.setTransform(dpr,0,0,dpr,0,0);}}
-  function init(){
-    cv=document.createElement('canvas');cv.id='fx';cv.setAttribute('aria-hidden','true');
-    document.body.appendChild(cv);cx=cv.getContext('2d');
-    size();
-    window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){size();},120);});
-    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else if(on)start();});   /* saves battery while the tab is hidden */
-    try{localStorage.removeItem(KEY);}catch(e){}                      /* old ON/OFF choice is no longer used */
-    /* Always starts by itself, on every visit, on every page, logged in or out.
-       It does not depend on any button, saved choice or device setting. */
-    on=true;
-    document.documentElement.classList.add('fx-on');
-    start();
-    /* self-healing: if the loop ever stops while the page is visible (some phones drop it), start it again */
-    var lastFr=-1;
-    setInterval(function(){
-      if(!on||document.hidden)return;
-      if(!raf||fr===lastFr){stop();start();}
-      lastFr=fr;
-    },1500);
-    window.addEventListener('pageshow',function(){if(on&&!document.hidden&&!raf)start();});
-    window.addEventListener('focus',function(){if(on&&!document.hidden&&!raf)start();});
-  }
-  init();
-  return {burstAt:burstAt,stats:function(){return {on:on,frames:fr,particles:P.length,rockets:R.length,bursts:nBurst,iconBursts:nIcon,Q:Q,W:W,H:H,ema:ema,raf:!!raf};}};
-})();
 
 window.addEventListener('hashchange',route);
 route();
