@@ -54,27 +54,32 @@ body.authonly .side,body.authonly .mtop,body.authonly footer,body.authonly #scri
 body.authonly .mainwrap{margin-left:0}
 body.authonly main{max-width:480px;padding-top:36px}
 body.authonly #app .card{margin-left:auto;margin-right:auto;max-width:none!important}
-/* ---- Festival banner and gentle brother-sister animation ---- */
-.festival-sub{position:relative;z-index:1;color:#fff;font-weight:600;margin-top:4px;font-size:clamp(.95rem,2.4vw,1.15rem)}
-.dvg{position:relative;overflow:hidden;text-align:center;background:linear-gradient(135deg,#1B1D6B 0%,#2E2FB8 55%,#4A34C6 100%);border:1px solid rgba(255,200,90,.6);border-radius:18px;padding:22px 14px;margin:0 0 20px;box-shadow:0 6px 22px rgba(46,47,184,.28)}
-.dvt{position:relative;z-index:1;display:inline-block;max-width:100%;font:800 clamp(1.7rem,6.4vw,3.3rem)/1.25 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.01em;text-wrap:balance;color:#FFD86B;background:linear-gradient(100deg,#FFD86B 0%,#FFB020 25%,#FFF3B0 50%,#FFB020 75%,#FFD86B 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 7px rgba(255,176,32,.55))}
-.dvt .em{-webkit-text-fill-color:initial;display:inline-block}
-.dvg .sp{display:none;position:absolute;left:var(--x);top:var(--y);width:1em;height:1em;font-size:var(--s,16px);line-height:1;color:var(--c,#FFE08A);pointer-events:none;opacity:0}
-.dvg .sp::before{content:"\2726";position:absolute;left:0;top:0;text-shadow:0 0 8px currentColor}
+/* ---- festival animation: ONE full-screen fixed canvas (visual only, no sound) ---- */
+#fx{position:fixed;top:0;left:0;width:100%;height:100%;z-index:45;pointer-events:none;display:none;background:transparent}
+html.fx-on #fx{display:block}
+/* ---- festival banner (home page) and festival glow: only used while a festival is active ---- */
+.fb{position:relative;overflow:hidden;text-align:center;color:#fff;background:linear-gradient(135deg,var(--b1) 0%,var(--b2) 55%,var(--b3) 100%);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:24px 46px;margin:0 0 20px;box-shadow:0 6px 22px rgba(20,20,80,.28);animation:fbpulse 3.4s ease-in-out infinite}
+.fb.tri::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:linear-gradient(90deg,#FF9933 0 33.4%,#FFFFFF 33.4% 66.6%,#138808 66.6% 100%)}
+.ft{position:relative;z-index:1}
+.fhi{display:inline-block;max-width:100%;font:800 clamp(1.9rem,7vw,3.4rem)/1.25 "Baloo 2",Hind,system-ui,sans-serif;letter-spacing:.01em;text-wrap:balance;color:var(--ac);background:linear-gradient(100deg,#FFFFFF 0%,var(--ac) 30%,#FFFFFF 55%,var(--ac) 80%,#FFFFFF 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 8px var(--ac));animation:shim 5s linear infinite}
+.fen{font:700 clamp(1.3rem,4.6vw,2.2rem)/1.25 "Baloo 2",Hind,system-ui,sans-serif;color:#fff;text-shadow:0 0 12px var(--ac),0 1px 2px rgba(0,0,0,.35);text-wrap:balance}
+.fn{position:relative;z-index:1;margin-top:6px;font-weight:600;opacity:.95;letter-spacing:.02em;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.fo{position:relative;z-index:1;margin-top:8px;display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center}
+.fo span{background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.34);border-radius:99px;padding:3px 12px;font-size:.9rem;font-weight:600}
+.fi i{position:absolute;left:var(--x);top:var(--y);font-style:normal;font-size:clamp(1.2rem,3.6vw,2.1rem);line-height:1;animation:ffloat 3.4s ease-in-out infinite;animation-delay:var(--d,0s);filter:drop-shadow(0 0 6px var(--ac));pointer-events:none}
+.fb .sp{position:absolute;left:var(--x);top:var(--y);width:1em;height:1em;font-size:var(--s,16px);line-height:1;color:var(--c,#FFE08A);pointer-events:none;opacity:0;animation:twinkle var(--t,2.6s) ease-in-out infinite;animation-delay:var(--d,0s)}
+.fb .sp::before{content:"\2726";position:absolute;left:0;top:0;text-shadow:0 0 8px currentColor}
 @keyframes twinkle{0%,100%{opacity:0;transform:scale(.2) rotate(0deg)}45%{opacity:1;transform:scale(1.15) rotate(70deg)}70%{opacity:.7;transform:scale(.8) rotate(130deg)}}
 @keyframes shim{0%{background-position:0 0}100%{background-position:200% 0}}
-.dvg .sp{display:block;animation:twinkle 3s ease-in-out infinite}
-.dvt{animation:shim 8s linear infinite}
-/* A warm, gentle sibling illustration used on Bhai Dooj; no fireworks or loud effects. */
-.sibling-scene{display:flex;justify-content:center;align-items:flex-end;gap:clamp(16px,5vw,42px);margin:12px auto 0;position:relative;z-index:1;min-height:82px}
-.sibling-person{display:flex;flex-direction:column;align-items:center;transform-origin:bottom center;animation:sibling-wave 2.8s ease-in-out infinite}
-.sibling-person.sis{animation-delay:.35s}
-.sibling-face{font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.05;filter:drop-shadow(0 3px 3px rgba(0,0,0,.2))}
-.sibling-caption{font-size:.78rem;color:#fff;font-weight:600;line-height:1.2;margin-top:3px}
-.sibling-heart{align-self:center;font-size:1.25rem;animation:heart-float 2.2s ease-in-out infinite}
-@keyframes sibling-wave{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-5px) rotate(-3deg)}55%{transform:translateY(-2px) rotate(2deg)}75%{transform:translateY(-6px) rotate(-2deg)}}
-@keyframes heart-float{0%,100%{transform:translateY(2px) scale(.9);opacity:.75}50%{transform:translateY(-7px) scale(1.12);opacity:1}}
-@media(prefers-reduced-motion:reduce){.sibling-person,.sibling-heart,.dvg .sp,.dvt{animation:none!important}}
+@keyframes ffloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-6px) rotate(5deg)}}
+@keyframes fbpulse{0%,100%{box-shadow:0 6px 22px rgba(20,20,80,.28),0 0 0 rgba(255,255,255,0)}50%{box-shadow:0 6px 26px rgba(20,20,80,.35),0 0 22px var(--ac)}}
+@keyframes fglow{0%,100%{filter:drop-shadow(0 0 2px var(--fa,#FFC84A));transform:scale(1)}50%{filter:drop-shadow(0 0 7px var(--fa,#FFC84A)) drop-shadow(0 0 14px var(--fa,#FFC84A));transform:scale(1.14)}}
+@keyframes lgglow{0%,100%{box-shadow:0 0 0 2px var(--fa,#FFC84A),0 0 10px var(--fa,#FFC84A)}50%{box-shadow:0 0 0 2px var(--fa,#FFC84A),0 0 24px var(--fa,#FFC84A)}}
+html.fest .ni{animation:fglow 2.6s ease-in-out infinite;animation-delay:var(--d,0s)}
+html.fest .lg{animation:lgglow 2.8s ease-in-out infinite}
+html.fest .card .ic{animation:fglow 3.2s ease-in-out infinite}
+html.fest .hero .tag{box-shadow:0 0 16px var(--fa,#FFC84A)}
+@media (max-width:600px){.fb{padding:22px 16px}}
 @media (max-height:820px){#nav a{padding:6px 12px}.ng{padding:8px 12px 2px}.sbrand{padding-top:12px;padding-bottom:10px}}
 @media (min-width:900px){
   .side{transform:none;visibility:visible;max-width:none;box-shadow:none;transition:none}
@@ -138,44 +143,6 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 8px
 .toast button{background:#fff;color:#1E40AF;border:0;border-radius:8px;padding:6px 12px;font:600 .95rem Hind,sans-serif;cursor:pointer}
 footer{text-align:center;color:var(--mute);padding:20px;font-size:.9rem}
 .msg{color:var(--mute);min-height:1.5em}
-
-/* ---- Soft animated colour ambience across every screen ---- */
-body{
-  background-color:var(--bg);
-  background-image:
-    radial-gradient(ellipse at 12% 18%, rgba(91,63,216,.16), transparent 38%),
-    radial-gradient(ellipse at 88% 22%, rgba(30,190,190,.11), transparent 36%),
-    radial-gradient(ellipse at 68% 88%, rgba(255,159,28,.10), transparent 40%),
-    radial-gradient(ellipse at 8% 92%, rgba(236,72,153,.08), transparent 34%);
-  background-size:180% 180%;
-  background-attachment:fixed;
-  animation:akAmbientColours 24s ease-in-out infinite alternate;
-}
-@keyframes akAmbientColours{
-  0%{background-position:0% 0%}
-  50%{background-position:100% 35%}
-  100%{background-position:20% 100%}
-}
-.side{
-  background-size:260% 260%;
-  animation:akSidebarColours 18s ease-in-out infinite alternate;
-}
-@keyframes akSidebarColours{
-  0%{background-position:0% 0%}
-  100%{background-position:100% 100%}
-}
-.hero{
-  background-size:240% 240%;
-  animation:akHeroColours 16s ease-in-out infinite alternate;
-}
-@keyframes akHeroColours{
-  0%{background-position:0% 50%}
-  100%{background-position:100% 50%}
-}
-@media(prefers-reduced-motion:reduce){
-  body,.side,.hero{animation:none!important}
-}
-
 </style>
 </head>
 <body>
@@ -485,77 +452,9 @@ function stat(){
   function c(a,b){return '<div class="card" style="text-align:center"><div class="big" style="font-size:2rem">'+a+'</div><p>'+b+'</p></div>';}
   return '<h3>'+(n?'नमस्ते, '+esc(n)+'! ':'')+'आपकी प्रगति</h3><div class="grid" style="margin:8px 0 24px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">'+c(w||'—','सर्वश्रेष्ठ WPM')+c(q!==null?q+'/'+QS.length:'—','टेस्ट स्कोर')+c(d,'पूरे किए रिकॉर्ड')+'</div>';
 }
-
-function festivalBanner(){
-  // Festival dates are curated for the commonly followed New Delhi/IST calendar.
-  // Lunar observances can vary by region; verify local panchang for ritual timings.
-  var festivals = {
-    '2026-01-14':['मकर संक्रांति','Happy Makar Sankranti','🪁','पतंगों और नई शुरुआत का त्योहार'],
-    '2026-01-23':['वसंत पंचमी','Happy Vasant Panchami','🌼','माँ सरस्वती की पूजा का पावन दिन'],
-    '2026-02-15':['महाशिवरात्रि','Happy Maha Shivratri','🔱','भक्ति और प्रार्थना का पावन पर्व'],
-    '2026-03-04':['होली','Happy Holi','🎨','रंगों और खुशियों का त्योहार'],
-    '2026-03-26':['राम नवमी','Happy Ram Navami','🏹','मर्यादा और सद्भाव का संदेश'],
-    '2026-04-02':['हनुमान जयंती','Happy Hanuman Jayanti','🚩','साहस, सेवा और भक्ति का पर्व'],
-    '2026-05-01':['बुद्ध पूर्णिमा','Happy Buddha Purnima','🪷','शांति और करुणा का संदेश'],
-    '2026-07-16':['रथ यात्रा','Happy Rath Yatra','🛕','भक्ति और उत्सव का पावन अवसर'],
-    '2026-07-29':['गुरु पूर्णिमा','Happy Guru Purnima','🙏','गुरुओं के सम्मान का दिन'],
-    '2026-08-15':['स्वतंत्रता दिवस','Happy Independence Day','🇮🇳','आजादी और एकता का उत्सव'],
-    '2026-08-28':['रक्षाबंधन','Happy Raksha Bandhan','🧵','प्यार और अपनापन का त्योहार'],
-    '2026-09-04':['जन्माष्टमी','Happy Janmashtami','🦚','श्रीकृष्ण जन्मोत्सव की शुभकामनाएँ'],
-    '2026-09-14':['गणेश चतुर्थी','Happy Ganesh Chaturthi','🐘','गणपति बप्पा मोरया'],
-    '2026-10-02':['गांधी जयंती','Gandhi Jayanti','🕊️','सत्य और अहिंसा का संदेश'],
-    '2026-10-11':['शारदीय नवरात्रि','Happy Navratri','🌺','माँ दुर्गा की आराधना का पर्व'],
-    '2026-10-20':['दशहरा','Happy Dussehra','🏹','सत्य की विजय का उत्सव'],
-    '2026-10-29':['करवा चौथ','Happy Karwa Chauth','🌙','परिवार और परंपराओं का पर्व'],
-    '2026-11-06':['धनतेरस','Happy Dhanteras','🪔','समृद्धि और शुभकामनाओं का पर्व'],
-    '2026-11-08':['दीपावली','Happy Diwali','🪔','रोशनी और खुशियों का त्योहार'],
-    '2026-11-11':['भाई दूज','Happy Bhai Dooj','🌸','भाई-बहन के स्नेह का त्योहार'],
-    '2026-11-15':['छठ पूजा','Happy Chhath Puja','🌅','सूर्य उपासना और आस्था का पर्व'],
-    '2026-11-24':['गुरु नानक जयंती','Happy Guru Nanak Jayanti','🙏','सेवा, समानता और सद्भाव का संदेश'],
-    '2026-12-25':['क्रिसमस','Merry Christmas','🎄','शांति और खुशियों की शुभकामनाएँ'],
-    '2027-01-14':['मकर संक्रांति / पोंगल','Happy Makar Sankranti','🪁','फसल और नई शुरुआत का त्योहार'],
-    '2027-01-26':['गणतंत्र दिवस','Happy Republic Day','🇮🇳','हमारे संविधान और एकता का उत्सव'],
-    '2027-02-11':['वसंत पंचमी','Happy Vasant Panchami','🌼','ज्ञान और विद्या का पावन पर्व'],
-    '2027-03-06':['महाशिवरात्रि','Happy Maha Shivratri','🔱','भक्ति और प्रार्थना का पावन दिन'],
-    '2027-03-22':['होली','Happy Holi','🎨','रंगों और खुशियों का त्योहार'],
-    '2027-04-15':['राम नवमी','Happy Ram Navami','🏹','मर्यादा और सद्भाव का संदेश'],
-    '2027-04-20':['हनुमान जयंती','Happy Hanuman Jayanti','🚩','साहस, सेवा और भक्ति का पर्व'],
-    '2027-05-09':['अक्षय तृतीया','Happy Akshaya Tritiya','✨','शुभ शुरुआत और दान का दिन'],
-    '2027-07-18':['गुरु पूर्णिमा','Happy Guru Purnima','🙏','गुरुओं के सम्मान का दिन'],
-    '2027-08-15':['स्वतंत्रता दिवस','Happy Independence Day','🇮🇳','आजादी और एकता का उत्सव'],
-    '2027-08-17':['रक्षाबंधन','Happy Raksha Bandhan','🧵','प्यार और अपनापन का त्योहार'],
-    '2027-08-24':['जन्माष्टमी','Happy Janmashtami','🦚','श्रीकृष्ण जन्मोत्सव की शुभकामनाएँ'],
-    '2027-09-04':['गणेश चतुर्थी','Happy Ganesh Chaturthi','🐘','गणपति बप्पा मोरया'],
-    '2027-09-30':['शारदीय नवरात्रि','Happy Navratri','🌺','माँ दुर्गा की आराधना का पर्व'],
-    '2027-10-09':['दशहरा','Happy Dussehra','🏹','सत्य की विजय का उत्सव'],
-    '2027-10-19':['करवा चौथ','Happy Karwa Chauth','🌙','परिवार और परंपराओं का पर्व'],
-    '2027-10-27':['धनतेरस','Happy Dhanteras','🪔','समृद्धि और शुभकामनाओं का पर्व'],
-    '2027-10-29':['दीपावली','Happy Diwali','🪔','रोशनी और खुशियों का त्योहार'],
-    '2027-10-31':['भाई दूज','Happy Bhai Dooj','🌸','भाई-बहन के स्नेह का त्योहार'],
-    '2027-11-04':['छठ पूजा','Happy Chhath Puja','🌅','सूर्य उपासना और आस्था का पर्व'],
-    '2027-12-25':['क्रिसमस','Merry Christmas','🎄','शांति और खुशियों की शुभकामनाएँ']
-  };
-  var parts = new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
-  var p={}; parts.forEach(function(x){p[x.type]=x.value;});
-  var key=p.year+'-'+p.month+'-'+p.day;
-  // New Year and Republic/Independence/Gandhi days repeat every year.
-  var recurring = {
-    '01-01':['नववर्ष','Happy New Year','🎉','नए साल की नई शुरुआत'],
-    '01-26':['गणतंत्र दिवस','Happy Republic Day','🇮🇳','हमारे संविधान और एकता का उत्सव'],
-    '08-15':['स्वतंत्रता दिवस','Happy Independence Day','🇮🇳','आजादी और एकता का उत्सव'],
-    '10-02':['गांधी जयंती','Gandhi Jayanti','🕊️','सत्य और अहिंसा का संदेश'],
-    '12-25':['क्रिसमस','Merry Christmas','🎄','शांति और खुशियों की शुभकामनाएँ']
-  };
-  var f=festivals[key] || recurring[p.month+'-'+p.day];
-  if(!f) return '';
-  var isBhaiDooj = f[0].indexOf('भाई दूज') >= 0;
-  var siblingArt = isBhaiDooj ? '<div class="sibling-scene" aria-label="भाई और बहन का प्यारा एनिमेशन"><div class="sibling-person bro"><span class="sibling-face" aria-hidden="true">👦🏻</span><span class="sibling-caption">भाई</span></div><span class="sibling-heart" aria-hidden="true">💗</span><div class="sibling-person sis"><span class="sibling-face" aria-hidden="true">👧🏻</span><span class="sibling-caption">बहन</span></div></div>' : '';
-  return '<div class="dvg festival-banner" role="status" aria-label="'+f[0]+' celebration"><span class="dvt">'+f[0]+' <span class="em">'+f[2]+'</span> '+f[1]+'</span><div class="festival-sub">'+f[3]+'</div>'+siblingArt+'<span aria-hidden="true"><i class="sp" style="--x:8%;--y:28%;--c:#FFE08A;--s:14px"></i><i class="sp" style="--x:22%;--y:76%;--c:#FFFFFF;--s:11px"></i><i class="sp" style="--x:43%;--y:12%;--c:#FFD86B;--s:16px"></i><i class="sp" style="--x:68%;--y:78%;--c:#FFB020;--s:12px"></i><i class="sp" style="--x:91%;--y:24%;--c:#FFFFFF;--s:14px"></i></span></div>';
-}
-
 var V={
 home:function(){
-  var h=festivalBanner()+'<section class="hero"><span class="tag">Learn • Grow • Succeed</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><p><a class="btn" href="#study-room">📚 Start Learning</a><a class="btn alt" href="#typing">⌨️ Typing Practice</a><a class="btn alt" href="#test">📝 Online Test</a></p></section>'+clockCard()+stat()+'<div class="grid">';
+  var h=FESTIVALS.banner()+'<section class="hero"><span class="tag">Learn • Grow • Succeed</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><p><a class="btn" href="#study-room">📚 Start Learning</a><a class="btn alt" href="#typing">⌨️ Typing Practice</a><a class="btn alt" href="#test">📝 Online Test</a></p></section>'+clockCard()+stat()+'<div class="grid">';
   [['📚','Study Room','सभी विषयों की पढ़ाई करें और फोकस टाइमर के साथ पढ़ें।','study-room'],['⌨️','Typing Practice','हिंदी और अंग्रेज़ी टाइपिंग सीखें, स्पीड और सटीकता जाँचें।','typing'],['📝','Online Test','छोटा क्विज़ दें और तुरंत स्कोर देखें।','test'],['📅','Study Planner','अपने रोज़ के टास्क बनाएँ और प्रोग्रेस ट्रैक करें।','planner'],['📖','Notes & Resources','भरोसेमंद सरकारी प्लेटफ़ॉर्म से मुफ़्त पढ़ाई सामग्री।','notes'],['💼','Career Guidance','पढ़ाई के बाद के रास्ते और सरकारी परीक्षाओं की जानकारी।','career']].forEach(function(c){
     h+='<a class="card" href="#'+c[3]+'"><div class="ic">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></a>';});
   return h+'</div>';
@@ -1056,7 +955,7 @@ $('sclose').onclick=function(){closeMenu(true);};
 scrim.onclick=function(){closeMenu(true);};
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&side.classList.contains('open'))closeMenu(true);});
 window.addEventListener('resize',function(){if(window.innerWidth>=900)closeMenu(false);});
-$('nav').addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(a)closeMenu(false);});
+$('nav').addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a');if(a){if(window.FX)FX.burstAt(a.querySelector('.ni'));closeMenu(false);}});
 function failHTML(){
   return '<div class="authbrand"><span class="lg" aria-hidden="true">AK</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>Login सेवा अभी लोड नहीं हो सकी।</p></div><div class="card"><p>सुरक्षा (Login) वाली लाइब्रेरी इंटरनेट या ad-blocker की वजह से लोड नहीं हुई। आपके डेटा की सुरक्षा के लिए पूरी साइट अभी बंद रखी गई है। कृपया इंटरनेट जाँचें, ad-blocker बंद करें और दोबारा कोशिश करें।</p><p><button class="btn" id="retry" type="button">दोबारा कोशिश करें</button></p></div>';
 }
@@ -1094,6 +993,350 @@ function route(){
   if(!gated&&I[id])I[id](init);
   window.scrollTo(0,0);
 }
+
+/* ===================== Festival animation engine (canvas, visual effects only - no audio) =====================
+   One full-screen fixed canvas. It only runs while a festival is active (see FESTIVALS below) and its look
+   (fireworks, colour powder, snow, petals, kites, stars, confetti) is chosen by the festival. */
+var FX=(function(){
+  var cv=null,cx=null,W=0,H=0,dpr=1,on=false,raf=0,last=0,nextL=0,nextI=0,nextF=0,mode='none',PAL=[48,28,350,300,205,150,12,185],
+      P=[],R=[],FL=[],G=[],pool=[],Q=1,ema=16.7,fr=0,nBurst=0,nIcon=0,dark=false,darkAt=0,icOrder=[],icPos=0,rz=0,wdOn=false,lastFr=-1;
+  var mobile=function(){return W<700;};
+  function rnd(a,b){return a+Math.random()*(b-a);}
+  function pick(a){return a[(Math.random()*a.length)|0];}
+  function size(){
+    W=window.innerWidth;H=window.innerHeight;
+    dpr=Math.min(window.devicePixelRatio||1,W<700?1.25:1.5);
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+    cx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function lum(){
+    try{var m=getComputedStyle(document.body).backgroundColor.match(/\d+/g);if(m){dark=(0.2126*m[0]+0.7152*m[1]+0.0722*m[2])/255<0.4;}}catch(e){}
+  }
+  function spark(x,y,vx,vy,life,h,s,l,sz,g,drag,tw){
+    var p=pool.pop()||{};
+    p.x=x;p.y=y;p.vx=vx;p.vy=vy;p.l=life;p.m=life;p.h=h;p.s=s;p.L=l;p.z=dark?sz:sz*1.22;p.g=g;p.d=drag;p.t=tw?1:0;
+    P.push(p);
+  }
+  function maxP(){return Math.round((mobile()?360:900)*Q);}
+  function lite(h,gold){return dark?(gold?68:64):(gold?52:50);}   /* a little darker on light pages so sparks stay visible */
+  function sideW(){return W>=900?272:0;}
+  /* ---------- fireworks ---------- */
+  function explode(x,y,h,mini){
+    nBurst++;
+    var sc=Math.max(.65,Math.min(1.5,Math.min(W,H)/820))*(mini?.5:1),k=Q*(mobile()?.62:1)*(mini?.55:1),type=pick(['peony','peony','ring','willow','twin','peony']);
+    FL.push({x:x,y:y,r:Math.min(W,H)*.34*sc,l:9,m:9,h:h});
+    var n,i,a,v,h2=pick(PAL);
+    if(type==='ring'){
+      n=Math.round(70*k);
+      for(i=0;i<n;i++){a=i/n*6.2832;v=4.4*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(62,82),h,100,lite(h),rnd(1.5,2.4),.04,.985,0);}
+      n=Math.round(34*k);
+      for(i=0;i<n;i++){a=i/n*6.2832+.1;v=2.3*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(60,76),48,100,lite(48,1),rnd(1.2,2),.04,.985,1);}
+    }else if(type==='willow'){
+      n=Math.round(120*k);
+      for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(1.2,4.3)*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(105,150),44,100,lite(44,1),rnd(1.1,2),.032,.99,1);}
+    }else if(type==='twin'){
+      n=Math.round(80*k);
+      for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(1.5,5)*sc;var c=i%2?h:h2;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(64,92),c,100,lite(c),rnd(1.4,2.5),.045,.985,i%5===0);}
+    }else{
+      n=Math.round(130*k);
+      for(i=0;i<n;i++){a=rnd(0,6.2832);v=Math.sqrt(Math.random())*5.2*sc;
+        var gold=i%6===0,c2=gold?48:(h+rnd(-10,10));
+        spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(60,96),c2,100,lite(c2,gold),rnd(1.3,2.6),.045,.985,i%7===0);}
+    }
+    n=Math.round(12*k);                                   /* bright white-gold core */
+    for(i=0;i<n;i++){a=rnd(0,6.2832);v=rnd(.3,1.6)*sc;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(14,26),50,100,dark?88:60,rnd(1.8,3),0,.95,0);}
+  }
+  function launch(){
+    if(P.length>maxP())return;
+    var sw=sideW(),left=sw>0&&Math.random()<.3;            /* some small rockets fly up beside the left menu icons */
+    var x=left?rnd(34,250):rnd(sw+36,W*.95),ty=rnd(H*.12,H*.52),fr2=rnd(50,76),dist=H+8-ty,vy=-2*dist/fr2;
+    R.push({x:x,y:H+8,vx:rnd(-.5,.5),vy:vy,ay:-vy/fr2,ty:ty,h:pick(PAL),n:0,mini:left});
+  }
+  /* ---------- Holi colour powder ---------- */
+  function gulal(){
+    if(P.length>maxP())return;
+    nBurst++;
+    var x=rnd(sideW()+30,W-30),y=rnd(H*.12,H*.88),h=pick(PAL),h2=pick(PAL),n=Math.round(34*Q*(mobile()?.65:1)),i,a,v;
+    FL.push({x:x,y:y,r:110,l:8,m:8,h:h});
+    for(i=0;i<n;i++){a=rnd(0,6.2832);v=Math.sqrt(Math.random())*3.6;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(70,110),i%2?h:h2,95,dark?62:55,rnd(4.5,10),.012,.965,0);}
+  }
+  /* ---------- sidebar icon sparkles (fireworks / powder modes) ---------- */
+  function iconBurst(){
+    var side=document.getElementById('side');if(!side)return;
+    if(getComputedStyle(side).visibility!=='visible')return;
+    var list=side.querySelectorAll('.ni');if(!list.length)return;
+    if(icOrder.length!==list.length){icOrder=[];for(var q=0;q<list.length;q++)icOrder.push(q);icOrder.sort(function(){return Math.random()-.5;});icPos=0;}
+    burstAt(list[icOrder[icPos++%icOrder.length]]);
+  }
+  function burstAt(el){
+    if(!on||(mode!=='fireworks'&&mode!=='gulal')||!el||!el.getBoundingClientRect)return;
+    var r=el.getBoundingClientRect();
+    if(!r.width||r.right<=0||r.bottom<=0||r.top>=H||r.left>=W)return;
+    nIcon++;
+    var x=r.left+r.width/2,y=r.top+r.height/2,h=pick(PAL),n=Math.round(22*Q),i,a,v;
+    FL.push({x:x,y:y,r:46,l:7,m:7,h:48});
+    for(i=0;i<n;i++){a=i/n*6.2832+rnd(-.1,.1);v=rnd(.9,2.3);var c=i%3===0?48:h;spark(x,y,Math.cos(a)*v,Math.sin(a)*v,rnd(26,44),c,100,lite(c,c===48),rnd(.9,1.7),.012,.96,1);}
+  }
+  /* ---------- light modes: snow, petals, confetti, kites, stars ---------- */
+  function target(){
+    var m=mobile(),q=Q;
+    if(mode==='snow')return Math.round((m?45:90)*q);
+    if(mode==='petals')return Math.round((m?24:46)*q);
+    if(mode==='confetti')return Math.round((m?38:76)*q);
+    if(mode==='kites')return m?3:6;
+    if(mode==='stars')return Math.round((m?18:36)*q);
+    return 0;
+  }
+  function spawnG(seed){
+    var p={x:rnd(-10,W+10),y:seed?rnd(-20,H):-20,vx:rnd(-.35,.35),vy:rnd(.55,1.5),r:rnd(1.6,3.6),rot:rnd(0,6.28),vr:rnd(-.045,.045),sw:rnd(0,6.28),c:pick(PAL),a:rnd(.6,.95),l:0,m:0};
+    if(mode==='kites'){p.y=seed?rnd(H*.2,H+30):H+40;p.vy=-rnd(.4,.85);p.vx=rnd(-.15,.15);p.r=rnd(20,32);p.a=.92;}
+    else if(mode==='stars'){p.x=rnd(sideW()+10,W-10);p.y=rnd(8,H-8);p.m=rnd(90,190);p.l=seed?rnd(0,p.m):0;p.r=rnd(5,12);p.vx=p.vy=0;}
+    else if(mode==='petals'){p.r=rnd(4,7);p.vy=rnd(.5,1.2);}
+    else if(mode==='confetti'){p.r=rnd(3,6);p.vy=rnd(.9,2);}
+    G.push(p);
+  }
+  function drawG(dt){
+    var i,p,a,c,s,co,si,n=target();
+    cx.clearRect(0,0,W,H);
+    while(G.length<n&&(mode==='stars'?true:Math.random()<.4)){spawnG(false);if(mode!=='stars')break;}
+    cx.globalCompositeOperation='source-over';
+    for(i=G.length-1;i>=0;i--){
+      p=G[i];
+      if(mode==='stars'){
+        p.l+=dt;if(p.l>=p.m){G.splice(i,1);continue;}
+        a=Math.sin(Math.PI*p.l/p.m);s=p.r*(.5+.5*a);
+        cx.globalAlpha=a*(dark?1:.9);cx.fillStyle=p.c;
+        cx.beginPath();cx.moveTo(p.x,p.y-s);cx.lineTo(p.x+s*.2,p.y);cx.lineTo(p.x,p.y+s);cx.lineTo(p.x-s*.2,p.y);cx.closePath();
+        cx.moveTo(p.x-s,p.y);cx.lineTo(p.x,p.y-s*.2);cx.lineTo(p.x+s,p.y);cx.lineTo(p.x,p.y+s*.2);cx.closePath();cx.fill();
+        continue;
+      }
+      p.sw+=.03*dt;p.rot+=p.vr*dt;p.x+=(p.vx+Math.sin(p.sw)*(mode==='kites'?.5:.45))*dt;p.y+=p.vy*dt;
+      if(mode==='kites'?p.y<-70:p.y>H+30){G.splice(i,1);continue;}
+      cx.globalAlpha=p.a;
+      if(mode==='snow'){
+        cx.fillStyle='hsl(205,85%,'+(dark?92:70)+'%)';cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.2832);cx.fill();
+        cx.globalAlpha=p.a*.25;cx.beginPath();cx.arc(p.x,p.y,p.r*2.3,0,6.2832);cx.fill();
+      }else{
+        co=Math.cos(p.rot);si=Math.sin(p.rot);
+        cx.setTransform(co*dpr,si*dpr,-si*dpr,co*dpr,p.x*dpr,p.y*dpr);
+        cx.fillStyle=p.c;
+        if(mode==='petals'){cx.beginPath();cx.ellipse(0,0,p.r,p.r*.55,0,0,6.2832);cx.fill();}
+        else if(mode==='confetti'){cx.fillRect(-p.r,-p.r*.5,p.r*2,p.r);}
+        else if(mode==='kites'){
+          s=p.r;cx.beginPath();cx.moveTo(0,-s);cx.lineTo(s*.62,0);cx.lineTo(0,s*.9);cx.lineTo(-s*.62,0);cx.closePath();cx.fill();
+          cx.strokeStyle='rgba(60,40,20,.55)';cx.lineWidth=1;cx.beginPath();cx.moveTo(0,-s);cx.lineTo(0,s*.9);cx.moveTo(-s*.62,0);cx.lineTo(s*.62,0);
+          cx.moveTo(0,s*.9);cx.quadraticCurveTo(s*.5,s*1.5,-s*.2,s*2.1);cx.quadraticCurveTo(s*.4,s*2.6,0,s*3.1);cx.stroke();
+        }
+        cx.setTransform(dpr,0,0,dpr,0,0);
+      }
+    }
+    cx.globalAlpha=1;
+  }
+  /* ---------- main loop ---------- */
+  function frame(t){
+    raf=requestAnimationFrame(frame);
+    var dtMs=last?t-last:16.7;last=t;if(dtMs>250){dtMs=16.7;}
+    var dt=Math.min(3,dtMs/16.667);
+    fr++;ema=ema*.92+dtMs*.08;
+    if(fr%30===0){if(ema>27)Q=Math.max(.35,Q-.15);else if(ema<20)Q=Math.min(1,Q+.05);}
+    if(t-darkAt>3000){lum();darkAt=t;}
+    if(mode!=='fireworks'&&mode!=='gulal'){drawG(dt);return;}
+    if(t>=nextL){
+      if(mode==='gulal'){gulal();nextL=t+rnd(520,1150)/Math.max(.6,Q);}
+      else{launch();if(Math.random()<.22)setTimeout(launch,rnd(90,260));nextL=t+rnd(360,1050)/Math.max(.6,Q);}
+    }
+    if(t>=nextI){iconBurst();nextI=t+rnd(260,620);}
+    if(mode==='fireworks'&&t>=nextF){var bx=rnd(sideW()+40,W*.96),by=rnd(H*.08,H*.92);explode(bx,by,pick(PAL));nextF=t+rnd(2600,5200);}
+    cx.globalCompositeOperation='destination-out';cx.fillStyle='rgba(0,0,0,.2)';cx.fillRect(0,0,W,H);
+    cx.globalCompositeOperation=dark?'lighter':'source-over';
+    var i,p,r,f,a;
+    for(i=FL.length-1;i>=0;i--){f=FL[i];f.l-=dt;if(f.l<=0){FL.splice(i,1);continue;}
+      a=f.l/f.m;var g=cx.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r);
+      g.addColorStop(0,'hsla(48,100%,'+(dark?88:58)+'%,'+(.42*a)+')');g.addColorStop(.35,'hsla('+f.h+',100%,'+(dark?65:55)+'%,'+(.17*a)+')');g.addColorStop(1,'hsla('+f.h+',100%,60%,0)');
+      cx.fillStyle=g;cx.fillRect(f.x-f.r,f.y-f.r,f.r*2,f.r*2);}
+    for(i=R.length-1;i>=0;i--){r=R[i];r.n++;r.vy+=r.ay*dt;r.x+=r.vx*dt;r.y+=r.vy*dt;
+      spark(r.x,r.y,rnd(-.25,.25),rnd(.2,.8),rnd(14,24),44,100,lite(44,1),rnd(.9,1.5),.02,.95,1);
+      cx.fillStyle='hsla(48,100%,'+(dark?85:55)+'%,1)';cx.beginPath();cx.arc(r.x,r.y,2.2,0,6.2832);cx.fill();
+      cx.fillStyle='hsla(40,100%,60%,.28)';cx.beginPath();cx.arc(r.x,r.y,6,0,6.2832);cx.fill();
+      if(r.vy>=-.6||r.y<=r.ty){explode(r.x,r.y,r.h,r.mini);R.splice(i,1);}}
+    for(i=P.length-1;i>=0;i--){p=P[i];p.l-=dt;
+      if(p.l<=0){P.splice(i,1);pool.push(p);continue;}
+      p.vx*=Math.pow(p.d,dt);p.vy=p.vy*Math.pow(p.d,dt)+p.g*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;
+      a=p.l/p.m;a=a>.7?1:a/.7;if(p.t&&Math.random()<.35)a*=.25;if(!dark)a*=.88;
+      cx.fillStyle='hsla('+p.h+','+p.s+'%,'+p.L+'%,'+a+')';
+      cx.beginPath();cx.arc(p.x,p.y,p.z,0,6.2832);cx.fill();
+      if(p.z>1.5){cx.fillStyle='hsla('+p.h+',100%,'+p.L+'%,'+(a*(dark?.22:.14))+')';cx.beginPath();cx.arc(p.x,p.y,p.z*2.8,0,6.2832);cx.fill();}}
+  }
+  function start(){if(raf||!on||document.hidden)return;last=0;nextL=0;nextI=0;nextF=1200;lum();raf=requestAnimationFrame(frame);}
+  function stop(){if(raf){cancelAnimationFrame(raf);raf=0;}}
+  function clearAll(){
+    P.length=0;R.length=0;FL.length=0;G.length=0;
+    if(cx){cx.setTransform(1,0,0,1,0,0);cx.globalCompositeOperation='source-over';cx.globalAlpha=1;cx.clearRect(0,0,cv.width,cv.height);cx.setTransform(dpr,0,0,dpr,0,0);}
+  }
+  function ensure(){
+    if(cv)return;
+    cv=document.createElement('canvas');cv.id='fx';cv.setAttribute('aria-hidden','true');
+    document.body.appendChild(cv);cx=cv.getContext('2d');size();
+    window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){size();},120);});
+    document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else if(on)start();});
+    window.addEventListener('pageshow',function(){if(on&&!document.hidden&&!raf)start();});
+    window.addEventListener('focus',function(){if(on&&!document.hidden&&!raf)start();});
+  }
+  function watchdog(){
+    if(wdOn)return;wdOn=true;
+    setInterval(function(){                                /* self-healing: restart the loop if the browser dropped it */
+      if(!on||document.hidden)return;
+      if(!raf||fr===lastFr){stop();start();}
+      lastFr=fr;
+    },1500);
+  }
+  /* theme({fx:'fireworks|gulal|snow|petals|kites|stars|confetti|none', pal:[...]}) starts it; theme(null) stops it */
+  function theme(t){
+    if(!t||!t.fx||t.fx==='none'){
+      on=false;mode='none';stop();clearAll();
+      document.documentElement.classList.remove('fx-on');
+      return;
+    }
+    ensure();
+    mode=t.fx;PAL=t.pal&&t.pal.length?t.pal:PAL;
+    clearAll();on=true;
+    document.documentElement.classList.add('fx-on');
+    if(mode!=='fireworks'&&mode!=='gulal'){for(var i=0,n=Math.round(target()*.6);i<n;i++)spawnG(true);}
+    stop();start();watchdog();
+  }
+  return {theme:theme,burstAt:burstAt,stats:function(){return {on:on,mode:mode,frames:fr,particles:P.length+G.length,rockets:R.length,bursts:nBurst,iconBursts:nIcon,Q:Q,W:W,H:H,ema:ema,raf:!!raf};}};
+})();
+
+/* ===================== Automatic Indian festival system (Indian Standard Time) =====================
+   * Today's date is taken from the device clock and converted to IST (UTC+5:30), so everybody sees the same festival.
+   * No festival active  ->  the normal AK NEST EDU home page (no banner, no decoration, no animation).
+   * Several festivals on one day -> the most important one is the main banner, the others appear as small chips.
+   * HOW THE CALENDAR WORKS
+   *   FIXED   = festivals on the same date every year (always work, no editing ever).
+   *   CAL     = festivals whose date moves every year (Hindu / Islamic calendar). Each line is the whole period:
+   *             id:['first day','last day']  (last day optional).  Dates are for India (IST).
+   *             Add one new year block (e.g. 2028) once a year; until then only FIXED festivals show for that year. */
+var FESTIVALS=(function(){
+  var D={},TRI=['#0B1F5B','#1B3A8A','#0B1F5B'];
+  function F(id,hi,en,gh,ge,ic,p,b,ac,fx,pal,tri){D[id]={id:id,hi:hi,en:en,gh:gh,ge:ge,ic:ic,p:p,b:b,ac:ac,fx:fx,pal:pal||[],tri:!!tri};}
+  /* id, Hindi name, English name, Hindi greeting, English greeting, icons, priority, 3 background colours, accent, animation, palette */
+  F('diwali','दीपावली','Diwali','शुभ दीपावली','Happy Diwali',['🪔','✨','🎆'],100,['#1B1D6B','#4A34C6','#B8420F'],'#FFC84A','fireworks',[48,28,350,300,205,150,12,185]);
+  F('holi','होली','Holi','होली की हार्दिक शुभकामनाएँ','Happy Holi',['🎨','💦','🌈'],95,['#6A1B9A','#D81B60','#F57C00'],'#FFE082','gulal',[330,50,195,100,10,280]);
+  F('dussehra','दशहरा (विजयादशमी)','Dussehra','विजयादशमी की शुभकामनाएँ','Happy Dussehra',['🏹','🔥','👑'],90,['#7F1D1D','#C2410C','#B45309'],'#FFD166','fireworks',[20,45,5,30]);
+  F('navratri','नवरात्रि','Navratri','शुभ नवरात्रि','Happy Navratri',['🔱','🪔','🌺'],85,['#6A1B7A','#B0185A','#E65100'],'#FFD54F','petals',['#FF9800','#FFC107','#E91E63','#FF5722']);
+  F('chaitra_navratri','चैत्र नवरात्रि','Chaitra Navratri','शुभ चैत्र नवरात्रि','Happy Chaitra Navratri',['🔱','🪔','🌺'],70,['#6A1B7A','#B0185A','#E65100'],'#FFD54F','petals',['#FF9800','#FFC107','#E91E63','#FF5722']);
+  F('durga_puja','दुर्गा पूजा','Durga Puja','शुभो दुर्गा पूजा','Happy Durga Puja',['🔱','🌺','🪔'],84,['#B71C1C','#C2185B','#E65100'],'#FFE082','petals',['#E53935','#FF7043','#FFC107','#F06292']);
+  F('raksha_bandhan','रक्षा बंधन','Raksha Bandhan','रक्षा बंधन की शुभकामनाएँ','Happy Raksha Bandhan',['🎀','💖','🌸'],88,['#880E4F','#D81B60','#F4511E'],'#FFD54F','petals',['#F06292','#FFB74D','#FF8A65','#BA68C8']);
+  F('janmashtami','जन्माष्टमी','Janmashtami','जन्माष्टमी की शुभकामनाएँ','Happy Janmashtami',['🦚','🎶','✨'],88,['#0D47A1','#1565C0','#00838F'],'#FFD54F','petals',['#42A5F5','#FFCA28','#26C6DA','#7E57C2']);
+  F('ganesh_chaturthi','गणेश चतुर्थी','Ganesh Chaturthi','गणपति बप्पा मोरया','Happy Ganesh Chaturthi',['🐘','🌺','🪔'],90,['#BF360C','#E64A19','#AD1457'],'#FFE082','petals',['#FF7043','#FFCA28','#EC407A','#66BB6A']);
+  F('makar_sankranti','मकर संक्रांति','Makar Sankranti','मकर संक्रांति की शुभकामनाएँ','Happy Makar Sankranti',['🪁','☀️','🌾'],85,['#01579B','#0288D1','#EF6C00'],'#FFF59D','kites',['#FF5252','#FFEB3B','#69F0AE','#40C4FF','#E040FB']);
+  F('pongal','पोंगल','Pongal','पोंगल की शुभकामनाएँ','Happy Pongal',['🌾','☀️','🍚'],84,['#1B5E20','#2E7D32','#E65100'],'#FFF176','petals',['#FFCA28','#66BB6A','#FF7043','#FFF176']);
+  F('lohri','लोहड़ी','Lohri','लोहड़ी की शुभकामनाएँ','Happy Lohri',['🔥','🌾','🎶'],72,['#BF360C','#E65100','#FFA000'],'#FFE082','fireworks',[20,35,45]);
+  F('eid_fitr','ईद-उल-फ़ित्र','Eid-ul-Fitr','ईद मुबारक','Eid Mubarak',['🌙','⭐','🕌'],95,['#004D40','#00695C','#1A237E'],'#FFD54F','stars',['#F5B800','#00ACC1','#7E57C2']);
+  F('eid_adha','ईद-उल-अज़हा (बकरीद)','Eid-ul-Adha (Bakrid)','ईद-उल-अज़हा मुबारक','Eid-ul-Adha Mubarak',['🌙','⭐','🕌'],92,['#004D40','#00695C','#1A237E'],'#FFD54F','stars',['#F5B800','#00ACC1','#7E57C2']);
+  F('christmas','क्रिसमस','Christmas','क्रिसमस की शुभकामनाएँ','Merry Christmas',['🎄','⭐','🎅'],95,['#7F1D1D','#14532D','#1E3A8A'],'#FFFFFF','snow',['#FFFFFF']);
+  F('new_year','नव वर्ष','New Year','नव वर्ष की हार्दिक शुभकामनाएँ','Happy New Year',['🎆','🥳','🎉'],90,['#0F172A','#312E81','#7C3AED'],'#FDE68A','fireworks',[48,300,200,160,10]);
+  F('independence_day','स्वतंत्रता दिवस','Independence Day','स्वतंत्रता दिवस की शुभकामनाएँ','Happy Independence Day',['🇮🇳','🕊️','✨'],98,TRI,'#FFD180','fireworks',[30,130,225],1);
+  F('republic_day','गणतंत्र दिवस','Republic Day','गणतंत्र दिवस की शुभकामनाएँ','Happy Republic Day',['🇮🇳','🎖️','✨'],98,TRI,'#FFD180','fireworks',[30,130,225],1);
+  F('buddha_purnima','बुद्ध पूर्णिमा','Buddha Purnima','बुद्ध पूर्णिमा की शुभकामनाएँ','Happy Buddha Purnima',['☸️','🌸','🕊️'],80,['#6D4C41','#B26A00','#8E6A00'],'#FFF8E1','petals',['#F48FB1','#FFD54F','#CE93D8','#FFB74D']);
+  F('guru_nanak','गुरु नानक जयंती (प्रकाश पर्व)','Guru Nanak Jayanti','गुरु नानक जयंती की शुभकामनाएँ','Happy Guru Nanak Jayanti',['🙏','✨','🪔'],86,['#0D47A1','#1565C0','#E65100'],'#FFD54F','fireworks',[48,40,210,30]);
+  F('chhath','छठ पूजा','Chhath Puja','छठ पूजा की शुभकामनाएँ','Happy Chhath Puja',['☀️','🙏','🌾'],86,['#BF360C','#E65100','#B7791F'],'#FFF176','petals',['#FFB300','#FF7043','#FFE082','#FF8A65']);
+  F('vasant_panchami','वसंत पंचमी (सरस्वती पूजा)','Vasant Panchami','वसंत पंचमी की शुभकामनाएँ','Happy Vasant Panchami',['📚','🌼','🎶'],75,['#5D4037','#8D6E00','#33691E'],'#FFF59D','petals',['#FFD54F','#FFEE58','#AED581']);
+  F('maha_shivratri','महाशिवरात्रि','Maha Shivratri','महाशिवरात्रि की शुभकामनाएँ','Happy Maha Shivratri',['🔱','🕉️','🌙'],80,['#1A237E','#283593','#4A148C'],'#B3E5FC','stars',['#7C8CFF','#00ACC1','#AB47BC']);
+  F('ugadi','उगादी / गुड़ी पड़वा','Ugadi / Gudi Padwa','नव संवत्सर की शुभकामनाएँ','Happy Ugadi & Gudi Padwa',['🌿','🌼','🥭'],78,['#1B5E20','#388E3C','#E65100'],'#FFF59D','petals',['#FFEE58','#9CCC65','#FFA726']);
+  F('ram_navami','राम नवमी','Ram Navami','राम नवमी की शुभकामनाएँ','Happy Ram Navami',['🏹','🙏','🚩'],80,['#BF360C','#E65100','#B7791F'],'#FFE082','petals',['#FF9800','#FFC107','#FF7043']);
+  F('mahavir_jayanti','महावीर जयंती','Mahavir Jayanti','महावीर जयंती की शुभकामनाएँ','Happy Mahavir Jayanti',['🕊️','🙏','✨'],70,['#E65100','#EF6C00','#6A1B9A'],'#FFE082','petals',['#FFB74D','#FFF176','#CE93D8']);
+  F('baisakhi','बैसाखी','Baisakhi','बैसाखी की शुभकामनाएँ','Happy Baisakhi',['🌾','🥁','💃'],76,['#1B5E20','#558B2F','#E65100'],'#FFF176','confetti',['#FFC107','#66BB6A','#FF7043','#29B6F6']);
+  F('rath_yatra','रथ यात्रा','Rath Yatra','रथ यात्रा की शुभकामनाएँ','Happy Rath Yatra',['🛕','🚩','🌺'],72,['#B71C1C','#D84315','#B7791F'],'#FFE082','petals',['#EF5350','#FFCA28','#FF7043']);
+  F('onam','ओणम','Onam','ओणम की शुभकामनाएँ','Happy Onam',['🌼','🛶','🍃'],82,['#1B5E20','#2E7D32','#B7791F'],'#FFF59D','petals',['#FFD54F','#FF7043','#FFEE58','#AED581']);
+  F('karwa_chauth','करवा चौथ','Karwa Chauth','करवा चौथ की शुभकामनाएँ','Happy Karwa Chauth',['🌙','💍','✨'],60,['#880E4F','#AD1457','#6A1B9A'],'#FFE082','stars',['#F5B800','#EC407A','#AB47BC']);
+  F('gandhi_jayanti','गांधी जयंती','Gandhi Jayanti','गांधी जयंती की शुभकामनाएँ','Gandhi Jayanti',['🕊️','🇮🇳','✨'],70,['#263238','#37474F','#1A237E'],'#FFFFFF','none',[],1);
+  F('teachers_day','शिक्षक दिवस','Teachers\' Day','शिक्षक दिवस की शुभकामनाएँ','Happy Teachers\' Day',['📚','🍎','✏️'],68,['#1A237E','#3949AB','#00897B'],'#FFF59D','confetti',['#FFC107','#29B6F6','#66BB6A','#EC407A']);
+  F('childrens_day','बाल दिवस','Children\'s Day','बाल दिवस की शुभकामनाएँ','Happy Children\'s Day',['🎈','🎨','🧒'],66,['#C2185B','#E65100','#00838F'],'#FFF59D','confetti',['#FFC107','#29B6F6','#66BB6A','#EC407A','#AB47BC']);
+  F('ambedkar_jayanti','आंबेडकर जयंती','Ambedkar Jayanti','बाबासाहेब को नमन','Ambedkar Jayanti',['📘','⚖️','🇮🇳'],66,['#0D47A1','#1565C0','#283593'],'#FFFFFF','none',[]);
+  F('youth_day','राष्ट्रीय युवा दिवस','National Youth Day','राष्ट्रीय युवा दिवस की शुभकामनाएँ','Happy National Youth Day',['🚀','📖','💪'],60,['#E65100','#EF6C00','#1A237E'],'#FFF59D','none',[]);
+
+  /* ---- festivals on the same date every year: [id, first month, first day, last month, last day] ---- */
+  var FIXED=[['youth_day',1,12,1,12],['lohri',1,13,1,13],['makar_sankranti',1,14,1,15],['pongal',1,14,1,17],['republic_day',1,25,1,26],
+    ['baisakhi',4,13,4,14],['ambedkar_jayanti',4,14,4,14],['independence_day',8,14,8,15],['teachers_day',9,5,9,5],['gandhi_jayanti',10,2,10,2],
+    ['childrens_day',11,14,11,14],['christmas',12,24,12,26],['new_year',12,31,1,2]];
+
+  /* ---- festivals whose date changes every year (India, IST). Sources: calendarific.com India lists and Drik Panchang,
+          checked in Nov 2026. Moon-based dates (Eid, Buddha Purnima, Guru Nanak) can shift by one day, so they list the eve too. ---- */
+  var CAL={
+    2026:{vasant_panchami:['2026-01-23'],maha_shivratri:['2026-02-15'],holi:['2026-03-03','2026-03-04'],ugadi:['2026-03-19'],
+      chaitra_navratri:['2026-03-19','2026-03-26'],eid_fitr:['2026-03-20','2026-03-22'],ram_navami:['2026-03-26'],mahavir_jayanti:['2026-03-31'],
+      buddha_purnima:['2026-04-30','2026-05-01'],eid_adha:['2026-05-26','2026-05-28'],rath_yatra:['2026-07-16'],onam:['2026-08-25','2026-08-26'],
+      raksha_bandhan:['2026-08-27','2026-08-28'],janmashtami:['2026-09-03','2026-09-04'],ganesh_chaturthi:['2026-09-14','2026-09-24'],
+      navratri:['2026-10-11','2026-10-19'],durga_puja:['2026-10-16','2026-10-20'],dussehra:['2026-10-20'],karwa_chauth:['2026-10-29'],
+      diwali:['2026-11-06','2026-11-11'],chhath:['2026-11-13','2026-11-16'],guru_nanak:['2026-11-23','2026-11-24']},
+    2027:{vasant_panchami:['2027-02-11'],maha_shivratri:['2027-03-06'],eid_fitr:['2027-03-09','2027-03-11'],holi:['2027-03-21','2027-03-22'],
+      ugadi:['2027-04-07'],chaitra_navratri:['2027-04-07','2027-04-15'],ram_navami:['2027-04-15'],mahavir_jayanti:['2027-04-18'],
+      eid_adha:['2027-05-16','2027-05-18'],buddha_purnima:['2027-05-19','2027-05-20'],rath_yatra:['2027-07-05'],
+      raksha_bandhan:['2027-08-16','2027-08-17'],janmashtami:['2027-08-24','2027-08-25'],ganesh_chaturthi:['2027-09-04','2027-09-14'],
+      onam:['2027-09-11','2027-09-12'],navratri:['2027-09-30','2027-10-08'],durga_puja:['2027-10-05','2027-10-09'],dussehra:['2027-10-09'],
+      karwa_chauth:['2027-10-18'],diwali:['2027-10-26','2027-10-31'],chhath:['2027-11-02','2027-11-05'],guru_nanak:['2027-11-13','2027-11-14']}
+  };
+
+  function dn(iso){var a=iso.split('-');return Date.UTC(+a[0],+a[1]-1,+a[2])/864e5;}
+  function pad(n){return n<10?'0'+n:''+n;}
+  function todayISO(){                                  /* today in India, whatever the device's own time zone */
+    var d=new Date(Date.now()+19800000);
+    return d.getUTCFullYear()+'-'+pad(d.getUTCMonth()+1)+'-'+pad(d.getUTCDate());
+  }
+  function at(iso){
+    var n=dn(iso),y=+iso.slice(0,4),out=[],yy,id,r,i,f;
+    for(yy=y-1;yy<=y+1;yy++){
+      if(CAL[yy])for(id in CAL[yy]){r=CAL[yy][id];if(D[id]&&n>=dn(r[0])&&n<=dn(r[1]||r[0]))out.push({d:D[id],s:r[0],e:r[1]||r[0]});}
+      for(i=0;i<FIXED.length;i++){
+        f=FIXED[i];
+        var s=Date.UTC(yy,f[1]-1,f[2])/864e5,e=Date.UTC(f[3]<f[1]?yy+1:yy,f[3]-1,f[4])/864e5;
+        if(D[f[0]]&&n>=s&&n<=e)out.push({d:D[f[0]],s:s,e:e});
+      }
+    }
+    out.sort(function(a,b){return b.d.p-a.d.p;});
+    var seen={},res=[];
+    out.forEach(function(o){if(!seen[o.d.id]){seen[o.d.id]=1;res.push(o.d);}});
+    return res;
+  }
+  function current(){return at(todayISO());}
+  function key(){return todayISO()+'|'+current().map(function(f){return f.id;}).join(',');}
+  /* ---- banner on the Home page ---- */
+  var SPK=[[6,26],[12,74],[20,14],[30,80],[44,8],[56,86],[68,14],[78,78],[89,24],[94,66],[2,52],[97,40]];
+  function banner(){
+    var A=current();if(!A.length)return '';
+    var p=A[0],i,h='',sp='',ic='';
+    var pos=[[3,8],[88,8],[3,62],[90,62],[14,74],[80,72]];
+    for(i=0;i<pos.length;i++)ic+='<i style="--x:'+pos[i][0]+'%;--y:'+pos[i][1]+'%;--d:'+(i*.45)+'s">'+p.ic[i%p.ic.length]+'</i>';
+    for(i=0;i<SPK.length;i++)sp+='<i class="sp" style="--x:'+SPK[i][0]+'%;--y:'+SPK[i][1]+'%;--c:'+(i%2?'#FFFFFF':p.ac)+';--s:'+(9+(i*5)%9)+'px;--d:'+((i*.37)%2.6).toFixed(2)+'s;--t:'+(2.4+(i%4)*.3).toFixed(1)+'s"></i>';
+    h+='<div class="fb'+(p.tri?' tri':'')+'" data-fest="'+p.id+'" style="--b1:'+p.b[0]+';--b2:'+p.b[1]+';--b3:'+p.b[2]+';--ac:'+p.ac+'">';
+    h+='<span class="fi" aria-hidden="true">'+ic+'</span><span aria-hidden="true">'+sp+'</span>';
+    h+='<div class="ft"><div class="fhi">'+p.gh+'</div><div class="fen">'+p.ge+'</div></div>';
+    h+='<div class="fn">'+p.hi+' · '+p.en+'</div>';
+    if(A.length>1){h+='<div class="fo">';A.slice(1,4).forEach(function(f){h+='<span>'+f.ic[0]+' '+f.hi+' · '+f.en+'</span>';});h+='</div>';}
+    return h+'</div>';
+  }
+  /* ---- switch the look of the whole site (colour glow + animation) to today's festival ---- */
+  var lastKey='';
+  function apply(){
+    var A=current(),p=A[0]||null,r=document.documentElement;
+    lastKey=key();
+    r.classList.toggle('fest',!!p);
+    if(p){r.style.setProperty('--fa',p.ac);r.setAttribute('data-fest',p.id);}else{r.style.removeProperty('--fa');r.removeAttribute('data-fest');}
+    FX.theme(p?{fx:p.fx,pal:p.pal}:null);
+  }
+  function watch(){                                       /* a page left open overnight changes by itself at midnight IST */
+    if(key()===lastKey)return;
+    apply();
+    var h=location.hash;
+    if((h===''||h==='#home')&&(!sb||me)&&!LIBFAIL)route();
+  }
+  setInterval(watch,20000);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)watch();});
+  window.addEventListener('pageshow',watch);
+  return {at:at,today:todayISO,current:current,banner:banner,apply:apply,names:function(){return Object.keys(D);},years:function(){return Object.keys(CAL);}};
+})();
+FESTIVALS.apply();
 
 window.addEventListener('hashchange',route);
 route();
