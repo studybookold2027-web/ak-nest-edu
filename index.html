@@ -144,6 +144,29 @@ main.wide{max-width:1560px}
   .pltb textarea{min-height:56px;field-sizing:content}
   .plfd{flex:1 1 140px}
 }
+/* ---- Typing Practice: sentence (left) and typing box (right), always side by side ---- */
+.tpg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch;margin:12px 0}
+.tpp{display:flex;flex-direction:column;min-width:0;background:var(--card);border:2px solid var(--tb,#B8BEDD);border-radius:14px;overflow:hidden;box-shadow:0 3px 14px rgba(46,47,184,.10)}
+.tpp>header{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 12px;color:#fff;font-weight:700;font-size:.95rem;background:linear-gradient(135deg,#3B3FD8,#6A3FD8)}
+.tpr>header{background:linear-gradient(135deg,#00838F,#1E8E5A)}
+.tpp>header small{font-weight:600;opacity:.95;white-space:nowrap;background:rgba(255,255,255,.2);border-radius:99px;padding:2px 9px}
+.tpb{position:relative;flex:1;overflow:auto;padding:12px;min-height:200px;max-height:min(62vh,460px)}
+.tpin{min-width:132px;height:100%;display:flex;flex-direction:column}
+.tpg .sample{margin:0;border:0;padding:0;background:transparent;font-size:clamp(1.05rem,2.3vw,1.55rem);line-height:1.9;overflow-wrap:anywhere}
+.tpg .sample .ok{color:var(--ok);background:rgba(30,142,90,.14);border-radius:3px}
+.tpg .sample .bad{color:var(--bad);background:rgba(209,67,67,.3);border-radius:3px;text-decoration:underline wavy var(--bad);text-underline-offset:4px}
+.tpg .sample .cur{border-bottom:3px solid var(--acc);background:rgba(255,159,28,.2);animation:tpblink 1s steps(2) infinite}
+@keyframes tpblink{50%{border-bottom-color:transparent}}
+.tpg textarea{flex:1;min-height:170px;height:100%;width:100%;resize:none;font-size:max(16px,clamp(1.05rem,2.3vw,1.5rem));line-height:1.7;border:2px solid var(--line);border-radius:10px;background:var(--bg)}
+.tpg textarea:focus{outline:3px solid var(--pri);outline-offset:1px}
+@media (max-width:700px){
+  .tpg{gap:8px}
+  .tpp{border-radius:11px;border-width:1.5px}
+  .tpp>header{padding:7px 8px;font-size:.78rem}.tpp>header small{padding:1px 6px;font-size:.72rem}
+  .tpb{padding:8px;min-height:230px}
+  .tpg .sample{font-size:1.02rem;line-height:1.75}
+  .tpg textarea{font-size:16px;min-height:200px;padding:8px}
+}
 @media (max-height:820px){#nav a{padding:6px 12px}.ng{padding:8px 12px 2px}.sbrand{padding-top:12px;padding-bottom:10px}}
 @media (min-width:900px){
   .side{transform:none;visibility:visible;max-width:none;box-shadow:none;transition:none}
@@ -530,7 +553,10 @@ home:function(){
   return h+'</div>';
 },
 typing:function(){
-  return '<h2>⌨️ Typing Practice</h2><p class="lead">नीचे का वाक्य टाइप करें। हिंदी के लिए अपने कीबोर्ड पर हिंदी इनपुट चालू रखें।</p><div class="seg"><button id="lhi" aria-pressed="true">हिंदी</button><button id="len" aria-pressed="false">English</button></div><div class="sample" id="sample" aria-live="off"></div><textarea id="ta" placeholder="यहाँ टाइप करना शुरू करें…" aria-label="Typing area"></textarea><div class="stats"><span>Speed: <b id="wpm">0</b> WPM</span><span>Accuracy: <b id="acc">100</b>%</span><span id="best"></span></div><button class="btn" id="nw">नया वाक्य</button>';
+  return '<h2>⌨️ Typing Practice</h2><p class="lead">बाईं तरफ़ का वाक्य दाईं तरफ़ के box में टाइप करें। हिंदी के लिए अपने कीबोर्ड पर हिंदी इनपुट चालू रखें।</p><div class="seg"><button id="lhi" aria-pressed="true">हिंदी</button><button id="len" aria-pressed="false">English</button></div>'+
+  '<div class="tpg" id="tpg"><section class="tpp tpl" aria-label="Sentence to type"><header><span>📖 वाक्य · Sentence</span><small id="tpc" aria-hidden="true"></small></header><div class="tpb"><div class="tpin"><div class="sample" id="sample" aria-live="off"></div></div></div></section>'+
+  '<section class="tpp tpr" aria-label="Typing box"><header><span>⌨️ यहाँ टाइप करें · Type here</span></header><div class="tpb"><div class="tpin"><textarea id="ta" placeholder="यहाँ टाइप करना शुरू करें…" aria-label="Typing area" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea></div></div></section></div>'+
+  '<div class="stats"><span>Speed: <b id="wpm">0</b> WPM</span><span>Accuracy: <b id="acc">100</b>%</span><span id="best"></span></div><button class="btn" id="nw">नया वाक्य</button>';
 },
 test:function(){return '<h2>📝 Online Test</h2><p class="lead">हर बार 16 में से 6 नए सवाल, एक-एक करके। जवाब चुनते ही सही उत्तर दिख जाएगा।</p><div id="qz"></div>';},
 planner:function(){
@@ -600,9 +626,13 @@ typing:function(){
     var v=ta.value,h='';
     for(var i=0;i<tgt.length;i++){var c=esc(tgt[i]);h+=i<v.length?'<span class="'+(v[i]===tgt[i]?'ok':'bad')+'">'+c+'</span>':(i===v.length?'<span class="cur">'+c+'</span>':c);}
     $('sample').innerHTML=h;
+    $('tpc').textContent=Math.min(v.length,tgt.length)+' / '+tgt.length;
+    var box=$('sample').closest('.tpb'),cur=$('sample').querySelector('.cur');          /* keep the letter to type in view inside the panel */
+    if(box&&cur){var top=cur.offsetTop,left=cur.offsetLeft;if(top<box.scrollTop+8||top>box.scrollTop+box.clientHeight-48)box.scrollTop=Math.max(0,top-34);if(left<box.scrollLeft||left>box.scrollLeft+box.clientWidth-30)box.scrollLeft=Math.max(0,left-30);}
   }
   function newT(){var a=TXT[lang];tgt=a[Math.floor(Math.random()*a.length)];ta.value='';ta.disabled=false;t0=0;done=false;$('wpm').textContent='0';$('acc').textContent='100';paint();best();ta.placeholder=lang==='hi'?'यहाँ टाइप करना शुरू करें…':'Start typing here…';}
   ta.addEventListener('paste',function(e){e.preventDefault();});
+  $('tpg').querySelector('.tpr').addEventListener('click',function(ev){if(ev.target!==ta&&!ta.disabled)ta.focus();});
   ta.addEventListener('input',function(){
     if(done)return;
     if(!t0)t0=Date.now();
@@ -1287,7 +1317,7 @@ var FX=(function(){
   return {theme:theme,burstAt:burstAt,stats:function(){return {on:on,mode:mode,frames:fr,particles:P.length+G.length,rockets:R.length,bursts:nBurst,iconBursts:nIcon,Q:Q,W:W,H:H,ema:ema,raf:!!raf};}};
 })();
 
-/* ===================== Custom-Duration Study Routine Planner (inside the Routine page) =====================
+/* ===================== 90-Day Study Routine Planner (inside the Routine page) =====================
    One Excel-like table. Every cell can be edited. Saved automatically: on this device at once, and in Supabase
    (table study_plans, one row per student, protected by Row Level Security) a moment later. */
 var PLAN=(function(){
@@ -1413,10 +1443,10 @@ var PLAN=(function(){
   }
   function html(){
     var o=filterOpts();
-    return '<div class="pl"><div class="plhead"><div><h2>📊 Study Routine Planner</h2><p class="lead">अपनी पूरी पढ़ाई का plan Excel जैसी table में बनाइए। हर खाना बदला जा सकता है, और सब अपने आप सेव होता है।</p></div><span id="plst" class="plst"></span></div>'+
+    return '<div class="pl"><div class="plhead"><div><h2>📊 90 Days Study Routine Planner</h2><p class="lead">अपनी पूरी पढ़ाई का plan Excel जैसी table में बनाइए। हर खाना बदला जा सकता है, और सब अपने आप सेव होता है।</p></div><span id="plst" class="plst"></span></div>'+
     '<div id="plsum"></div>'+
-    '<div class="card pltool"><div class="row"><div><label for="plstart">Plan की शुरुआत की तारीख</label><input id="plstart" type="date"></div><div><label for="pldays">Plan की अवधि (दिन)</label><input id="pldays" type="number" min="1" max="10000" step="1" value="90" inputmode="numeric"></div><div><label for="plgoal">रोज़ का लक्ष्य (घंटे)</label><input id="plgoal" type="number" min="0.5" max="16" step="0.5"></div></div>'+
-    '<div class="plbtns"><button class="btn" id="plnew" type="button">🆕 चुनी हुई अवधि का नया Plan बनाएँ</button><button class="btn alt" id="plext30" type="button">➕ 30 दिन और बढ़ाएँ</button><span class="plext"><input id="plextn" type="number" min="1" max="10000" value="10" aria-label="कितने दिन बढ़ाने हैं"><button class="btn alt" id="plextb" type="button">दिन बढ़ाएँ</button></span><button class="btn alt" id="pladd" type="button">➕ Row जोड़ें</button><button class="btn alt" id="plsubb" type="button">📚 Subjects</button><button class="btn alt" id="plrepb" type="button">📈 Progress Report</button><button class="btn alt" id="plcsv" type="button">⬇️ Excel/CSV में Download</button><button class="btn alt" id="plsort" type="button">↕️ तारीख़ से क्रम</button></div></div>'+
+    '<div class="card pltool"><div class="row"><div><label for="plstart">Plan की शुरुआत की तारीख</label><input id="plstart" type="date"></div><div><label for="plgoal">रोज़ का लक्ष्य (घंटे)</label><input id="plgoal" type="number" min="0.5" max="16" step="0.5"></div></div>'+
+    '<div class="plbtns"><button class="btn" id="plnew" type="button">🆕 नया 90-दिन का Plan बनाएँ</button><button class="btn alt" id="plext30" type="button">➕ 30 दिन और बढ़ाएँ</button><span class="plext"><input id="plextn" type="number" min="1" max="365" value="10" aria-label="कितने दिन बढ़ाने हैं"><button class="btn alt" id="plextb" type="button">दिन बढ़ाएँ</button></span><button class="btn alt" id="pladd" type="button">➕ Row जोड़ें</button><button class="btn alt" id="plsubb" type="button">📚 Subjects</button><button class="btn alt" id="plrepb" type="button">📈 Progress Report</button><button class="btn alt" id="plcsv" type="button">⬇️ Excel/CSV में Download</button><button class="btn alt" id="plsort" type="button">↕️ तारीख़ से क्रम</button></div></div>'+
     '<div id="plsubs" class="card" hidden></div><div id="plrep" class="card" hidden></div>'+
     '<div class="plfil"><input id="plq" type="search" placeholder="🔍 Search: subject, topic, remarks, तारीख़…" aria-label="Search" value="'+esc(flt.q)+'"><select id="plfs" aria-label="Subject filter">'+o.sub+'</select><select id="plfm" aria-label="Month filter">'+o.mon+'</select><select id="plft" aria-label="Status filter"><option value="">सभी Status</option><option value="p"'+(flt.st==='p'?' selected':'')+'>Present</option><option value="a"'+(flt.st==='a'?' selected':'')+'>Absent</option><option value="n"'+(flt.st==='n'?' selected':'')+'>चिह्नित नहीं</option></select><label class="plfd">से <input id="plff" type="date" value="'+esc(flt.from)+'"></label><label class="plfd">तक <input id="plfe" type="date" value="'+esc(flt.to)+'"></label><button class="btn alt" id="plclr" type="button">✖ Filter हटाएँ</button><button class="btn alt" id="pltoday" type="button">📍 आज पर जाएँ</button></div>'+
     '<div class="plwrap"><table class="pltb"><thead><tr><th style="--hc:#586081;min-width:46px">#</th>'+COLS.map(function(c){return '<th style="--hc:'+c[2]+';min-width:'+c[3]+'px">'+c[1]+'</th>';}).join('')+'<th style="--hc:#586081;min-width:92px">Row</th></tr></thead><tbody></tbody></table></div>'+
@@ -1447,12 +1477,12 @@ var PLAN=(function(){
   }
   /* ---------- actions ---------- */
   function lastDate(){var d='';S.rows.forEach(function(r){if(r.date&&r.date>d)d=r.date;});return d||today();}
-  function extend(n){n=Math.floor(+n)||0;if(n<1||n>10000){toast('1 से 10,000 दिन के बीच संख्या लिखें।');return;}var st=addDays(lastDate(),1),i;for(i=0;i<n;i++)S.rows.push(mkRow(addDays(st,i)));changed();renderBody();refreshSum();toast(n+' दिन और जुड़ गए।');}
+  function extend(n){n=Math.max(1,Math.min(365,Math.floor(+n)||0));if(!n)return;var st=addDays(lastDate(),1),i;for(i=0;i<n;i++)S.rows.push(mkRow(addDays(st,i)));changed();renderBody();refreshSum();toast(n+' दिन और जुड़ गए।');}
   function csv(){
     var q=function(v){v=String(v==null?'':v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;},L=[COLS.map(function(c){return c[1];}).join(',')];
     S.rows.forEach(function(r){L.push([r.sub,r.year,r.month,r.date,r.day,r.at==='a'?'Yes':'',r.at==='p'?'Yes':'',r.top,r.st,r.en,fmt(r.tot),r.rem].map(q).join(','));});
     var b=new Blob(['\ufeff'+L.join('\r\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');
-    a.href=URL.createObjectURL(b);a.download='AK-NEST-EDU-study-routine.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+    a.href=URL.createObjectURL(b);a.download='AK-NEST-EDU-90-day-routine.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
   }
   function rowOf(el){var tr=el.closest('tr');if(!tr)return null;var id=tr.getAttribute('data-id'),i;for(i=0;i<S.rows.length;i++)if(S.rows[i].id===id)return {r:S.rows[i],i:i,tr:tr};return null;}
   function onEdit(ev){
@@ -1497,15 +1527,13 @@ var PLAN=(function(){
   }
   function bindTop(){
     var $r=function(id){return root.querySelector('#'+id);};
-    $r('plstart').value=S.start||'';$r('pldays').value=Math.max(1,S.rows.length||90);$r('plgoal').value=(S.goal/60);
+    $r('plstart').value=S.start||'';$r('plgoal').value=(S.goal/60);
     $r('plstart').onchange=function(){S.start=this.value;changed();};
-    $r('pldays').onchange=function(){var n=Math.floor(+this.value);if(!(n>=1&&n<=10000)){this.value=Math.max(1,S.rows.length||90);toast('1 से 10,000 दिन के बीच संख्या लिखें।');return;}this.value=n;};
     $r('plgoal').onchange=function(){var h=parseFloat(this.value);if(!(h>0&&h<=16)){this.value=S.goal/60;return;}S.goal=Math.round(h*60);changed();refreshSum();};
     $r('plnew').onclick=function(){
       var st=$r('plstart').value||today();
-      var n=Math.floor(+$r('pldays').value);if(!(n>=1&&n<=10000)){toast('Plan की अवधि 1 से 10,000 दिन रखें।');return;}
-      if(!confirm(n+' दिन का नया plan '+st+' से बनेगा। अभी की सभी rows हट जाएँगी (Subjects वही रहेंगे)। पहले \"Excel/CSV में Download\" कर लेना चाहें तो Cancel दबाइए। आगे बढ़ें?'))return;
-      S.start=st;S.rows=build(st,n);changed();renderBody();refreshSum();toast(n+' दिन की नई plan बन गई।');
+      if(!confirm('नया 90-दिन का plan '+st+' से बनेगा। अभी की सभी rows हट जाएँगी (Subjects वही रहेंगे)। पहले "Excel/CSV में Download" कर लेना चाहें तो Cancel दबाइए। आगे बढ़ें?'))return;
+      S.start=st;S.rows=build(st,90);changed();renderBody();refreshSum();toast('90 दिन की नई plan बन गई।');
     };
     $r('plext30').onclick=function(){extend(30);};
     $r('plextb').onclick=function(){extend($r('plextn').value);};
@@ -1549,7 +1577,7 @@ var PLAN=(function(){
   function mount(el){
     root=el;uid=me?me.id:'local';
     app.classList.add('wide');
-    root.innerHTML='<div class="pl"><div class="plhead"><div><h2>📊 Study Routine Planner</h2></div><span id="plst" class="plst"></span></div></div>';
+    root.innerHTML='<div class="pl"><div class="plhead"><div><h2>📊 90 Days Study Routine Planner</h2></div><span id="plst" class="plst"></span></div></div>';
     setStat('loading');
     var local=get('plan',null);if(local&&(!local.rows||!Array.isArray(local.rows)))local=null;
     var token=++busyTok;
