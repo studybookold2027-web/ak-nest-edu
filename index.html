@@ -80,6 +80,70 @@ html.fest .lg{animation:lgglow 2.8s ease-in-out infinite}
 html.fest .card .ic{animation:fglow 3.2s ease-in-out infinite}
 html.fest .hero .tag{box-shadow:0 0 16px var(--fa,#FFC84A)}
 @media (max-width:600px){.fb{padding:22px 16px}}
+/* ---- 90-day study planner (Routine page) ---- */
+main.wide{max-width:1560px}
+.pl [hidden]{display:none!important}
+.plhead{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:8px 16px}
+.plhead h2{margin-bottom:4px}
+.plst{display:inline-block;font-size:.88rem;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--mute)}
+.plst.ok{color:var(--ok);border-color:var(--ok)}.plst.warn{color:#B26A00;border-color:#E0A030}.plst.bad{color:var(--bad);border-color:var(--bad)}
+.plcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 12px}
+.plc{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--pri);border-radius:10px;padding:10px 12px}
+.plc b{display:block;font-size:1.45rem;line-height:1.2}.plc span{color:var(--mute);font-size:.82rem}
+.plc.ok{border-left-color:var(--ok)}.plc.bad{border-left-color:var(--bad)}
+.plprog{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:14px}
+.plprog small{color:var(--mute)}
+.plbar{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:6px}
+.plbar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#3B3FD8,#7B3FD8,#B0185A);transition:width .3s}
+.plbar i.ok,.plchart i.ok{background:linear-gradient(90deg,#1E8E5A,#4CC38A)}
+.pltool{margin-bottom:12px}
+.plbtns{display:flex;flex-wrap:wrap;gap:4px 0;align-items:center;margin-top:8px}
+.plext{display:inline-flex;align-items:center;gap:6px;margin:4px 6px 4px 0}.plext input{width:80px}
+.plfil{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+.plfil input[type=search]{flex:2 1 240px;width:auto}.plfil select{flex:1 1 140px;width:auto}
+.plfd{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;color:var(--mute)}.plfd input{width:auto}
+.plwrap{overflow:auto;max-height:72vh;border:2px solid var(--tb,#B8BEDD);border-radius:10px;background:var(--card)}
+.pltb{border-collapse:separate;border-spacing:0;min-width:1720px;width:100%}
+.pltb th{position:sticky;top:0;z-index:2;background:var(--hc);color:#fff;font-weight:700;font-size:.86rem;padding:10px 8px;border-right:1px solid rgba(255,255,255,.45);border-bottom:2px solid rgba(0,0,0,.25);white-space:nowrap;text-align:center}
+.pltb td{border-right:1px solid var(--tb,#C9CEE6);border-bottom:1px solid var(--tb,#C9CEE6);padding:0;vertical-align:middle;background:var(--card)}
+.pltb tbody tr:nth-child(even) td{background:rgba(59,63,216,.045)}
+.pltb tr.sp td{background:rgba(30,142,90,.14)}.pltb tr.sa td{background:rgba(209,67,67,.14)}
+.pltb tr.st td{box-shadow:inset 0 2px 0 var(--acc),inset 0 -2px 0 var(--acc)}
+.pltb tr.flash td{animation:plflash 1.3s ease}
+@keyframes plflash{0%,60%{background:rgba(255,159,28,.4)}100%{}}
+.pltb td.n{text-align:center;color:var(--mute);font-weight:700;width:46px;padding:0 6px}
+.pltb td.ck{text-align:center}.pltb td.ck input{width:20px;height:20px;margin:0;accent-color:var(--pri);cursor:pointer}
+.pltb input:not([type=checkbox]),.pltb textarea{border:0;border-radius:0;background:transparent;padding:7px 8px;min-height:0;width:100%;resize:vertical}
+.pltb textarea{min-height:36px;resize:none;field-sizing:content;max-height:140px}
+.pltb input:focus,.pltb textarea:focus{outline:2px solid var(--pri);outline-offset:-2px;background:var(--card)}
+.pltb td.act{white-space:nowrap;text-align:center;padding:0 4px}
+.rb{background:transparent;border:1px solid var(--line);border-radius:7px;cursor:pointer;font-size:1rem;padding:3px 8px;margin:2px;color:inherit}.rb:hover{background:var(--line)}
+.pltb .empty td{text-align:center;padding:24px;color:var(--mute)}
+.plfoot{margin:8px 0 16px;color:var(--mute);font-size:.9rem}
+.plsl{display:grid;gap:8px;margin-bottom:10px}.plsi{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.plsi input{flex:1 1 200px;width:auto}.plsi small{color:var(--mute)}
+.plscroll{overflow:auto;margin-bottom:8px}.plrt{border-collapse:collapse;min-width:520px}.plrt th{background:var(--pri);color:var(--priink);padding:7px 10px;text-align:left}.plrt td{border:1px solid var(--line);padding:6px 10px}
+#plrep h4{margin:14px 0 6px}
+.plchart{display:flex;align-items:flex-end;gap:6px;height:120px;overflow-x:auto;padding:4px 0}
+.plcb{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:34px}.plcb i{display:block;width:22px;min-height:3px;border-radius:4px 4px 0 0;background:var(--pri)}.plcb i.bad{background:var(--bad)}.plcb small{font-size:.68rem;color:var(--mute);margin-top:3px}
+@media (prefers-color-scheme:dark){.plwrap{--tb:#3A4070}.pltb td{--tb:#3A4070}.plst.warn{color:#FFB547}}
+@media (max-width:760px){
+  .plcards{grid-template-columns:repeat(2,1fr)}
+  .plwrap{max-height:none;overflow:visible;border:0;background:transparent}
+  .pltb,.pltb tbody,.pltb tr,.pltb td{display:block;min-width:0}
+  .pltb thead{display:none}
+  .pltb tr{border:2px solid var(--tb,#B8BEDD);border-radius:12px;margin:0 0 14px;overflow:hidden;background:var(--card)}
+  .pltb td,.pltb tbody tr:nth-child(even) td{display:flex;align-items:center;gap:8px;border:0;border-bottom:1px solid var(--line);padding:5px 8px;background:transparent}
+  .pltb tr.sp{background:rgba(30,142,90,.13)}.pltb tr.sa{background:rgba(209,67,67,.13)}
+  .pltb tr.sp td,.pltb tr.sa td{background:transparent}
+  .pltb td::before{content:attr(data-l);flex:0 0 108px;font-weight:700;font-size:.74rem;color:#fff;background:var(--hc);padding:5px 6px;border-radius:6px;text-align:center}
+  .pltb td.n{width:auto;justify-content:flex-start;font-weight:800}.pltb td.n::before{content:"Row No."}
+  .pltb tr.st{border-color:var(--acc)}.pltb tr.st td{box-shadow:none}
+  .pltb td.ck{justify-content:flex-start}
+  .pltb td.act{justify-content:flex-end}.pltb td.act::before{display:none}
+  .pltb input:not([type=checkbox]),.pltb textarea{flex:1;border:1px solid var(--line);border-radius:7px;background:var(--bg);min-width:0}
+  .pltb textarea{min-height:56px;field-sizing:content}
+  .plfd{flex:1 1 140px}
+}
 @media (max-height:820px){#nav a{padding:6px 12px}.ng{padding:8px 12px 2px}.sbrand{padding-top:12px;padding-bottom:10px}}
 @media (min-width:900px){
   .side{transform:none;visibility:visible;max-width:none;box-shadow:none;transition:none}
@@ -393,7 +457,7 @@ function idleStop(){if(idleTimer){clearInterval(idleTimer);idleTimer=null;}idleH
 var authReady=!sb,loginNote='';
 if(sb)UP=null;
 function setUser(u){
-  RC=null;
+  RC=null;if(window.PLAN)PLAN.reset();
   if(!sb){UP='sba.';return;}
   if(!u){UP=null;mem={};return;}
   UP='sba.u.'+u.id+'.';
@@ -409,7 +473,8 @@ function wipeSb(){try{Object.keys(localStorage).forEach(function(k){if(/^sb-.*-a
 var LOGIN_URL=location.pathname+location.search+'#login';
 function manualLogout(){
   idleStop();
-  sb.auth.signOut().then(function(r){
+  var fl=window.PLAN?Promise.race([PLAN.flushNow(),new Promise(function(r){setTimeout(r,2500);})]).catch(function(){}):Promise.resolve();
+  fl.then(function(){return sb.auth.signOut();}).then(function(r){
     if(r&&r.error){wipeSb();me=null;setUser(null);location.replace(LOGIN_URL);location.reload();return;}
     me=null;setUser(null);location.replace(LOGIN_URL);route();
   },function(){wipeSb();me=null;setUser(null);location.replace(LOGIN_URL);location.reload();});
@@ -498,6 +563,9 @@ dashboard:function(){
   return '<h2>📊 मेरा Dashboard</h2><p class="lead">नमस्ते'+(nm?', '+esc(nm):'')+'! आज की पढ़ाई एक नज़र में।</p>'+clockCard()+'<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:14px"><div class="card" style="text-align:center"><div class="big" id="dp">–</div><p>आज का काम पूरा</p></div><div class="card" style="text-align:center"><div class="big" id="dc">–</div><p>पूरे / बाकी (आज)</p></div><div class="card" style="text-align:center"><div class="big" id="dq">–</div><p>पिछले दिनों के छूटे काम</p></div><div class="card" style="text-align:center"><div class="big" id="ds">–</div><p>आज की पढ़ाई</p></div></div><div class="card" id="dn">लोड हो रहा है…</div><div class="card" style="margin-top:14px"><h3>आज का Routine</h3><div id="dl">लोड हो रहा है…</div><p><a class="btn" href="#routine">+ काम जोड़ें / देखें</a> <a class="btn alt" style="color:var(--ink)" href="#time">⏱️ स्टडी टाइमर</a></p></div>';
 },
 routine:function(){
+  return '<div class="seg" id="rtop" role="tablist" aria-label="Routine"><button type="button" role="tab" data-t="plan">📊 90-Day Study Planner</button><button type="button" role="tab" data-t="daily">⏰ रोज़ के काम और Reminder</button></div><div id="rbody" style="margin-top:14px"></div>';
+},
+routineDaily:function(){
   var dl=SUBJ.map(function(s){return '<option value="'+s[1]+'">';}).join('');
   var wk=[[1,'सोम'],[2,'मंगल'],[3,'बुध'],[4,'गुरु'],[5,'शुक्र'],[6,'शनि'],[0,'रवि']].map(function(d){return '<label class="wd"><input type="checkbox" value="'+d[0]+'">'+d[1]+'</label>';}).join('');
   return '<h2>🗓️ मेरा Routine</h2><p class="lead">रोज़ का या हफ़्ते का Routine बनाएँ, और काम पूरा होने पर टिक करें।</p><div class="card" id="rmode"></div><div class="card" style="margin-top:14px"><h3 id="rh">नया काम जोड़ें</h3><div class="row"><div style="flex:2 1 220px"><label for="rn">काम का नाम</label><input id="rn" maxlength="120" placeholder="जैसे: गणित के 20 सवाल"></div><div><label for="rs">Subject (विषय)</label><input id="rs" list="sl2" maxlength="60" placeholder="जैसे: गणित"><datalist id="sl2">'+dl+'</datalist></div></div><div class="row"><div><label for="rd">तारीख <span id="rdw"></span></label><input id="rd" type="date"></div><div><label for="r1">शुरू होने का समय</label><input id="r1" type="time"></div><div><label for="r2">खत्म होने का समय</label><input id="r2" type="time"></div></div><div class="row"><div><label for="rr">कितनी बार?</label><select id="rr"><option value="none">सिर्फ़ इसी दिन</option><option value="daily">रोज़</option><option value="weekly">हफ़्ते के चुने हुए दिन</option></select></div><div><label for="rm2">याद दिलाना</label><select id="rm2"><option value="">नहीं</option><option value="0">समय पर</option><option value="5">5 मिनट पहले</option><option value="10">10 मिनट पहले</option><option value="15">15 मिनट पहले</option></select></div></div><div id="rwb" hidden><label>कौन-से दिन?</label><div id="rw">'+wk+'</div></div><label for="ro">नोट्स</label><textarea id="ro" maxlength="500" style="min-height:60px"></textarea><p><button class="btn" id="rb">सेव करें</button><button class="btn alt" id="rc" style="color:var(--ink)" hidden>रद्द करें</button></p><p class="msg" id="rm" role="status"></p></div><div class="card" style="margin-top:14px"><div class="seg" id="rtabs"><button data-t="today" aria-pressed="true">आज / दिन चुनें</button><button data-t="pending" aria-pressed="false">बाकी काम</button><button data-t="all" aria-pressed="false">मेरे सभी Routine</button></div><div id="rday" class="row" style="margin-top:10px"><div><label for="rv">दिन देखें</label><input id="rv" type="date"></div></div><div class="prog"><i id="rp"></i></div><p class="msg" id="rt"></p><div id="rl">लोड हो रहा है…</div></div>';
@@ -717,6 +785,17 @@ dashboard:async function(){
   }catch(e){if($('dl'))$('dl').textContent='लोड नहीं हो सका: '+e.message;}
 },
 routine:function(){
+  var tabs=$('rtop');
+  function show(t){
+    clearT();put('rtab',t);
+    Array.prototype.forEach.call(tabs.children,function(b){var on=b.getAttribute('data-t')===t;b.setAttribute('aria-pressed',on?'true':'false');b.setAttribute('aria-selected',on?'true':'false');});
+    if(t==='plan'){PLAN.mount($('rbody'));}
+    else{PLAN.unmount();$('rbody').innerHTML=V.routineDaily();I.routineDaily();}
+  }
+  Array.prototype.forEach.call(tabs.children,function(b){b.onclick=function(){show(b.getAttribute('data-t'));};});
+  show(get('rtab','plan')==='daily'?'daily':'plan');
+},
+routineDaily:function(){
   var tab='today',edit=null,armed=null,rows=[],today=istDay(Date.now());
   $('rd').value=today;$('rv').value=today;
   function say(t){$('rm').textContent=t;}
@@ -961,6 +1040,7 @@ function failHTML(){
 }
 function route(){
   clearT();RC=null;
+  if(window.PLAN)PLAN.unmount();
   if(LIBFAIL){document.body.classList.add('authonly');closeMenu(false);$('nav').innerHTML='';app.innerHTML=failHTML();var rb=$('retry');if(rb)rb.onclick=function(){location.reload();};return;}
   var id=location.hash.slice(1),init='';
   if(id==='logout'){if(sb&&me){manualLogout();}else if(sb){location.replace(LOGIN_URL);}else location.hash='#home';return;}
@@ -1205,6 +1285,297 @@ var FX=(function(){
     stop();start();watchdog();
   }
   return {theme:theme,burstAt:burstAt,stats:function(){return {on:on,mode:mode,frames:fr,particles:P.length+G.length,rockets:R.length,bursts:nBurst,iconBursts:nIcon,Q:Q,W:W,H:H,ema:ema,raf:!!raf};}};
+})();
+
+/* ===================== 90-Day Study Routine Planner (inside the Routine page) =====================
+   One Excel-like table. Every cell can be edited. Saved automatically: on this device at once, and in Supabase
+   (table study_plans, one row per student, protected by Row Level Security) a moment later. */
+var PLAN=(function(){
+  var COLS=[['sub','Syllabus / Subject','#3B3FD8',170],['year','Year','#7B3FD8',88],['month','Month','#B0185A',138],['date','Date','#D2570A',158],
+    ['day','Day','#9A6B00',136],['abs','Absent','#C62828',74],['pre','Present','#1E8E5A',74],['top','Topics','#00838F',270],
+    ['st','Start Time','#1565C0',112],['en','End Time','#5E35B1',112],['tot','Total Study Time','#00695C',128],['rem','Remarks','#6D4C41',210]];
+  var MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DAY=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var S=null,uid=null,root=null,timer=0,stat='',statErr='',busy=false,flt={q:'',sub:'',mon:'',st:'',from:'',to:''},pending=null;
+  function today(){return istDay(Date.now());}
+  function rid(){return Math.random().toString(36).slice(2,10);}
+  function pd(iso){var a=(iso||'').split('-');return a.length===3&&+a[0]>0&&+a[1]>0&&+a[2]>0?new Date(Date.UTC(+a[0],+a[1]-1,+a[2])):null;}
+  function addDays(iso,n){var d=pd(iso);if(!d)return '';d.setUTCDate(d.getUTCDate()+n);return d.getUTCFullYear()+'-'+p2(d.getUTCMonth()+1)+'-'+p2(d.getUTCDate());}
+  function fromDate(iso){var d=pd(iso);return d?{year:d.getUTCFullYear(),month:MON[d.getUTCMonth()],day:DAY[d.getUTCDay()]}:null;}
+  function mkRow(date){var f=fromDate(date)||{year:'',month:'',day:''};return {id:rid(),sub:'',year:f.year,month:f.month,date:date||'',day:f.day,at:'',top:'',st:'',en:'',tot:null,rem:''};}
+  function tmin(t){var m=/^(\d{1,2}):(\d{2})$/.exec(t||'');return m?(+m[1])*60+(+m[2]):null;}
+  function calc(st,en){var a=tmin(st),b=tmin(en);if(a===null||b===null)return null;var d=b-a;if(d<0)d+=1440;return d>0?d:null;}   /* end before start = studied past midnight */
+  function fmt(m){return m===null||m===undefined||isNaN(m)?'':p2(Math.floor(m/60))+':'+p2(m%60);}
+  function parseTot(v){                                   /* accepts 1:30, 01:30, 90, 90m, 1.5h, 1h30, 1h 30m */
+    v=String(v||'').trim().toLowerCase();if(!v)return null;
+    var m=/^(\d{1,3}):(\d{1,2})$/.exec(v);if(m)return +m[1]*60+ +m[2];
+    m=/^(\d+(?:\.\d+)?)\s*h(?:ours?|r|rs)?\s*(?:(\d+)\s*m?(?:in|ins)?)?$/.exec(v);if(m)return Math.round(parseFloat(m[1])*60)+(m[2]?+m[2]:0);
+    m=/^(\d+)\s*(?:m|min|mins)?$/.exec(v);if(m)return +m[1];
+    return undefined;
+  }
+  function build(start,n,subs){var rows=[],i;for(i=0;i<n;i++)rows.push(mkRow(addDays(start,i)));return rows;}
+  function fresh(){return {v:1,start:today(),goal:120,subs:SUBJ.map(function(x){return x[1];}),rows:build(today(),90),ts:Date.now(),dirty:true};}
+  function snap(){return {v:1,start:S.start,goal:S.goal,subs:S.subs,rows:S.rows,ts:S.ts};}
+  /* ---------- saving ---------- */
+  function setStat(s,e){stat=s;statErr=e||'';var el=root&&root.querySelector('#plst');if(el)paintStat(el);}
+  function paintStat(el){
+    var T={saving:['⏳','सेव हो रहा है…',''],saved:['☁️','सेव हो गया (Supabase में)','ok'],local:['💾','इस डिवाइस पर सेव है','warn'],
+      nosetup:['⚠️','सिर्फ़ इस डिवाइस पर सेव है — Supabase में planner की table बनानी बाकी है','warn'],offline:['📴','इंटरनेट नहीं — जुड़ते ही अपने आप सेव होगा','warn'],err:['⚠️','Supabase में सेव नहीं हो पाया — दोबारा कोशिश होगी','bad'],loading:['⏳','आपका planner लोड हो रहा है…','']}[stat]||['',''];
+    el.textContent=T[0]+' '+T[1];el.className='plst '+(T[2]||'');
+  }
+  function missing(e){var m=((e&&e.message)||'')+' '+((e&&e.code)||'');return /PGRST205|42P01|study_plans|does not exist|schema cache/i.test(m);}
+  function saveLocal(){S.ts=Date.now();S.uid=uid;put('plan',S);}
+  function changed(){S.dirty=true;saveLocal();if(!sb||!me){setStat('local');return;}setStat('saving');clearTimeout(timer);timer=setTimeout(push,1200);}
+  function push(){
+    clearTimeout(timer);timer=0;
+    if(!S||!sb||!me)return Promise.resolve();
+    var data=snap(),ts=S.ts;
+    return Promise.resolve(sb.from('study_plans').upsert({user_id:me.id,data:data,updated_at:new Date().toISOString()},{onConflict:'user_id'})).then(function(r){
+      if(r&&r.error){setStat(missing(r.error)?'nosetup':'err',r.error.message);return;}
+      if(S&&S.ts===ts){S.dirty=false;saveLocal();}
+      setStat('saved');
+    }).catch(function(){setStat(navigator.onLine===false?'offline':'err');});
+  }
+  function flushNow(){return timer||(S&&S.dirty)?push():Promise.resolve();}
+  function loadCloud(){
+    if(!sb||!me)return Promise.resolve(undefined);
+    return Promise.resolve(sb.from('study_plans').select('data,updated_at').eq('user_id',me.id)).then(function(r){
+      if(r&&r.error)return {err:r.error};
+      var row=r&&Array.isArray(r.data)?r.data[0]:null;
+      return row&&row.data&&row.data.rows?{data:row.data}:null;
+    }).catch(function(e){return {err:e||{}};});
+  }
+  /* ---------- derived numbers ---------- */
+  function stats(){
+    var rows=S.rows,t=today(),n=rows.length,p=0,a=0,mins=0,i,r,m;
+    for(i=0;i<n;i++){r=rows[i];if(r.at==='p')p++;else if(r.at==='a')a++;m=r.tot;if(m)mins+=m;}
+    var done=rows.filter(function(r){return r.date&&r.date<=t;}).sort(function(x,y){return x.date<y.date?-1:1;}),cur=0,best=0,run=0,k;
+    for(k=0;k<done.length;k++){if(done[k].at==='p'){run++;if(run>best)best=run;}else if(!(done[k].date===t&&!done[k].at))run=0;}
+    for(k=done.length-1;k>=0;k--){if(done[k].date===t&&!done[k].at)continue;if(done[k].at==='p')cur++;else break;}
+    var td=rows.filter(function(r){return r.date===t;}),tm=0,ts='';
+    td.forEach(function(r){if(r.tot)tm+=r.tot;});ts=td.length?(td.some(function(r){return r.at==='p';})?'p':(td.some(function(r){return r.at==='a';})?'a':'')):'-';
+    return {n:n,p:p,a:a,pend:n-p-a,mins:mins,avg:p?Math.round(mins/p):0,pct:n?Math.round(p*100/n):0,att:(p+a)?Math.round(p*100/(p+a)):0,cur:cur,best:best,todayMins:tm,todaySt:ts,goalPct:S.goal?Math.min(100,Math.round(tm*100/S.goal)):0,todayRows:td.length};
+  }
+  function bar(pct,cls){return '<div class="plbar"><i class="'+(cls||'')+'" style="width:'+Math.max(0,Math.min(100,pct))+'%"></i></div>';}
+  function sumHTML(){
+    var x=stats(),T={p:'✅ आज Present',a:'❌ आज Absent','':'⏳ आज अभी चिह्नित नहीं','-':'आज की row नहीं है'}[x.todaySt];
+    return '<div class="plcards">'+
+      '<div class="plc"><b>'+x.n+'</b><span>कुल दिन / rows</span></div>'+
+      '<div class="plc ok"><b>'+x.p+'</b><span>Present</span></div>'+
+      '<div class="plc bad"><b>'+x.a+'</b><span>Absent</span></div>'+
+      '<div class="plc"><b>'+x.pend+'</b><span>बाकी (अभी चिह्नित नहीं)</span></div>'+
+      '<div class="plc"><b>'+(fmt(x.mins)||'00:00')+'</b><span>कुल पढ़ाई का समय</span></div>'+
+      '<div class="plc"><b>'+x.cur+'</b><span>लगातार Present दिन</span></div></div>'+
+      '<div class="plprog"><div><strong>कुल प्रगति: '+x.pct+'%</strong> <small>('+x.p+' / '+x.n+' दिन Present)</small>'+bar(x.pct,'ok')+'</div>'+
+      '<div><strong>आज की प्रगति: '+(fmt(x.todayMins)||'00:00')+' / '+fmt(S.goal)+'</strong> <small>'+T+'</small>'+bar(x.goalPct,'')+'</div></div>';
+  }
+  function refreshSum(){var e=root&&root.querySelector('#plsum');if(e)e.innerHTML=sumHTML();var f=root&&root.querySelector('#plcnt');if(f)f.textContent=countText();if(root&&!root.querySelector('#plrep').hidden)reportInto(root.querySelector('#plrep'));}
+  /* ---------- table ---------- */
+  function vis(r){
+    var q=flt.q.trim().toLowerCase();
+    if(q&&((r.sub||'')+' '+(r.top||'')+' '+(r.rem||'')+' '+(r.day||'')+' '+(r.month||'')+' '+(r.date||'')+' '+(r.year||'')).toLowerCase().indexOf(q)<0)return false;
+    if(flt.sub&&(r.sub||'')!==(flt.sub==='__none'?'':flt.sub))return false;
+    if(flt.mon&&(r.month||'')!==flt.mon)return false;
+    if(flt.st==='p'&&r.at!=='p')return false;if(flt.st==='a'&&r.at!=='a')return false;if(flt.st==='n'&&r.at)return false;
+    if(flt.from&&(!r.date||r.date<flt.from))return false;if(flt.to&&(!r.date||r.date>flt.to))return false;
+    return true;
+  }
+  function countText(){var v=S.rows.filter(vis),m=0;v.forEach(function(r){if(r.tot)m+=r.tot;});return 'दिख रही rows: '+v.length+' / '+S.rows.length+' · इनका कुल समय: '+(fmt(m)||'00:00');}
+  function rowHTML(r,i){
+    var t=today(),cl=(r.at==='p'?'sp':(r.at==='a'?'sa':''))+(r.date===t?' st':''),h='<tr data-id="'+r.id+'" class="'+cl+'">';
+    function td(k,inner,extra){var c=COLS.filter(function(x){return x[0]===k;})[0];return '<td data-l="'+c[1]+'" style="--hc:'+c[2]+'"'+(extra||'')+'>'+inner+'</td>';}
+    h+='<td class="n" data-l="Day #" style="--hc:#586081">'+(i+1)+'</td>';
+    h+=td('sub','<input class="f-sub" list="plsub" maxlength="80" aria-label="Syllabus / Subject" value="'+esc(r.sub)+'">');
+    h+=td('year','<input class="f-year" type="number" min="1900" max="2200" aria-label="Year" value="'+esc(r.year)+'">');
+    h+=td('month','<input class="f-month" list="plmon" maxlength="20" aria-label="Month" value="'+esc(r.month)+'">');
+    h+=td('date','<input class="f-date" type="date" aria-label="Date" value="'+esc(r.date)+'">');
+    h+=td('day','<input class="f-day" list="plday" maxlength="20" aria-label="Day" value="'+esc(r.day)+'">');
+    h+=td('abs','<input class="f-abs" type="checkbox" aria-label="Absent"'+(r.at==='a'?' checked':'')+'>',' class="ck"');
+    h+=td('pre','<input class="f-pre" type="checkbox" aria-label="Present"'+(r.at==='p'?' checked':'')+'>',' class="ck"');
+    h+=td('top','<textarea class="f-top" rows="1" maxlength="600" aria-label="Topics">'+esc(r.top)+'</textarea>');
+    h+=td('st','<input class="f-st" type="time" aria-label="Start Time" value="'+esc(r.st)+'">');
+    h+=td('en','<input class="f-en" type="time" aria-label="End Time" value="'+esc(r.en)+'">');
+    h+=td('tot','<input class="f-tot" inputmode="text" maxlength="12" placeholder="HH:MM" aria-label="Total Study Time (automatic, you can change it)" value="'+fmt(r.tot)+'">');
+    h+=td('rem','<input class="f-rem" maxlength="300" aria-label="Remarks" value="'+esc(r.rem)+'">');
+    h+='<td class="act" data-l="Row" style="--hc:#586081"><button class="rb ins" type="button" title="इसके नीचे नई row जोड़ें" aria-label="इसके नीचे नई row जोड़ें">＋</button><button class="rb del" type="button" title="यह row delete करें" aria-label="यह row delete करें">🗑</button></td></tr>';
+    return h;
+  }
+  function body(){var rows=S.rows,h='',i;for(i=0;i<rows.length;i++)if(vis(rows[i]))h+=rowHTML(rows[i],i);return h||'<tr class="empty"><td colspan="14">कोई row नहीं मिली। Filter या search बदलकर देखिए।</td></tr>';}
+  function renderBody(){var tb=root.querySelector('tbody');tb.innerHTML=body();root.querySelector('#plcnt').textContent=countText();}
+  function lists(){
+    var subs=S.subs.slice();S.rows.forEach(function(r){if(r.sub&&subs.indexOf(r.sub)<0)subs.push(r.sub);});
+    return '<datalist id="plsub">'+subs.map(function(x){return '<option value="'+esc(x)+'">';}).join('')+'</datalist><datalist id="plmon">'+MON.map(function(x){return '<option value="'+x+'">';}).join('')+'</datalist><datalist id="plday">'+DAY.map(function(x){return '<option value="'+x+'">';}).join('')+'</datalist>';
+  }
+  function filterOpts(){
+    var subs=S.subs.slice();S.rows.forEach(function(r){if(r.sub&&subs.indexOf(r.sub)<0)subs.push(r.sub);});
+    return {sub:'<option value="">सभी Subject</option><option value="__none">(Subject खाली)</option>'+subs.map(function(x){return '<option value="'+esc(x)+'"'+(flt.sub===x?' selected':'')+'>'+esc(x)+'</option>';}).join(''),
+      mon:'<option value="">सभी Month</option>'+MON.map(function(x){return '<option value="'+x+'"'+(flt.mon===x?' selected':'')+'>'+x+'</option>';}).join('')};
+  }
+  function html(){
+    var o=filterOpts();
+    return '<div class="pl"><div class="plhead"><div><h2>📊 90 Days Study Routine Planner</h2><p class="lead">अपनी पूरी पढ़ाई का plan Excel जैसी table में बनाइए। हर खाना बदला जा सकता है, और सब अपने आप सेव होता है।</p></div><span id="plst" class="plst"></span></div>'+
+    '<div id="plsum"></div>'+
+    '<div class="card pltool"><div class="row"><div><label for="plstart">Plan की शुरुआत की तारीख</label><input id="plstart" type="date"></div><div><label for="plgoal">रोज़ का लक्ष्य (घंटे)</label><input id="plgoal" type="number" min="0.5" max="16" step="0.5"></div></div>'+
+    '<div class="plbtns"><button class="btn" id="plnew" type="button">🆕 नया 90-दिन का Plan बनाएँ</button><button class="btn alt" id="plext30" type="button">➕ 30 दिन और बढ़ाएँ</button><span class="plext"><input id="plextn" type="number" min="1" max="365" value="10" aria-label="कितने दिन बढ़ाने हैं"><button class="btn alt" id="plextb" type="button">दिन बढ़ाएँ</button></span><button class="btn alt" id="pladd" type="button">➕ Row जोड़ें</button><button class="btn alt" id="plsubb" type="button">📚 Subjects</button><button class="btn alt" id="plrepb" type="button">📈 Progress Report</button><button class="btn alt" id="plcsv" type="button">⬇️ Excel/CSV में Download</button><button class="btn alt" id="plsort" type="button">↕️ तारीख़ से क्रम</button></div></div>'+
+    '<div id="plsubs" class="card" hidden></div><div id="plrep" class="card" hidden></div>'+
+    '<div class="plfil"><input id="plq" type="search" placeholder="🔍 Search: subject, topic, remarks, तारीख़…" aria-label="Search" value="'+esc(flt.q)+'"><select id="plfs" aria-label="Subject filter">'+o.sub+'</select><select id="plfm" aria-label="Month filter">'+o.mon+'</select><select id="plft" aria-label="Status filter"><option value="">सभी Status</option><option value="p"'+(flt.st==='p'?' selected':'')+'>Present</option><option value="a"'+(flt.st==='a'?' selected':'')+'>Absent</option><option value="n"'+(flt.st==='n'?' selected':'')+'>चिह्नित नहीं</option></select><label class="plfd">से <input id="plff" type="date" value="'+esc(flt.from)+'"></label><label class="plfd">तक <input id="plfe" type="date" value="'+esc(flt.to)+'"></label><button class="btn alt" id="plclr" type="button">✖ Filter हटाएँ</button><button class="btn alt" id="pltoday" type="button">📍 आज पर जाएँ</button></div>'+
+    '<div class="plwrap"><table class="pltb"><thead><tr><th style="--hc:#586081;min-width:46px">#</th>'+COLS.map(function(c){return '<th style="--hc:'+c[2]+';min-width:'+c[3]+'px">'+c[1]+'</th>';}).join('')+'<th style="--hc:#586081;min-width:92px">Row</th></tr></thead><tbody></tbody></table></div>'+
+    '<div class="plfoot"><span id="plcnt"></span></div><div id="pllists">'+lists()+'</div></div>';
+  }
+  /* ---------- panels ---------- */
+  function subsInto(el){
+    el.innerHTML='<h3>📚 Subjects (विषय)</h3><p class="lead" style="margin-bottom:10px">नाम बदलने पर सभी rows में अपने आप बदल जाएगा। Subject हटाने पर उस subject वाली rows खाली subject वाली हो जाती हैं (rows delete नहीं होतीं)।</p><div class="plsl">'+
+      S.subs.map(function(x,i){var c=S.rows.filter(function(r){return r.sub===x;}).length;return '<div class="plsi" data-i="'+i+'"><input class="sn" value="'+esc(x)+'" maxlength="80" aria-label="Subject का नाम"><small>'+c+' rows</small><button class="btn alt sd" type="button">🗑 हटाएँ</button></div>';}).join('')+
+      '</div><div class="plsi"><input id="plnewsub" maxlength="80" placeholder="नया Subject जोड़ें" aria-label="नया Subject"><button class="btn" id="plnewsubb" type="button">➕ जोड़ें</button></div>';
+  }
+  function reportInto(el){
+    var x=stats(),by={},mon={},i,r,k,tdays=[],t=today();
+    S.rows.forEach(function(r){
+      k=r.sub||'(Subject नहीं)';by[k]=by[k]||{n:0,p:0,a:0,m:0};by[k].n++;if(r.at==='p')by[k].p++;if(r.at==='a')by[k].a++;by[k].m+=r.tot||0;
+      k=(r.month||'(Month नहीं)')+(r.year?' '+r.year:'');mon[k]=mon[k]||{n:0,p:0,a:0,m:0};mon[k].n++;if(r.at==='p')mon[k].p++;if(r.at==='a')mon[k].a++;mon[k].m+=r.tot||0;
+    });
+    function tbl(o,h){var s='<div class="plscroll"><table class="plrt"><thead><tr><th>'+h+'</th><th>Rows</th><th>Present</th><th>Absent</th><th>कुल समय</th><th>Present %</th></tr></thead><tbody>',kk;
+      for(kk in o)s+='<tr><td>'+esc(kk)+'</td><td>'+o[kk].n+'</td><td>'+o[kk].p+'</td><td>'+o[kk].a+'</td><td>'+(fmt(o[kk].m)||'00:00')+'</td><td>'+(o[kk].n?Math.round(o[kk].p*100/o[kk].n):0)+'%</td></tr>';return s+'</tbody></table></div>';}
+    var last=S.rows.filter(function(r){return r.date&&r.date<=t;}).sort(function(a,b){return a.date<b.date?-1:1;}).slice(-14),mx=1;
+    last.forEach(function(r){if((r.tot||0)>mx)mx=r.tot;});
+    var chart=last.length?'<div class="plchart">'+last.map(function(r){return '<div class="plcb" title="'+esc(r.date)+': '+(fmt(r.tot)||'00:00')+'"><i class="'+(r.at==='p'?'ok':(r.at==='a'?'bad':''))+'" style="height:'+Math.round((r.tot||0)*100/mx)+'%"></i><small>'+esc(r.date.slice(5))+'</small></div>';}).join('')+'</div>':'<p class="lead">अभी कोई दिन पूरा नहीं हुआ।</p>';
+    el.innerHTML='<h3>📈 Progress Report</h3><div class="plcards">'+
+      '<div class="plc ok"><b>'+x.pct+'%</b><span>कुल प्रगति (Present ÷ कुल दिन)</span></div><div class="plc"><b>'+x.att+'%</b><span>Attendance (Present ÷ चिह्नित दिन)</span></div>'+
+      '<div class="plc"><b>'+(fmt(x.mins)||'00:00')+'</b><span>कुल पढ़ाई</span></div><div class="plc"><b>'+(fmt(x.avg)||'00:00')+'</b><span>औसत समय (Present दिन)</span></div>'+
+      '<div class="plc"><b>'+x.cur+'</b><span>अभी की लगातार streak</span></div><div class="plc"><b>'+x.best+'</b><span>सबसे लंबी streak</span></div></div>'+
+      '<h4>पिछले दिनों की पढ़ाई (समय)</h4>'+chart+'<h4>Subject के अनुसार</h4>'+tbl(by,'Subject')+'<h4>Month के अनुसार</h4>'+tbl(mon,'Month');
+  }
+  /* ---------- actions ---------- */
+  function lastDate(){var d='';S.rows.forEach(function(r){if(r.date&&r.date>d)d=r.date;});return d||today();}
+  function extend(n){n=Math.max(1,Math.min(365,Math.floor(+n)||0));if(!n)return;var st=addDays(lastDate(),1),i;for(i=0;i<n;i++)S.rows.push(mkRow(addDays(st,i)));changed();renderBody();refreshSum();toast(n+' दिन और जुड़ गए।');}
+  function csv(){
+    var q=function(v){v=String(v==null?'':v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;},L=[COLS.map(function(c){return c[1];}).join(',')];
+    S.rows.forEach(function(r){L.push([r.sub,r.year,r.month,r.date,r.day,r.at==='a'?'Yes':'',r.at==='p'?'Yes':'',r.top,r.st,r.en,fmt(r.tot),r.rem].map(q).join(','));});
+    var b=new Blob(['\ufeff'+L.join('\r\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');
+    a.href=URL.createObjectURL(b);a.download='AK-NEST-EDU-90-day-routine.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+  }
+  function rowOf(el){var tr=el.closest('tr');if(!tr)return null;var id=tr.getAttribute('data-id'),i;for(i=0;i<S.rows.length;i++)if(S.rows[i].id===id)return {r:S.rows[i],i:i,tr:tr};return null;}
+  function onEdit(ev){
+    if(!root||!S)return;
+    var el=ev.target,o=rowOf(el);if(!o)return;var r=o.r,c=el.className,tr=o.tr,q=function(s){return tr.querySelector(s);};
+    if(/f-abs|f-pre/.test(c)){
+      var want=/f-abs/.test(c)?'a':'p';r.at=el.checked?want:'';
+      q('.f-abs').checked=r.at==='a';q('.f-pre').checked=r.at==='p';tr.classList.toggle('sp',r.at==='p');tr.classList.toggle('sa',r.at==='a');
+      changed();refreshSum();return;
+    }
+    if(/f-sub/.test(c)){r.sub=el.value;if(ev.type==='change'){root.querySelector('#pllists').innerHTML=lists();refillFilters();}}
+    else if(/f-year/.test(c))r.year=el.value===''?'':+el.value;
+    else if(/f-month/.test(c))r.month=el.value;
+    else if(/f-day/.test(c))r.day=el.value;
+    else if(/f-top/.test(c))r.top=el.value;
+    else if(/f-rem/.test(c))r.rem=el.value;
+    else if(/f-date/.test(c)){
+      r.date=el.value;var f=fromDate(r.date);
+      if(f){r.year=f.year;r.month=f.month;r.day=f.day;q('.f-year').value=f.year;q('.f-month').value=f.month;q('.f-day').value=f.day;}
+      tr.classList.toggle('st',r.date===today());
+    }
+    else if(/f-st|f-en/.test(c)){
+      if(/f-st/.test(c))r.st=el.value;else r.en=el.value;
+      var m=calc(r.st,r.en);if(m!==null||(!r.st&&!r.en)){r.tot=m;q('.f-tot').value=fmt(m);}
+    }
+    else if(/f-tot/.test(c)){
+      if(ev.type!=='change')return;
+      var v=parseTot(el.value);
+      if(v===undefined){el.value=fmt(r.tot);toast('समय ऐसे लिखिए: 1:30, 90, 1.5h या 1h30');return;}
+      r.tot=v;el.value=fmt(v);
+    }
+    changed();refreshSum();
+  }
+  function onClick(ev){
+    var b=ev.target.closest('button');if(!b)return;
+    if(b.classList.contains('del')||b.classList.contains('ins')){
+      var o=rowOf(b);if(!o)return;
+      if(b.classList.contains('del')){if(!confirm('इस row को delete करें?'))return;S.rows.splice(o.i,1);}
+      else S.rows.splice(o.i+1,0,mkRow(addDays(o.r.date,1)));
+      changed();renderBody();refreshSum();
+    }
+  }
+  function bindTop(){
+    var $r=function(id){return root.querySelector('#'+id);};
+    $r('plstart').value=S.start||'';$r('plgoal').value=(S.goal/60);
+    $r('plstart').onchange=function(){S.start=this.value;changed();};
+    $r('plgoal').onchange=function(){var h=parseFloat(this.value);if(!(h>0&&h<=16)){this.value=S.goal/60;return;}S.goal=Math.round(h*60);changed();refreshSum();};
+    $r('plnew').onclick=function(){
+      var st=$r('plstart').value||today();
+      if(!confirm('नया 90-दिन का plan '+st+' से बनेगा। अभी की सभी rows हट जाएँगी (Subjects वही रहेंगे)। पहले "Excel/CSV में Download" कर लेना चाहें तो Cancel दबाइए। आगे बढ़ें?'))return;
+      S.start=st;S.rows=build(st,90);changed();renderBody();refreshSum();toast('90 दिन की नई plan बन गई।');
+    };
+    $r('plext30').onclick=function(){extend(30);};
+    $r('plextb').onclick=function(){extend($r('plextn').value);};
+    $r('pladd').onclick=function(){S.rows.push(mkRow(addDays(lastDate(),1)));changed();renderBody();refreshSum();var w=root.querySelector('.plwrap');if(w)w.scrollTop=w.scrollHeight;};
+    $r('plsort').onclick=function(){S.rows.sort(function(a,b){return (a.date||'9999')<(b.date||'9999')?-1:((a.date||'9999')>(b.date||'9999')?1:0);});changed();renderBody();};
+    $r('plcsv').onclick=csv;
+    $r('plrepb').onclick=function(){var e=$r('plrep');e.hidden=!e.hidden;if(!e.hidden){reportInto(e);e.scrollIntoView({block:'nearest'});}};
+    $r('plsubb').onclick=function(){var e=$r('plsubs');e.hidden=!e.hidden;if(!e.hidden)subsInto(e);};
+    var sp=$r('plsubs');
+    sp.addEventListener('change',function(ev){
+      if(!ev.target.classList.contains('sn'))return;
+      var i=+ev.target.closest('.plsi').getAttribute('data-i'),old=S.subs[i],nv=ev.target.value.trim();
+      if(!nv||S.subs.indexOf(nv)>=0&&nv!==old){ev.target.value=old;return;}
+      S.subs[i]=nv;S.rows.forEach(function(r){if(r.sub===old)r.sub=nv;});changed();subsInto(sp);renderBody();refreshSum();$r('pllists').innerHTML=lists();refillFilters();
+    });
+    sp.addEventListener('click',function(ev){
+      var b=ev.target.closest('button');if(!b)return;
+      if(b.id==='plnewsubb'){var v=$r('plnewsub').value.trim();if(!v||S.subs.indexOf(v)>=0)return;S.subs.push(v);changed();subsInto(sp);$r('pllists').innerHTML=lists();refillFilters();return;}
+      if(b.classList.contains('sd')){
+        var i=+b.closest('.plsi').getAttribute('data-i'),old=S.subs[i],c=S.rows.filter(function(r){return r.sub===old;}).length;
+        if(!confirm('Subject "'+old+'" हटाएँ?'+(c?' इसकी '+c+' rows का Subject खाली हो जाएगा (rows delete नहीं होंगी)।':'')))return;
+        S.subs.splice(i,1);S.rows.forEach(function(r){if(r.sub===old)r.sub='';});changed();subsInto(sp);renderBody();refreshSum();$r('pllists').innerHTML=lists();refillFilters();
+      }
+    });
+    $r('plq').oninput=function(){flt.q=this.value;renderBody();};
+    $r('plfs').onchange=function(){flt.sub=this.value;renderBody();};
+    $r('plfm').onchange=function(){flt.mon=this.value;renderBody();};
+    $r('plft').onchange=function(){flt.st=this.value;renderBody();};
+    $r('plff').onchange=function(){flt.from=this.value;renderBody();};
+    $r('plfe').onchange=function(){flt.to=this.value;renderBody();};
+    $r('plclr').onclick=function(){flt={q:'',sub:'',mon:'',st:'',from:'',to:''};$r('plq').value='';$r('plfs').value='';$r('plfm').value='';$r('plft').value='';$r('plff').value='';$r('plfe').value='';renderBody();};
+    $r('pltoday').onclick=function(){
+      flt={q:'',sub:'',mon:'',st:'',from:'',to:''};['plq','plfs','plfm','plft','plff','plfe'].forEach(function(i){$r(i).value='';});renderBody();
+      var tr=root.querySelector('tr.st');if(tr){tr.scrollIntoView({block:'center'});tr.classList.add('flash');setTimeout(function(){tr.classList.remove('flash');},1400);}else toast('आज की तारीख़ की row इस plan में नहीं है।');
+    };
+    var tb=root.querySelector('tbody');
+    tb.addEventListener('input',onEdit);tb.addEventListener('change',onEdit);tb.addEventListener('click',onClick);
+  }
+  function refillFilters(){var o=filterOpts(),f=root.querySelector('#plfs'),v=f.value;f.innerHTML=o.sub;f.value=v;}
+  /* ---------- open / close ---------- */
+  function mount(el){
+    root=el;uid=me?me.id:'local';
+    app.classList.add('wide');
+    root.innerHTML='<div class="pl"><div class="plhead"><div><h2>📊 90 Days Study Routine Planner</h2></div><span id="plst" class="plst"></span></div></div>';
+    setStat('loading');
+    var local=get('plan',null);if(local&&(!local.rows||!Array.isArray(local.rows)))local=null;
+    var token=++busyTok;
+    loadCloud().then(function(c){
+      if(token!==busyTok||!root||!root.isConnected)return;
+      var cloud=c&&c.data?c.data:null,use=null,after=null;
+      if(c&&c.err){S=local||fresh();use='local';after=missing(c.err)?'nosetup':(navigator.onLine===false?'offline':'err');}
+      else if(cloud){
+        if(local&&local.dirty&&(local.ts||0)>=(cloud.ts||0)){S=local;after='push';}
+        else{S=cloud;S.dirty=false;S.uid=uid;put('plan',S);after='saved';}
+      }else{S=local||fresh();after=(sb&&me)?'push':'local';}
+      if(!S.subs)S.subs=SUBJ.map(function(x){return x[1];});if(!S.goal)S.goal=120;
+      root.innerHTML=html();bindTop();renderBody();refreshSum();
+      saveLocal();if(S.dirty===undefined)S.dirty=false;
+      if(after==='push'){S.dirty=true;saveLocal();setStat('saving');push();}
+      else if(after==='saved'&&!S.dirty)setStat('saved');
+      else if(after==='local')setStat('local');
+      else setStat(after||'local');
+      var t=root.querySelector('#plst');if(t)paintStat(t);
+    });
+  }
+  var busyTok=0;
+  function unmount(){busyTok++;app.classList.remove('wide');if(S&&(timer||S.dirty))push();root=null;}
+  function reset(){clearTimeout(timer);timer=0;S=null;root=null;busyTok++;}
+  document.addEventListener('visibilitychange',function(){if(document.hidden&&S&&(timer||S.dirty))push();});
+  window.addEventListener('pagehide',function(){if(S&&(timer||S.dirty))push();});
+  window.addEventListener('online',function(){if(S&&S.dirty&&sb&&me)push();});
+  return {mount:mount,unmount:unmount,reset:reset,flushNow:flushNow,stats:function(){return S?stats():null;},state:function(){return S;}};
 })();
 
 /* ===================== Automatic Indian festival system (Indian Standard Time) =====================
