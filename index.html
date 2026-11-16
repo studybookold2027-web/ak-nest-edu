@@ -7,7 +7,7 @@
 <meta name="application-name" content="AK NEST EDU">
 <meta name="apple-mobile-web-app-title" content="AK NEST EDU">
 <meta name="description" content="AK NEST EDU: Learn • Grow • Succeed. पढ़ाई, Routine, Typing Practice और Online Test एक ही जगह।">
-<meta name="theme-color" content="#2E2FB8">
+<meta name="theme-color" content="#0F172A">
 <meta property="og:site_name" content="AK NEST EDU">
 <meta property="og:title" content="AK NEST EDU">
 <meta property="og:description" content="Learn • Grow • Succeed">
@@ -230,6 +230,299 @@ table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 8px
 .toast button{background:#fff;color:#1E40AF;border:0;border-radius:8px;padding:6px 12px;font:600 .95rem Hind,sans-serif;cursor:pointer}
 footer{text-align:center;color:var(--mute);padding:20px;font-size:.9rem}
 .msg{color:var(--mute);min-height:1.5em}
+
+
+/* ============================================
+   AK NEST EDU — PREMIUM UI REFRESH
+   Existing page IDs and app functionality kept
+============================================ */
+:root{
+  --bg:#F6F8FC;--ink:#17243B;--mute:#64748B;--card:#FFFFFF;--line:#E2E8F0;
+  --pri:#2563EB;--priink:#FFFFFF;--acc:#0F766E;--ok:#15803D;--bad:#B91C1C;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#0B1220;--ink:#E5EDF8;--mute:#9AAAC0;--card:#121D2E;--line:#26364B;
+  --pri:#60A5FA;--priink:#071426;--acc:#2DD4BF;--ok:#4ADE80;--bad:#F87171;
+  color-scheme:dark;
+}
+body{font-family:Inter,"Segoe UI",Hind,system-ui,sans-serif;font-size:16px;line-height:1.65;background:var(--bg);color:var(--ink);transition:background .2s ease,color .2s ease}
+.mainwrap{min-height:100vh}
+.side{background:#0F172A;color:#DCE7F5;box-shadow:8px 0 28px rgba(15,23,42,.16)}
+.sbrand{border-bottom:1px solid #26364B;padding:18px 16px}
+.side .logo{color:#F8FAFC}
+.side .logo .lg,.logo .lg,.authbrand .lg{background:#2563EB;border-radius:12px;box-shadow:none}
+#nav{padding:10px 12px 16px;gap:5px}
+.ng{color:#91A4BE;font-size:.68rem;letter-spacing:.12em;padding:15px 12px 6px}
+#nav a{gap:12px;padding:10px 12px;margin:2px 0;border-radius:10px;color:#CBD5E1;font-size:.96rem}
+#nav a:hover{background:#1E293B;color:#fff}
+#nav a[aria-current="page"]{background:#1D3556;color:#fff;box-shadow:inset 3px 0 0 #60A5FA}
+.ni{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;font-size:1.08rem;color:#9DB7D8;filter:none;animation:none!important}
+.ngw.last{background:#0F172A;border-top:1px solid #26364B}
+.mtop{padding:10px 18px;gap:14px;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(15,23,42,.035)}
+.logo{color:#17243B;font-size:1.18rem;gap:10px}
+.logo .lg{width:40px;height:40px;color:#fff}
+#mbtn{border:1px solid var(--line);border-radius:10px;background:var(--surface, var(--card));font-size:1.2rem}
+.theme-toggle{margin-left:auto;width:40px;height:40px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);font-size:1.25rem;cursor:pointer}
+main{max-width:1180px;margin:0 auto;padding:28px 22px 48px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#10213B 0%,#173B67 58%,#1D4ED8 100%);color:#fff;border:1px solid rgba(96,165,250,.22);border-radius:22px;padding:clamp(28px,5vw,56px);margin-bottom:22px;box-shadow:0 14px 36px rgba(15,35,65,.13)}
+.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.10);border-radius:50%;right:-90px;top:-115px;box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.02);pointer-events:none}
+.hero h1{font-size:clamp(2.2rem,6vw,3.5rem);letter-spacing:-.035em;line-height:1.12;margin:12px 0;color:#fff}
+.hero .tl{font-size:1.12rem;color:#D5E5FA;font-weight:600}
+.hero p{color:#DCE8F7;max-width:680px}
+.tag{background:#DCEAFE;color:#173B67;padding:5px 14px;font-size:.84rem;letter-spacing:.04em}
+.btn{background:var(--pri);color:#fff;border-radius:10px;padding:11px 18px;font-weight:600;box-shadow:0 3px 9px rgba(37,99,235,.14);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 7px 16px rgba(37,99,235,.18)}
+.hero .btn{background:#fff;color:#173B67}.hero .btn.alt{background:transparent;color:#fff;border-color:rgba(255,255,255,.65)}
+.grid{gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 5px 18px rgba(15,23,42,.035);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+a.card:hover{border-color:#93B4E8;transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,23,42,.08)}
+.card .ic{display:inline-flex;align-items:center;justify-content:center;min-width:42px;min-height:42px;padding:7px;border-radius:12px;background:#EFF6FF;color:#1D4ED8;font-size:1.5rem;filter:grayscale(.75);animation:none!important}
+:root[data-theme="dark"] .card .ic{background:#1E3552;color:#93C5FD}
+h2,h3{letter-spacing:-.015em}
+h2{font-size:clamp(1.45rem,3vw,2rem)}
+.lead{color:var(--mute)}
+input,select,textarea{background:var(--card);border-color:var(--line);border-radius:10px}
+.clock{background:linear-gradient(120deg,#16365E,#2457A6);border:1px solid rgba(255,255,255,.12);border-radius:18px;box-shadow:0 10px 26px rgba(25,67,125,.14)}
+.fb{background:linear-gradient(120deg,#EFF6FF,#E0F2FE)!important;color:#173B67!important;border:1px solid #BFDBFE;border-radius:16px;box-shadow:none;animation:none!important}
+.fhi{background:none!important;color:#1D4ED8!important;-webkit-text-fill-color:#1D4ED8!important;filter:none!important;animation:none!important;text-shadow:none}
+.fen,.fn{color:#254568!important;text-shadow:none!important}
+.fi,.fb .sp{display:none!important}
+html.fest .ni,html.fest .lg,html.fest .card .ic{animation:none!important;filter:none!important;box-shadow:none!important}
+#fx,html.fx-on #fx{display:none!important}
+footer{border-top:1px solid var(--line);background:var(--card);color:var(--mute);margin-top:20px}
+:root[data-theme="dark"] .hero{background:linear-gradient(125deg,#101C30,#17365A 58%,#1E40AF)}
+:root[data-theme="dark"] .fb{background:linear-gradient(120deg,#172A43,#1C3553)!important;border-color:#2D4C70}
+:root[data-theme="dark"] .fhi{color:#93C5FD!important;-webkit-text-fill-color:#93C5FD!important}
+:root[data-theme="dark"] .fen,:root[data-theme="dark"] .fn{color:#D7E7FA!important}
+@media(min-width:900px){.mainwrap{margin-left:272px}.side{transform:none;visibility:visible}.mtop{position:sticky}.mainwrap main{padding-top:34px}}
+@media(max-width:600px){main{padding:18px 14px 36px}.hero{padding:28px 20px;border-radius:18px}.hero p{font-size:1rem}.mtop{padding:9px 12px}.logo{font-size:1.03rem}.card{padding:17px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+
+/* ---- Premium refinement v2: stronger contrast, calmer surfaces ---- */
+.mtop .logo{color:var(--ink)!important}
+.mtop .logo .lg{background:#2563EB!important;color:#fff!important}
+:root[data-theme="dark"] .mtop .logo{color:#F1F5F9!important}
+:root[data-theme="dark"] .mtop .theme-toggle{background:#172538;color:#E5EDF8;border-color:#33465F}
+.hero{background:linear-gradient(115deg,#13243B 0%,#18385D 68%,#214A83 100%);box-shadow:0 10px 28px rgba(15,35,65,.10)}
+.hero:after{opacity:.45}
+.hero .tag,html.fest .hero .tag{box-shadow:none!important;text-shadow:none!important}
+.hero .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center}
+.clock{background:#17365B!important;border:1px solid #2B4B70!important;box-shadow:0 8px 22px rgba(15,35,65,.10)!important}
+.clock .u{background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.08)}
+.fb{box-shadow:0 5px 16px rgba(15,35,65,.08)!important}
+:root[data-theme="dark"] .fb{background:#172A43!important;border-color:#2D4C70!important}
+.card{box-shadow:0 3px 12px rgba(15,23,42,.025)}
+@media(max-width:600px){.mtop .logo{font-size:1rem}.hero .btn{width:100%;min-height:50px}.clock{padding:18px 10px}}
+
+
+/* ===== AK NEST EDU Premium navigation refinement ===== */
+:root{--bg:#F8FAFC;--ink:#14213D;--mute:#64748B;--card:#FFFFFF;--line:#E2E8F0;--pri:#2563EB;--priink:#FFFFFF;--acc:#14B8A6;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0B1120;--ink:#E2E8F0;--mute:#A1AEC0;--card:#111C2E;--line:#26364D;--pri:#60A5FA;--priink:#0B1120;--acc:#2DD4BF;color-scheme:dark}
+.side{background:#0F172A;color:#E2E8F0;box-shadow:8px 0 28px rgba(2,6,23,.22)}
+.sbrand{min-height:76px;padding:16px 16px;border-bottom:1px solid #26364D}
+.side .logo{color:#F8FAFC;font-size:1.08rem;letter-spacing:.01em}
+.logo .lg{background:#2563EB;border-radius:13px;box-shadow:none}
+.side .logo .lg{background:#2563EB}
+.sclose{background:#1E293B;color:#E2E8F0;border:1px solid #334155;width:40px;height:40px}
+#nav{padding:12px 12px 24px;gap:4px;overscroll-behavior:contain;scrollbar-color:#475569 transparent}
+.ngw.last{margin-top:0;position:static;background:transparent;border-top:1px solid #26364D;padding:8px 0 4px}
+.ng{color:#94A3B8;font-size:.72rem;letter-spacing:.08em;padding:16px 12px 7px}
+#nav a{min-height:46px;padding:10px 12px;margin:2px 0;gap:13px;border-radius:11px;color:#CBD5E1;font-size:.98rem;font-weight:500}
+#nav a:hover{background:#1E293B;color:#F8FAFC}
+#nav a[aria-current="page"]{background:#1E3A5F;color:#FFFFFF;box-shadow:inset 3px 0 0 #60A5FA;font-weight:650}
+.ni{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;color:#94A3B8;font-size:1rem}
+#nav a[aria-current="page"] .ni{color:#93C5FD}
+.nav-sub{margin:0 0 6px 37px;padding:2px 0 2px 13px;border-left:1px solid #334155}
+#nav .nav-sub a{min-height:36px;padding:7px 10px;font-size:.9rem;color:#AFC0D4;border-radius:8px}
+#nav .nav-sub a[aria-current="page"]{background:#172B45;color:#FFFFFF;box-shadow:none}
+.subdot{width:6px;height:6px;border-radius:50%;background:#64748B;flex:none}
+#nav .nav-sub a[aria-current="page"] .subdot{background:#60A5FA}
+.mtop{background:var(--card);border-color:var(--line)}
+.mtop .logo{color:var(--ink)}
+.mtop .logo .lg{background:#2563EB}
+#mbtn{border-color:var(--line);border-radius:12px}
+.theme-toggle{border:1px solid var(--line);border-radius:12px}
+#scrim{background:rgba(2,6,23,.58);backdrop-filter:blur(2px)}
+@media(max-height:700px){.sbrand{min-height:64px;padding-top:10px;padding-bottom:10px}#nav{padding-top:6px;padding-bottom:12px}.ng{padding-top:10px}}
+@media(prefers-reduced-motion:reduce){.side,#nav a{transition:none!important}}
+
+
+/* ===== AK NEST EDU — First Premium Concept (v4) ===== */
+:root{
+  --bg:#F8FAFC;--ink:#14213D;--mute:#64748B;--card:#FFFFFF;--line:#E2E8F0;
+  --pri:#2563EB;--priink:#FFFFFF;--acc:#14B8A6;--ok:#16A34A;--bad:#DC2626;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#0B1120;--ink:#E2E8F0;--mute:#A1AEC0;--card:#111C2E;--line:#26364D;
+  --pri:#60A5FA;--priink:#0B1120;--acc:#2DD4BF;--ok:#4ADE80;--bad:#F87171;
+  color-scheme:dark;
+}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:Inter,"Noto Sans Devanagari","Segoe UI",system-ui,sans-serif;line-height:1.65}
+.mtop{background:var(--card)!important;border-bottom:1px solid var(--line)!important;box-shadow:0 2px 12px rgba(15,23,42,.045)!important}
+.mtop .logo{color:var(--ink)!important;font-weight:800;letter-spacing:-.02em}
+.mtop .logo .lg,.side .logo .lg{background:#2563EB!important;border-radius:13px!important;box-shadow:none!important}
+#mbtn,.theme-toggle{background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:12px!important;min-width:42px;min-height:42px}
+.side{background:#0F172A!important;color:#E2E8F0!important;box-shadow:8px 0 28px rgba(2,6,23,.20)!important}
+.sbrand{border-bottom:1px solid #26364D!important}
+.side .logo{color:#F8FAFC!important}
+.sclose{background:#1E293B!important;color:#E2E8F0!important;border:1px solid #334155!important}
+#nav{scrollbar-color:#475569 transparent!important}
+.ng{color:#94A3B8!important}
+#nav a{color:#CBD5E1!important;border-radius:11px!important}
+#nav a:hover{background:#1E293B!important;color:#F8FAFC!important}
+#nav a[aria-current="page"]{background:#1E3A5F!important;color:#fff!important;box-shadow:inset 3px 0 0 #60A5FA!important}
+#nav a .ni{color:#94A3B8!important}
+#nav a[aria-current="page"] .ni{color:#93C5FD!important}
+.ngw.last{background:transparent!important;border-top:1px solid #26364D!important}
+main{max-width:1180px!important;padding:30px 22px 48px!important}
+.hero{background:linear-gradient(125deg,#10213B 0%,#173B67 58%,#1D4ED8 100%)!important;color:#fff!important;border:1px solid rgba(96,165,250,.24)!important;border-radius:22px!important;padding:clamp(30px,5vw,58px)!important;box-shadow:0 14px 36px rgba(15,35,65,.13)!important}
+.hero:after{opacity:.22!important}
+.hero h1{color:#fff!important;letter-spacing:-.035em!important}
+.hero .tag{background:#DCEAFE!important;color:#173B67!important;box-shadow:none!important;text-shadow:none!important;border-radius:999px!important;padding:7px 17px!important;font-weight:700!important}
+.hero .tl{color:#D5E5FA!important}
+.hero p{color:#DCE8F7!important;max-width:760px!important}
+.hero .btn{background:#fff!important;color:#173B67!important;border:1px solid #fff!important;border-radius:12px!important;box-shadow:none!important;font-weight:700!important;padding:13px 20px!important}
+.hero .btn.alt{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.65)!important}
+.hero .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.14)!important}
+.fb{background:linear-gradient(120deg,#EFF6FF,#E0F2FE)!important;color:#173B67!important;border:1px solid #BFDBFE!important;border-radius:18px!important;box-shadow:none!important;animation:none!important}
+.fhi{color:#1D4ED8!important;-webkit-text-fill-color:#1D4ED8!important;text-shadow:none!important;filter:none!important;animation:none!important}
+.fen,.fn{color:#254568!important;text-shadow:none!important}
+.fi,.fb .sp{display:none!important}
+.clock{background:linear-gradient(125deg,#142E4D,#1D4778)!important;color:#fff!important;border:1px solid #2B4B70!important;border-radius:20px!important;box-shadow:0 10px 26px rgba(25,67,125,.12)!important}
+.clock .lbl,.clock .u small{color:#D5E5FA!important}
+.clock .u{background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.10)!important;border-radius:14px!important}
+.clock .ap{background:#fff!important;color:#1D4ED8!important;border-radius:10px!important}
+.card{background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:16px!important;box-shadow:0 4px 16px rgba(15,23,42,.045)!important;padding:20px!important}
+.card p{color:var(--mute)!important}
+.card:hover{border-color:#93C5FD!important;transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,23,42,.08)!important}
+.btn:not(.hero .btn){border-radius:11px!important}
+footer{background:var(--card)!important;color:var(--mute)!important;border-top:1px solid var(--line)!important}
+:root[data-theme="dark"] .fb{background:linear-gradient(120deg,#172A43,#1C3553)!important;border-color:#2D4C70!important;color:#E2E8F0!important}
+:root[data-theme="dark"] .fhi{color:#93C5FD!important;-webkit-text-fill-color:#93C5FD!important}
+:root[data-theme="dark"] .fen,:root[data-theme="dark"] .fn{color:#D7E7FA!important}
+:root[data-theme="dark"] .card{background:#111C2E!important;border-color:#26364D!important;color:#E2E8F0!important}
+:root[data-theme="dark"] .card p{color:#A1AEC0!important}
+:root[data-theme="dark"] .clock{background:linear-gradient(125deg,#14243A,#18365A)!important;border-color:#2D4C70!important}
+@media(max-width:600px){main{padding:18px 14px 36px!important}.hero{padding:28px 20px!important;border-radius:18px!important}.hero .btn{width:100%;min-height:52px}.clock{padding:18px 10px!important}.mtop{padding:9px 12px!important}.card{padding:17px!important}}
+@media(min-width:900px){main{padding-top:34px!important}}
+@media(prefers-reduced-motion:reduce){.hero .btn,.card{transition:none!important}}
+
+
+/* ===== AK NEST EDU Premium v5: consistent, restrained visual system ===== */
+:root{--bg:#F5F8FD;--ink:#14213D;--mute:#64748B;--card:#FFFFFF;--line:#E2E8F0;--pri:#2563EB;--priink:#FFFFFF;--acc:#F59E0B;--ok:#16A34A;--bad:#DC2626;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0B1220;--ink:#E5EDF8;--mute:#9AABC0;--card:#111C2E;--line:#26364D;--pri:#60A5FA;--priink:#081426;--acc:#FBBF24;--ok:#4ADE80;--bad:#F87171;color-scheme:dark}
+html,body{background:var(--bg)!important;color:var(--ink)!important}
+body{font-family:Inter,"Noto Sans Devanagari","Segoe UI",system-ui,sans-serif;line-height:1.65}
+.mtop{min-height:72px;padding:10px 16px!important;background:var(--card)!important;border-bottom:1px solid var(--line)!important;box-shadow:0 3px 14px rgba(15,23,42,.045)!important}
+.mtop .logo{font-weight:800;letter-spacing:-.025em;color:var(--ink)!important}
+.mtop .logo .lg,.side .logo .lg{background:#2563EB!important;border-radius:14px!important;box-shadow:none!important}
+#mbtn,.theme-toggle{width:44px!important;height:44px!important;min-width:44px;min-height:44px;background:var(--card)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:13px!important}
+.side{background:#101B30!important;color:#E5EDF8!important;box-shadow:12px 0 34px rgba(2,6,23,.20)!important}
+.sbrand{min-height:76px;border-bottom:1px solid #26364D!important}
+.side .logo{color:#F8FAFC!important}
+.sclose{background:#1D2B42!important;color:#E5EDF8!important;border:1px solid #34465F!important;border-radius:12px!important}
+#nav{padding:12px 12px 22px!important;gap:4px!important;scrollbar-color:#475569 transparent!important}
+.ng{color:#91A4BE!important;font-size:.72rem!important;letter-spacing:.09em!important;padding:15px 12px 6px!important}
+#nav a{min-height:47px;padding:10px 12px!important;border-radius:12px!important;color:#CBD7E6!important;gap:13px!important}
+#nav a:hover{background:#1D2B42!important;color:#fff!important}
+#nav a[aria-current="page"]{background:#1E3A5F!important;color:#fff!important;box-shadow:inset 3px 0 0 #60A5FA!important}
+#nav a .ni{color:#91A4BE!important}#nav a[aria-current="page"] .ni{color:#93C5FD!important}
+.nav-sub{border-left-color:#34465F!important}.ngw.last{background:transparent!important;border-top:1px solid #26364D!important}
+main{max-width:1160px!important;padding:30px 22px 48px!important}
+.fb{padding:16px 20px!important;margin:0 0 22px!important;border-radius:18px!important;background:linear-gradient(135deg,#EFF6FF,#E0F2FE)!important;color:#1E3A5F!important;border:1px solid #BFDBFE!important;box-shadow:0 8px 24px rgba(30,64,175,.06)!important;animation:none!important}
+.fhi{font-size:clamp(1.65rem,5.8vw,2.7rem)!important;color:#1D4ED8!important;background:none!important;-webkit-text-fill-color:#1D4ED8!important;filter:none!important;text-shadow:none!important;animation:none!important}
+.fen{font-size:clamp(1.1rem,3.8vw,1.65rem)!important;color:#24466D!important;text-shadow:none!important}
+.fn{color:#355675!important}
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#10213B 0%,#173B67 62%,#2455A5 100%)!important;color:#F8FAFC!important;border:1px solid rgba(96,165,250,.25)!important;border-radius:24px!important;padding:clamp(30px,5vw,58px)!important;margin-bottom:24px!important;box-shadow:0 16px 40px rgba(15,35,65,.12)!important}
+.hero:after{opacity:.16!important}
+.hero .tag{display:inline-flex;align-items:center;background:#E7F0FF!important;color:#1D416C!important;border-radius:999px!important;padding:8px 18px!important;font-size:.82rem!important;font-weight:800!important;letter-spacing:.07em!important;box-shadow:none!important;text-shadow:none!important;margin-bottom:18px!important}
+.hero h1{font-size:clamp(2.15rem,6vw,3.25rem)!important;line-height:1.12!important;letter-spacing:-.035em!important;margin:8px 0 12px!important;color:#fff!important}
+.hero .tl{font-size:clamp(1.1rem,3.4vw,1.55rem)!important;font-weight:650!important;color:#D8E7FA!important;margin:0 0 12px!important}
+.hero p{max-width:760px!important;color:#DCE8F7!important;font-size:clamp(1rem,2.6vw,1.18rem)!important;margin:8px 0 20px!important}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero .btn{display:inline-flex!important;align-items:center;justify-content:center;gap:10px;min-height:54px!important;margin:0!important;padding:13px 20px!important;border-radius:13px!important;font-weight:700!important;background:#fff!important;color:#173B67!important;border:1px solid #fff!important;box-shadow:0 5px 14px rgba(2,6,23,.10)!important;transition:transform .18s ease,box-shadow .18s ease!important}
+.hero .btn.alt{background:rgba(255,255,255,.045)!important;color:#F8FAFC!important;border:1px solid rgba(219,234,254,.58)!important;box-shadow:none!important}
+.hero .btn:hover{transform:translateY(-2px);box-shadow:0 9px 20px rgba(2,6,23,.16)!important}
+.ui-icon{display:block;flex:none}.home-grid{margin-top:18px!important}.home-card{position:relative;min-height:150px;padding:22px!important;border-radius:17px!important;border:1px solid var(--line)!important;background:var(--card)!important;box-shadow:0 5px 18px rgba(15,23,42,.035)!important;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease!important}
+.home-card:hover{transform:translateY(-3px);border-color:#93C5FD!important;box-shadow:0 12px 26px rgba(37,99,235,.09)!important}
+.home-card .ic{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:13px;background:#EFF6FF;color:#2563EB;font-size:1rem!important;animation:none!important;box-shadow:none!important}
+.home-card h3{margin:12px 0 3px!important;font-size:1.08rem!important;color:var(--ink)!important}.home-card p{color:var(--mute)!important}
+.card-arrow{position:absolute;right:20px;top:25px;color:#94A3B8;font-size:1.25rem}
+.clock{background:linear-gradient(135deg,#FFFFFF 0%,#EAF3FF 100%)!important;color:#173B67!important;border:1px solid #C9DCF5!important;border-radius:20px!important;padding:20px 16px!important;margin:24px 0!important;box-shadow:0 8px 24px rgba(30,64,175,.055)!important}
+.clock .lbl{color:#55708F!important;font-size:.8rem!important;font-weight:700!important;letter-spacing:.09em!important}
+.clock .u{background:#DCEAFE!important;border:1px solid #C5DAF6!important;border-radius:14px!important;padding:10px 12px!important;min-width:76px!important}
+.clock .u b{color:#173B67!important}.clock .u small{color:#526D8B!important}.clock .ap{background:#2563EB!important;color:#fff!important;border-radius:10px!important;margin-bottom:10px!important}
+.clock>div:last-child{color:#24466D!important;margin-top:10px!important}
+#app>h3{margin:28px 0 8px!important;font-size:1.35rem!important;color:var(--ink)!important}
+.card{border-radius:16px!important;border-color:var(--line)!important;box-shadow:0 4px 16px rgba(15,23,42,.025)!important}
+footer{background:var(--card)!important;color:var(--mute)!important;border-top:1px solid var(--line)!important}
+:root[data-theme="dark"] .fb{background:linear-gradient(135deg,#172A43,#1B3554)!important;border-color:#2D4C70!important;color:#E5EDF8!important}
+:root[data-theme="dark"] .fhi{color:#93C5FD!important;-webkit-text-fill-color:#93C5FD!important}
+:root[data-theme="dark"] .fen,:root[data-theme="dark"] .fn{color:#D7E7FA!important}
+:root[data-theme="dark"] .hero{background:linear-gradient(125deg,#101B30 0%,#142D4B 62%,#173D78 100%)!important}
+:root[data-theme="dark"] .home-card{background:#111C2E!important;border-color:#26364D!important}
+:root[data-theme="dark"] .home-card .ic{background:#1B3554!important;color:#93C5FD!important}
+:root[data-theme="dark"] .clock{background:linear-gradient(135deg,#14243A,#18365A)!important;border-color:#2D4C70!important;color:#E5EDF8!important}
+:root[data-theme="dark"] .clock .lbl,:root[data-theme="dark"] .clock>div:last-child{color:#C6D8EF!important}
+:root[data-theme="dark"] .clock .u{background:#284563!important;border-color:#365777!important}
+:root[data-theme="dark"] .clock .u b,:root[data-theme="dark"] .clock .u small{color:#F1F6FC!important}
+@media(max-width:640px){main{padding:20px 14px 36px!important}.hero{padding:28px 20px!important;border-radius:20px!important}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px}.hero .btn{width:100%;min-height:54px!important}.fb{padding:15px 12px!important}.clock{padding:18px 10px!important}.clock .hms{gap:7px}.clock .u{min-width:65px!important;padding:9px 8px!important}.clock .u b{font-size:2.35rem!important}.mtop{padding:9px 12px!important}.home-card{min-height:130px;padding:17px!important}}
+@media(min-width:900px){.hero-actions{gap:14px}.hero .btn{min-width:190px}}
+@media(prefers-reduced-motion:reduce){.hero .btn,.home-card{transition:none!important}}
+
+
+/* Excel Manager */
+.excel-drop{border:2px dashed var(--line);border-radius:18px;padding:24px 16px;text-align:center;background:var(--card)}
+.excel-drop .xl-mark{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:14px;background:#16834A;color:#fff;font-weight:800;font-size:25px;margin-bottom:8px}
+.excel-toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:14px 0}
+.excel-table-wrap{overflow:auto;max-height:65vh;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.excel-table{border-collapse:collapse;width:max-content;min-width:100%;font-size:14px}
+.excel-table th,.excel-table td{border:1px solid var(--line);padding:8px 11px;text-align:left;white-space:pre-wrap;max-width:260px;overflow-wrap:anywhere}
+.excel-table th{background:var(--bg);font-weight:700;position:sticky;top:0;z-index:1}
+.excel-note{font-size:13px;color:var(--mute)}
+.excel-table td[contenteditable="true"]{min-width:105px;min-height:38px;background:var(--card);outline:none;cursor:text;user-select:text;-webkit-user-select:text}
+.excel-table td[contenteditable="true"]:focus,.excel-table td.xl-selected{outline:2px solid var(--pri);outline-offset:-2px}
+.excel-color-tool{display:flex;align-items:center;gap:6px;padding:7px 9px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:13px;color:var(--text)}
+.excel-color-tool input[type="color"]{width:30px;height:28px;border:0;padding:0;background:transparent;cursor:pointer}
+.excel-palette{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.excel-swatch{width:28px;height:28px;border:1px solid #94a3b8;border-radius:8px;cursor:pointer;padding:0}
+.excel-table td.xl-selected{box-shadow:inset 0 0 0 1px var(--pri)}
+.excel-table .xl-rowhead{position:sticky;left:0;background:var(--bg);font-weight:700;min-width:42px;text-align:center;color:var(--mute)}
+.excel-toolbar .btn{white-space:nowrap}
+.excel-save-state{font-size:13px;color:var(--ok);min-height:20px}
+@media(max-width:640px){.excel-toolbar{gap:7px}.excel-toolbar .btn{flex:1 1 135px;font-size:14px;padding:9px 10px}.excel-table td[contenteditable="true"]{min-width:115px}}
+
+
+/* ===== AK NEST EDU verified update: transparent Home festival banner + site-wide animation ===== */
+.fb{
+  background:transparent!important;
+  color:var(--ink)!important;
+  border:1px solid color-mix(in srgb,var(--fa,#60A5FA) 48%,transparent)!important;
+  box-shadow:0 5px 18px rgba(15,35,65,.055)!important;
+  backdrop-filter:blur(2px);
+  animation:fbpulse 3.4s ease-in-out infinite!important;
+}
+.fhi{
+  color:var(--fa,#2563EB)!important;
+  background:none!important;
+  -webkit-text-fill-color:var(--fa,#2563EB)!important;
+  filter:drop-shadow(0 0 5px color-mix(in srgb,var(--fa,#2563EB) 24%,transparent))!important;
+  text-shadow:none!important;
+  animation:shim 5s linear infinite!important;
+}
+.fen,.fn{color:var(--ink)!important;text-shadow:none!important}
+.fi{display:block!important}
+.fb .sp{display:block!important}
+#fx{display:none}
+html.fx-on #fx{display:block!important}
+:root[data-theme="dark"] .fb{background:transparent!important;border-color:color-mix(in srgb,var(--fa,#93C5FD) 55%,transparent)!important}
+:root[data-theme="dark"] .fhi{color:var(--fa,#93C5FD)!important;-webkit-text-fill-color:var(--fa,#93C5FD)!important}
+@media(prefers-reduced-motion:reduce){.fb,.fhi,.fi i,.fb .sp{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -239,17 +532,18 @@ footer{text-align:center;color:var(--mute);padding:20px;font-size:.9rem}
   <nav id="nav" aria-label="Main"></nav>
 </aside>
 <div class="mainwrap">
-  <header class="mtop"><button id="mbtn" type="button" aria-label="Menu खोलें" aria-expanded="false" aria-controls="side">☰</button><a class="logo" href="#home"><span class="lg" aria-hidden="true">AK</span><span>AK NEST EDU</span></a></header>
+  <header class="mtop"><button id="mbtn" type="button" aria-label="Menu खोलें" aria-expanded="false" aria-controls="side">☰</button><a class="logo" href="#home"><span class="lg" aria-hidden="true">AK</span><span>AK NEST EDU</span></a><button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Light / Dark mode">◐</button></header>
   <main id="app"></main>
   <footer>© AK NEST EDU · Learn • Grow • Succeed</footer>
 </div>
 </div>
 <div id="scrim" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.78.0/dist/umd/supabase.js"></script>
 <script>window.supabase||document.write('<script src="https://unpkg.com/@supabase/supabase-js@2.78.0/dist/umd/supabase.js"><\/script>');</script>
 <script>
 var EMAIL='studybookold2027@gmail.com';
-var PAGES=[['home','Home'],['dashboard','📊 Dashboard'],['routine','🗓️ Routine'],['study-room','📚 Study Room'],['time','⏱️ Study Timer'],['typing','⌨️ Typing'],['typing-test','🎯 Typing Test'],['test','📝 Online Test'],['planner','📅 Planner'],['notes','📖 Notes'],['career','💼 Career'],['leaderboard','🏆 Leaderboard'],['contact','📞 Contact'],['account','👤 Account']];
+var PAGES=[['home','Home'],['dashboard','Dashboard'],['routine','Routine'],['study-room','Study Room'],['time','Study Timer'],['typing','Typing'],['typing-test','Typing Test'],['test','Online Test'],['planner','Planner'],['excel','Excel'],['notes','Notes'],['career','Career'],['leaderboard','Leaderboard'],['contact','Contact'],['account','Account']];
 var mem={},UP='sba.';
 /* Local (on-device) data is kept per logged-in user: key = sba.u.<user id>.<name>. Nobody logged in -> nothing readable. */
 function get(k,d){if(UP===null)return d;try{var v=localStorage.getItem(UP+k);if(v!==null)return JSON.parse(v);}catch(e){}return (UP+k) in mem?mem[UP+k]:d;}
@@ -540,12 +834,16 @@ function stat(){
   function c(a,b){return '<div class="card" style="text-align:center"><div class="big" style="font-size:2rem">'+a+'</div><p>'+b+'</p></div>';}
   return '<h3>'+(n?'नमस्ते, '+esc(n)+'! ':'')+'आपकी प्रगति</h3><div class="grid" style="margin:8px 0 24px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">'+c(w||'—','सर्वश्रेष्ठ WPM')+c(q!==null?q+'/'+QS.length:'—','टेस्ट स्कोर')+c(d,'पूरे किए रिकॉर्ड')+'</div>';
 }
+function uiIcon(name){
+  var p={book:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 6v15M8 7h8M8 11h8"/>',keyboard:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h.01M10 9h.01M13 9h.01M16 9h.01M7 12h.01M10 12h.01M13 12h.01M16 12h.01M9 15h6"/>',test:'<path d="M8 4h11v17H5V7z"/><path d="M8 3v4H4M9 12l2 2 4-4M9 17h6"/>',calendar:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 9h18M8 13h3M8 17h7"/>',notes:'<path d="M5 3h11l3 3v15H5z"/><path d="M15 3v4h4M8 11h8M8 15h8"/>',career:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/>'};
+  return '<svg class="ui-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(p[name]||p.book)+'</svg>';
+}
 var V={
 home:function(){
-  var h=FESTIVALS.banner()+'<section class="hero"><span class="tag">Learn • Grow • Succeed</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><p><a class="btn" href="#study-room">📚 Start Learning</a><a class="btn alt" href="#typing">⌨️ Typing Practice</a><a class="btn alt" href="#test">📝 Online Test</a></p></section>'+clockCard()+stat()+'<div class="grid">';
-  [['📚','Study Room','सभी विषयों की पढ़ाई करें और फोकस टाइमर के साथ पढ़ें।','study-room'],['⌨️','Typing Practice','हिंदी और अंग्रेज़ी टाइपिंग सीखें, स्पीड और सटीकता जाँचें।','typing'],['📝','Online Test','छोटा क्विज़ दें और तुरंत स्कोर देखें।','test'],['📅','Study Planner','अपने रोज़ के टास्क बनाएँ और प्रोग्रेस ट्रैक करें।','planner'],['📖','Notes & Resources','भरोसेमंद सरकारी प्लेटफ़ॉर्म से मुफ़्त पढ़ाई सामग्री।','notes'],['💼','Career Guidance','पढ़ाई के बाद के रास्ते और सरकारी परीक्षाओं की जानकारी।','career']].forEach(function(c){
-    h+='<a class="card" href="#'+c[3]+'"><div class="ic">'+c[0]+'</div><h3>'+c[1]+'</h3><p>'+c[2]+'</p></a>';});
-  return h+'</div>';
+  /* Home page intentionally contains only the five requested elements:
+     festival banner, hero, three primary actions, and IST clock.
+     All other tools remain available through the sidebar navigation. */
+  return FESTIVALS.banner()+'<section class="hero"><span class="tag">LEARN · GROW · SUCCEED</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><div class="hero-actions"><a class="btn" href="#study-room">'+uiIcon('book')+'<span>Start Learning</span></a><a class="btn alt" href="#typing">'+uiIcon('keyboard')+'<span>Typing Practice</span></a><a class="btn alt" href="#test">'+uiIcon('test')+'<span>Online Test</span></a></div></section>'+clockCard();
 },
 'study-room':function(){
   var h='<h2>📚 Study Room</h2><p class="lead">विषय चुनें, और नीचे दिए टाइमर से 25 मिनट बिना रुके पढ़ें।</p><div class="card" style="margin-bottom:18px;text-align:center"><div class="seg"><button id="m25" aria-pressed="true">Focus 25</button><button id="m5" aria-pressed="false">Break 5</button></div><div class="big" id="clock">25:00</div><button class="btn" id="go">Start</button><button class="btn alt" id="rs" style="color:var(--ink)">Reset</button><p class="msg" id="tmsg"></p></div><div class="grid">';
@@ -562,6 +860,30 @@ test:function(){return '<h2>📝 Online Test</h2><p class="lead">हर बा�
 planner:function(){
   var o=SUBJ.map(function(s){return '<option>'+s[1]+'</option>';}).join('')+'<option>अन्य</option>';
   return '<h2>📅 Study Planner</h2><p class="lead">अपनी पढ़ाई का रिकॉर्ड भरें और पूरा होने पर टिक करें।</p><div class="card"><div class="row"><div><label for="pn">Student Name</label><input id="pn" placeholder="आपका नाम"></div><div><label for="ps">Subject</label><select id="ps">'+o+'</select></div><div style="flex:2 1 200px"><label for="pt">Topic</label><input id="pt" placeholder="जैसे: प्रतिशत"></div></div><div class="row"><div><label for="pd">Study Date</label><input id="pd" type="date"></div><div><label for="p1">Start Time</label><input id="p1" type="time"></div><div><label for="p2">End Time</label><input id="p2" type="time"></div><div><label for="pg">Daily Target</label><input id="pg" placeholder="जैसे: 20 सवाल"></div></div><p><button class="btn" id="pa">रिकॉर्ड जोड़ें</button></p><p class="msg" id="pm" role="status"></p></div><div class="card" style="margin-top:14px"><h3>Study Records</h3><div class="prog"><i id="pb"></i></div><p class="msg" id="pc"></p><div style="overflow-x:auto"><table class="rec" style="min-width:860px"><thead><tr><th>Timestamp</th><th>Student Name</th><th>Subject</th><th>Topic</th><th>Study Date</th><th>Start Time</th><th>End Time</th><th>Daily Target</th><th>Done</th><th></th></tr></thead><tbody id="pl"></tbody></table></div></div>';
+},
+excel:function(){
+  var book=get('excel-workbook',null),active=book&&book.active?book.active:(book&&book.sheetNames?book.sheetNames[0]:''),names=book&&book.sheetNames?book.sheetNames:[],rows=book&&book.sheets&&active?book.sheets[active]:[];
+  var h='<h2>Excel Manager</h2><p class="lead">यहाँ Excel की तरह खुद लिखें, Edit करें और अपनी फाइल सेव या डाउनलोड करें।</p>'+
+    '<section class="card"><div class="excel-drop"><div class="xl-mark">X</div><h3>अपनी Excel फाइल अपलोड करें</h3><p class="excel-note">Excel (.xlsx, .xls) या CSV फाइल चुनें।</p><input id="xlfile" type="file" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv" aria-label="Excel फाइल चुनें"><p class="excel-note">फाइल इसी Browser/डिवाइस में प्रोसेस होगी। अधिकतम 2 MB।</p><div class="excel-toolbar" style="justify-content:center"><button class="btn" id="xlnew" type="button">＋ नई खाली Excel बनाएँ</button></div></div><p class="msg" id="xlstatus" role="status">'+(book?'फाइल/वर्कबुक: '+esc(book.name||'मेरी Excel'):'अभी कोई Excel फाइल नहीं है। नई खाली Excel बनाएँ या अपनी फाइल Upload करें।')+'</p></section>';
+  if(book&&names.length){
+    h+='<section class="card" style="margin-top:14px"><div class="row" style="align-items:end"><div style="flex:1 1 180px"><label for="xlsheet">Sheet चुनें</label><select id="xlsheet">'+names.map(function(n){return '<option value="'+esc(n)+'"'+(n===active?' selected':'')+'>'+esc(n)+'</option>';}).join('')+'</select></div><div class="excel-note">'+rows.length+' rows · '+(rows[0]?rows[0].length:0)+' columns</div></div>'+
+    '<div class="excel-toolbar"><button class="btn" id="xlsave" type="button">✓ Save</button><button class="btn alt" id="xladdrow" type="button">＋ Row</button><button class="btn alt" id="xladdcol" type="button">＋ Column</button><button class="btn alt" id="xladdsheet" type="button">＋ नई Sheet</button><button class="btn alt" id="xldownload" type="button">⬇ Excel (.xlsx)</button><button class="btn alt" id="xlexport" type="button">CSV डाउनलोड</button><button class="btn alt" id="xlclear" type="button">हटाएँ</button></div>'+
+    '<div class="excel-toolbar" aria-label="Formula और Editing Tools"><label class="excel-color-tool">Formula / Value <input id="xlformula" type="text" placeholder="जैसे =SUM(A1:A5)" style="width:min(360px,55vw)"></label><button class="btn alt" id="xlsetformula" type="button">Cell में डालें</button><button class="btn alt" id="xlundo" type="button">↶ Undo</button><button class="btn alt" id="xlredo" type="button">↷ Redo</button><button class="btn alt" id="xlbold" type="button"><b>B</b></button><button class="btn alt" id="xlitalic" type="button"><i>I</i></button><button class="btn alt" id="xlcenter" type="button">Center</button><button class="btn alt" id="xlfind" type="button">Find / Replace</button><button class="btn alt" id="xlsort" type="button">Sort A–Z</button></div>'+
+    '<div class="excel-toolbar" aria-label="Cell रंग और Highlight"><label class="excel-color-tool">Text Color <input id="xlfontcolor" type="color" value="#1f2937" aria-label="Text का रंग"></label><button class="btn alt" id="xlapplyfont" type="button">Text रंग लगाएँ</button><label class="excel-color-tool">Cell Color <input id="xlfillcolor" type="color" value="#fff2a8" aria-label="Cell का रंग"></label><button class="btn alt" id="xlapplyfill" type="button">Cell रंग लगाएँ</button><button class="btn alt" id="xlimportant" type="button">★ Important</button><button class="btn alt" id="xlclearstyle" type="button">रंग हटाएँ</button></div><div class="excel-palette" aria-label="Quick highlight colors"><span class="excel-note">Quick Highlight:</span><button class="excel-swatch" type="button" data-xlcolor="#fff2a8" style="background:#fff2a8" aria-label="पीला Highlight"></button><button class="excel-swatch" type="button" data-xlcolor="#c9f7d5" style="background:#c9f7d5" aria-label="हरा Highlight"></button><button class="excel-swatch" type="button" data-xlcolor="#ffd6d6" style="background:#ffd6d6" aria-label="लाल Highlight"></button><button class="excel-swatch" type="button" data-xlcolor="#d8eaff" style="background:#d8eaff" aria-label="नीला Highlight"></button><button class="excel-swatch" type="button" data-xlcolor="#eadcff" style="background:#eadcff" aria-label="बैंगनी Highlight"></button></div><p class="excel-note">पहले किसी Cell पर टैप करें, फिर Text Color या Cell Color चुनकर Apply करें। Important बटन से पीला Highlight लगेगा।</p><p class="excel-save-state" id="xlsavestate" aria-live="polite">हर बदलाव अपने-आप इस डिवाइस में सेव होता है।</p>'+
+    '<div class="excel-table-wrap"><table class="excel-table" id="xleditor"><tbody>';
+    var maxRows=Math.min(Math.max(rows.length,10),300),maxCols=Math.min(Math.max(rows.reduce(function(m,r){return Math.max(m,r.length);},0),6),30);
+    for(var ri=0;ri<maxRows;ri++){
+      h+='<tr><th class="xl-rowhead">'+(ri+1)+'</th>';
+      for(var ci=0;ci<maxCols;ci++){
+        var val=rows[ri]&&rows[ri][ci]!=null?rows[ri][ci]:'';if(typeof val==='string'&&val.charAt(0)==='='){try{var fm=val.match(/^=(SUM|AVERAGE|MIN|MAX|COUNT)\(([A-Z]+\d+):([A-Z]+\d+)\)$/i);if(fm){function xlcol(t){var z=0;for(var q=0;q<t.length;q++)z=z*26+t.charCodeAt(q)-64;return z-1;}function xlref(t){var z=t.match(/^([A-Z]+)(\d+)$/i);return {r:Number(z[2])-1,c:xlcol(z[1].toUpperCase())};}var xa=xlref(fm[2]),xz=xlref(fm[3]),xn=[];for(var xr=Math.min(xa.r,xz.r);xr<=Math.max(xa.r,xz.r);xr++)for(var xc=Math.min(xa.c,xz.c);xc<=Math.max(xa.c,xz.c);xc++){var xv=rows[xr]&&rows[xr][xc];if(xv!==''&&xv!=null&&isFinite(Number(xv)))xn.push(Number(xv));}var xo=fm[1].toUpperCase();val=xo==='COUNT'?xn.length:(!xn.length?0:xo==='SUM'?xn.reduce(function(a,b){return a+b;},0):xo==='AVERAGE'?xn.reduce(function(a,b){return a+b;},0)/xn.length:xo==='MIN'?Math.min.apply(null,xn):Math.max.apply(null,xn));}}catch(xerr){val='#ERROR';}}
+        var sty=book&&book.cellStyles&&book.cellStyles[active]&&book.cellStyles[active][ri+','+ci]?book.cellStyles[active][ri+','+ci]:{},styleAttr='';if(sty.color)styleAttr+='color:'+sty.color+';';if(sty.bg)styleAttr+='background-color:'+sty.bg+';';if(sty.bold)styleAttr+='font-weight:700;';if(sty.italic)styleAttr+='font-style:italic;';if(sty.align)styleAttr+='text-align:'+sty.align+';';
+        h+='<td contenteditable="true" spellcheck="false" data-r="'+ri+'" data-c="'+ci+'" style="'+styleAttr+'" aria-label="Row '+(ri+1)+', Column '+(ci+1)+'">'+esc(val)+'</td>';
+      }
+      h+='</tr>';
+    }
+    h+='</tbody></table></div><p class="excel-note">किसी भी Cell पर टैप करके लिखें। पहले 300 Rows और 30 Columns Editor में दिखते हैं। बाकी अपलोड डेटा भी Download में सुरक्षित रहेगा। Save इसी डिवाइस में रहता है; बैकअप के लिए Excel डाउनलोड करें।</p></section>';
+  }
+  return h;
 },
 notes:function(){
   var L=[['NCERT','कक्षा 1–12 की किताबें मुफ़्त PDF में।','https://ncert.nic.in'],['SWAYAM','सरकारी प्लेटफ़ॉर्म पर मुफ़्त ऑनलाइन कोर्स।','https://swayam.gov.in'],['DIKSHA','स्कूल पाठ्यक्रम पर आधारित डिजिटल सामग्री।','https://diksha.gov.in'],['NPTEL','IIT और IISc के प्रोफ़ेसरों के लेक्चर।','https://nptel.ac.in']],h='<h2>📖 Notes & Resources</h2><p class="lead">पढ़ाई के लिए भरोसेमंद सरकारी स्रोत।</p><div class="grid">';
@@ -601,7 +923,11 @@ time:function(){
   return '<h2>⏱️ Study Timer</h2><p class="lead">Subject चुनें, session का नाम लिखें और Start दबाएँ। Page refresh करने या tab बदलने पर भी timer सही चलता रहेगा।</p>'+clockCard()+'<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div class="card"><h3>Study Session</h3><label for="ss">Subject</label><select id="ss">'+o+'</select><label for="sl">Session title</label><input id="sl" placeholder="जैसे: Percentage practice"><div class="tm" id="sd">00:00:00</div><p class="msg" id="sm" role="status" style="text-align:center"></p><div style="text-align:center"><button class="btn" id="sa">Start</button><button class="btn" id="sf">Finish &amp; Save</button><button class="btn alt" id="sr" style="color:var(--ink)">Reset</button></div></div><div class="card"><h3>Today</h3><div class="big" id="td">0 min</div><p class="msg" id="tg" style="text-align:center"></p><div class="prog"><i id="tp"></i></div><label for="gl">Daily goal (minutes)</label><input id="gl" type="number" min="10" max="1440"><h3 style="margin-top:14px">Last 7 days</h3><div class="sbar" id="wk"></div></div></div><div class="card" style="margin-top:14px"><h3>Study History</h3><div style="overflow-x:auto"><table class="rec" style="min-width:640px"><thead><tr><th>Date</th><th>Subject</th><th>Title</th><th>Start</th><th>End</th><th>Duration</th></tr></thead><tbody id="sh"></tbody></table></div></div>';
 },
 'typing-test':function(){
-  return '<h2>🎯 Typing Test</h2><p class="lead">समय चुनें और टाइप करना शुरू करें। पहली key दबाते ही countdown अपने-आप शुरू होगा और समय पूरा होते ही टेस्ट रुक जाएगा। हिंदी के लिए Hindi input चालू रखें।</p><div class="card"><div class="row"><div><label for="tt">Test time</label><select id="tt"><option value="1">1 minute</option><option value="3">3 minutes</option><option value="5">5 minutes</option><option value="10">10 minutes</option></select></div><div><label for="tl">Language</label><select id="tl"><option value="hi">हिंदी</option><option value="en">English</option></select></div></div><div class="tm" id="tc" role="timer">01:00</div><div class="sample" id="tp2"></div><textarea id="tx" aria-label="Typing test area"></textarea><p><button class="btn" id="tr">Restart</button></p><div id="trs" role="status"></div></div><div class="card" style="margin-top:14px"><h3>Recent tests</h3><div id="th"></div></div>';
+  return '<h2>🎯 Typing Test</h2><p class="lead">समय चुनें और टाइप करना शुरू करें। पहली key दबाते ही countdown अपने-आप शुरू होगा और समय पूरा होते ही टेस्ट रुक जाएगा। बाईं तरफ़ का पाठ दाईं तरफ़ के box में टाइप करें। हिंदी के लिए Hindi input चालू रखें।</p>'+
+  '<div class="card"><div class="row"><div><label for="tt">Test time</label><select id="tt"><option value="1">1 minute</option><option value="3">3 minutes</option><option value="5">5 minutes</option><option value="10">10 minutes</option></select></div><div><label for="tl">Language</label><select id="tl"><option value="hi">हिंदी</option><option value="en">English</option></select></div></div><div class="tm" id="tc" role="timer">01:00</div></div>'+
+  '<div class="tpg" id="tpgt"><section class="tpp tpl" aria-label="Passage to type"><header><span>📖 पाठ · Passage</span><small id="tpc2" aria-hidden="true"></small></header><div class="tpb"><div class="tpin"><div class="sample" id="tp2" aria-live="off"></div></div></div></section>'+
+  '<section class="tpp tpr" aria-label="Typing box"><header><span>⌨️ यहाँ टाइप करें · Type here</span></header><div class="tpb"><div class="tpin"><textarea id="tx" placeholder="यहाँ टाइप करना शुरू करें…" aria-label="Typing test area" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea></div></div></section></div>'+
+  '<p><button class="btn" id="tr">Restart</button></p><div id="trs" role="status"></div><div class="card" style="margin-top:14px"><h3>Recent tests</h3><div id="th"></div></div>';
 },
 contact:function(){
   return '<h2>📞 Contact Us</h2><p class="lead">सवाल, सुझाव या फ़ीडबैक भेजें।</p><div class="card" style="max-width:520px"><label for="cn">नाम</label><input id="cn"><label for="cm">संदेश</label><textarea id="cm"></textarea><p><button class="btn" id="cs">भेजें</button></p><p class="msg" id="cmsg"></p></div>';
@@ -638,7 +964,7 @@ typing:function(){
     if(!t0)t0=Date.now();
     var v=ta.value,ok=0;
     for(var i=0;i<v.length;i++)if(v[i]===tgt[i])ok++;
-    var m=Math.max((Date.now()-t0)/60000,1/600);
+    var m=Math.max((Date.now()-t0)/60000,1/60);
     $('wpm').textContent=Math.round(ok/5/m);
     $('acc').textContent=v.length?Math.round(ok/v.length*100):100;
     paint();
@@ -704,6 +1030,48 @@ planner:function(){
   $('pn').value=get('name','');
   $('pd').value=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
   draw();
+},
+excel:function(){
+  var input=$('xlfile'),status=$('xlstatus');
+  function sayExcel(t){var el=$('xlsavestate')||status;if(el)el.textContent=t;}
+  function saveBook(b){try{localStorage.setItem(UP+'excel-workbook',JSON.stringify(b));return true;}catch(e){sayExcel('सेव नहीं हो पाया। Browser की Storage जगह कम है; Excel डाउनलोड करके बैकअप रखें।');return false;}}
+  var create=$('xlnew');if(create)create.onclick=function(){var blank=[];for(var i=0;i<10;i++)blank.push(['','','','','','']);var b={name:'My-Excel.xlsx',sheetNames:['Sheet1'],sheets:{Sheet1:blank},active:'Sheet1',uploadedAt:Date.now()};if(saveBook(b))route();};
+  if(input)input.addEventListener('change',function(){
+    var f=input.files&&input.files[0];if(!f)return;
+    if(f.size>2*1024*1024){sayExcel('फाइल 2 MB से बड़ी है। कृपया छोटी Excel/CSV फाइल चुनें।');input.value='';return;}
+    if(!window.XLSX){sayExcel('Excel reader लोड नहीं हुआ। इंटरनेट चालू करके पेज Refresh करें।');return;}
+    var reader=new FileReader();reader.onerror=function(){sayExcel('फाइल पढ़ी नहीं जा सकी। दूसरी फाइल आज़माएँ।');};
+    reader.onload=function(e){try{var wb=XLSX.read(e.target.result,{type:'array'}),sheets={};wb.SheetNames.forEach(function(n){sheets[n]=XLSX.utils.sheet_to_json(wb.Sheets[n],{header:1,defval:'',raw:false});});var total=wb.SheetNames.reduce(function(a,n){return a+sheets[n].length;},0);if(!total){sayExcel('इस फाइल में पढ़ने योग्य डेटा नहीं मिला।');return;}var data={name:f.name,sheetNames:wb.SheetNames,sheets:sheets,active:wb.SheetNames[0],uploadedAt:Date.now()};if(saveBook(data))route();}catch(err){sayExcel('यह Excel/CSV फाइल नहीं पढ़ी जा सकी। कृपया सही फाइल चुनें।');}};reader.readAsArrayBuffer(f);
+  });
+  var sel=$('xlsheet');if(sel)sel.onchange=function(){var b=get('excel-workbook',null);if(!b)return;b.active=this.value;saveBook(b);route();};
+  var table=$('xleditor');if(table)table.addEventListener('input',function(e){var cell=e.target.closest('td[data-r][data-c]');if(!cell)return;var b=get('excel-workbook',null);if(!b||!b.sheets||!b.sheets[b.active])return;snapshot();var r=Number(cell.getAttribute('data-r')),c=Number(cell.getAttribute('data-c'));while(b.sheets[b.active].length<=r)b.sheets[b.active].push([]);while(b.sheets[b.active][r].length<=c)b.sheets[b.active][r].push('');b.sheets[b.active][r][c]=cell.innerText;saveBook(b);sayExcel('अपने-आप सेव हो गया ✓');});
+  var selectedCell=null;
+  if(table){table.addEventListener('click',function(e){var cell=e.target.closest('td[data-r][data-c]');if(!cell)return;if(selectedCell)selectedCell.classList.remove('xl-selected');selectedCell=cell;selectedCell.classList.add('xl-selected');var b=get('excel-workbook',null);if(formulaBox&&b)formulaBox.value=b.sheets[b.active][Number(cell.dataset.r)]?.[Number(cell.dataset.c)]??'';});}
+  var undoStack=[],redoStack=[];function snapshot(){var b=get('excel-workbook',null);if(b){undoStack.push(JSON.stringify(b));if(undoStack.length>30)undoStack.shift();redoStack=[];}}
+  function restoreHistory(from,to){if(!from.length){sayExcel('इतिहास में बदलाव नहीं मिला।');return;}var current=get('excel-workbook',null);if(current)to.push(JSON.stringify(current));var prior=JSON.parse(from.pop());saveBook(prior);route();}
+  var undo=$('xlundo');if(undo)undo.onclick=function(){restoreHistory(undoStack,redoStack);};var redo=$('xlredo');if(redo)redo.onclick=function(){restoreHistory(redoStack,undoStack);};
+  function selectedCoords(){return selectedCell?{r:Number(selectedCell.getAttribute('data-r')),c:Number(selectedCell.getAttribute('data-c'))}:null;}
+  function cellValue(b,r,c){var v=b.sheets[b.active][r]&&b.sheets[b.active][r][c]!=null?String(b.sheets[b.active][r][c]):'';if(!v.startsWith('='))return v;try{return String(evalFormula(v,b.sheets[b.active]));}catch(e){return '#ERROR';}}
+  function evalFormula(formula,rows){var m=formula.trim().match(/^=(SUM|AVERAGE|MIN|MAX|COUNT)\(([A-Z]+\d+):([A-Z]+\d+)\)$/i);if(!m)throw Error('unsupported');function col(x){var n=0;for(var i=0;i<x.length;i++)n=n*26+x.charCodeAt(i)-64;return n-1;}function ref(x){var z=x.match(/^([A-Z]+)(\d+)$/i);return {c:col(z[1].toUpperCase()),r:Number(z[2])-1};}var a=ref(m[2]),z=ref(m[3]),nums=[];for(var r=Math.min(a.r,z.r);r<=Math.max(a.r,z.r);r++)for(var c=Math.min(a.c,z.c);c<=Math.max(a.c,z.c);c++){var v=rows[r]&&rows[r][c];if(v!==''&&v!=null&&isFinite(Number(v)))nums.push(Number(v));}var op=m[1].toUpperCase();if(op==='COUNT')return nums.length;if(!nums.length)return 0;if(op==='SUM')return nums.reduce(function(x,y){return x+y;},0);if(op==='AVERAGE')return nums.reduce(function(x,y){return x+y;},0)/nums.length;if(op==='MIN')return Math.min.apply(null,nums);return Math.max.apply(null,nums);}
+  var formulaBox=$('xlformula');if(table)table.addEventListener('focusin',function(e){var cell=e.target.closest('td[data-r][data-c]');if(!cell)return;var b=get('excel-workbook',null);if(formulaBox&&b)formulaBox.value=b.sheets[b.active][Number(cell.dataset.r)]?.[Number(cell.dataset.c)]??'';});
+  var setFormula=$('xlsetformula');if(setFormula)setFormula.onclick=function(){var pos=selectedCoords(),b=get('excel-workbook',null),v=formulaBox?formulaBox.value:'';if(!pos||!b){sayExcel('पहले कोई Cell चुनें।');return;}snapshot();while(b.sheets[b.active].length<=pos.r)b.sheets[b.active].push([]);b.sheets[b.active][pos.r][pos.c]=v;if(saveBook(b)){selectedCell.textContent=cellValue(b,pos.r,pos.c);sayExcel(v.startsWith('=')?'Formula लागू हुआ ✓':'Cell अपडेट हुआ ✓');}};
+  function applyTextStyle(prop,val){if(!selectedCell){sayExcel('पहले Cell चुनें।');return;}snapshot();var b=get('excel-workbook',null),pos=selectedCoords();b.cellStyles=b.cellStyles||{};b.cellStyles[b.active]=b.cellStyles[b.active]||{};var key=pos.r+','+pos.c,st=b.cellStyles[b.active][key]||{};st[prop]=val;b.cellStyles[b.active][key]=st;saveBook(b);if(prop==='bold')selectedCell.style.fontWeight=val?'700':'';if(prop==='italic')selectedCell.style.fontStyle=val?'italic':'';if(prop==='align')selectedCell.style.textAlign=val;sayExcel('Formatting सेव हो गई ✓');}
+  var bold=$('xlbold');if(bold)bold.onclick=function(){applyTextStyle('bold',selectedCell&&selectedCell.style.fontWeight!=='700');};var italic=$('xlitalic');if(italic)italic.onclick=function(){applyTextStyle('italic',selectedCell&&selectedCell.style.fontStyle!=='italic');};var center=$('xlcenter');if(center)center.onclick=function(){applyTextStyle('align','center');};
+  var find=$('xlfind');if(find)find.onclick=function(){var q=prompt('क्या खोजना है?');if(q===null||!q)return;var replacement=prompt('किससे बदलना है? (खाली छोड़ें तो केवल खोजेगा)');var b=get('excel-workbook',null),rows=b&&b.sheets[b.active];if(!rows)return;var count=0;snapshot();rows.forEach(function(row){row.forEach(function(v,i){if(String(v).includes(q)){count++;if(replacement!==null&&replacement!=='')row[i]=String(v).split(q).join(replacement);}});});if(replacement!==null&&replacement!=='')saveBook(b);sayExcel(count+' जगह मिली।');if(replacement!==null&&replacement!=='')route();};
+  var sort=$('xlsort');if(sort)sort.onclick=function(){var b=get('excel-workbook',null),rows=b&&b.sheets[b.active];if(!rows||rows.length<2)return;snapshot();var head=rows[0],body=rows.slice(1).sort(function(a,c){return String(a[0]||'').localeCompare(String(c[0]||''),undefined,{numeric:true,sensitivity:'base'});});b.sheets[b.active]=[head].concat(body);if(saveBook(b))route();};
+  function applyCellStyle(kind,value){if(!selectedCell){sayExcel('पहले जिस Cell को रंगना है, उस पर टैप करें।');return;}var b=get('excel-workbook',null);if(!b)return;snapshot();var r=Number(selectedCell.getAttribute('data-r')),c=Number(selectedCell.getAttribute('data-c'));b.cellStyles=b.cellStyles||{};b.cellStyles[b.active]=b.cellStyles[b.active]||{};var key=r+','+c,st=b.cellStyles[b.active][key]||{};if(kind==='color')st.color=value;else if(kind==='bg')st.bg=value;else if(kind==='clear')st={};b.cellStyles[b.active][key]=st;if(!st.color&&!st.bg)delete b.cellStyles[b.active][key];if(saveBook(b)){selectedCell.style.color=st.color||'';selectedCell.style.backgroundColor=st.bg||'';sayExcel('Cell का रंग सेव हो गया ✓');}}
+  var af=$('xlapplyfont');if(af)af.onclick=function(){applyCellStyle('color',$('xlfontcolor').value);};
+  var ab=$('xlapplyfill');if(ab)ab.onclick=function(){applyCellStyle('bg',$('xlfillcolor').value);};
+  var imp=$('xlimportant');if(imp)imp.onclick=function(){applyCellStyle('bg','#fff2a8');};
+  var clrsty=$('xlclearstyle');if(clrsty)clrsty.onclick=function(){applyCellStyle('clear','');};
+  var swatches=document.querySelectorAll('[data-xlcolor]');swatches.forEach(function(btn){btn.onclick=function(){var color=btn.getAttribute('data-xlcolor');$('xlfillcolor').value=color;applyCellStyle('bg',color);};});
+  var save=$('xlsave');if(save)save.onclick=function(){var b=get('excel-workbook',null);if(b&&saveBook(b))sayExcel('आपकी Excel इसी डिवाइस में सेव हो गई ✓');};
+  var ar=$('xladdrow');if(ar)ar.onclick=function(){var b=get('excel-workbook',null),r=b&&b.sheets[b.active];if(!r)return;if(r.length>=3000){sayExcel('अधिकतम 3000 Rows की सीमा पूरी हो गई।');return;}var cols=Math.max(6,r.reduce(function(m,x){return Math.max(m,x.length);},0));r.push(Array(cols).fill(''));if(saveBook(b))route();};
+  var ac=$('xladdcol');if(ac)ac.onclick=function(){var b=get('excel-workbook',null),r=b&&b.sheets[b.active];if(!r)return;var cols=r.reduce(function(m,x){return Math.max(m,x.length);},0);if(cols>=100){sayExcel('अधिकतम 100 Columns की सीमा पूरी हो गई।');return;}r.forEach(function(row){while(row.length<=cols)row.push('');});if(saveBook(b))route();};
+  var as=$('xladdsheet');if(as)as.onclick=function(){var b=get('excel-workbook',null);if(!b)return;var base='Sheet'+(b.sheetNames.length+1),name=prompt('नई Sheet का नाम लिखें:',base);if(!name)return;name=name.trim().slice(0,31);if(!name||b.sheetNames.indexOf(name)>=0){sayExcel('Sheet का नाम खाली या पहले से मौजूद है।');return;}b.sheetNames.push(name);b.sheets[name]=Array.from({length:10},function(){return Array(6).fill('');});b.active=name;if(saveBook(b))route();};
+  var dl=$('xldownload');if(dl)dl.onclick=function(){var b=get('excel-workbook',null);if(!b||!window.XLSX){sayExcel('Excel Download के लिए इंटरनेट चालू करके Refresh करें।');return;}try{var wb=XLSX.utils.book_new();b.sheetNames.forEach(function(n){var ws=XLSX.utils.aoa_to_sheet(b.sheets[n]||[]),styles=b.cellStyles&&b.cellStyles[n]||{};Object.keys(styles).forEach(function(k){var parts=k.split(','),addr=XLSX.utils.encode_cell({r:Number(parts[0]),c:Number(parts[1])}),st=styles[k];if(!ws[addr])ws[addr]={t:'s',v:''};ws[addr].s={};if(st.color)ws[addr].s.font={color:{rgb:st.color.replace('#','').toUpperCase()}};if(st.bg)ws[addr].s.fill={patternType:'solid',fgColor:{rgb:st.bg.replace('#','').toUpperCase()}};if(st.bold||st.italic)ws[addr].s.font=Object.assign(ws[addr].s.font||{},{bold:!!st.bold,italic:!!st.italic});if(st.align)ws[addr].s.alignment={horizontal:st.align};});Object.keys(ws).filter(function(k){return /^[A-Z]+[0-9]+$/.test(k);}).forEach(function(addr){var v=ws[addr].v;if(typeof v==='string'&&v.charAt(0)==='='){ws[addr].f=v.slice(1);delete ws[addr].v;ws[addr].t='n';}});XLSX.utils.book_append_sheet(wb,ws,n.slice(0,31));});XLSX.writeFile(wb,(b.name||'AK-NEST-EDU-Excel').replace(/\.(xlsx|xls|csv)$/i,'')+'-edited.xlsx');sayExcel('Excel फाइल Download हो रही है।');}catch(e){sayExcel('Excel Download नहीं हो पाया।');}};
+  var ex=$('xlexport');if(ex)ex.onclick=function(){var b=get('excel-workbook',null),r=b&&b.sheets&&b.sheets[b.active];if(!r)return;var csv=r.map(function(row){return row.map(function(v){return '"'+String(v==null?'':v).replace(/"/g,'""')+'"';}).join(',');}).join('\r\n');var blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=(b.name||'excel').replace(/\.(xlsx|xls|csv)$/i,'')+'-'+b.active+'.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);};
+  var cl=$('xlclear');if(cl)cl.onclick=function(){if(!confirm('अपलोड की गई Excel जानकारी हटाएँ?'))return;try{localStorage.removeItem(UP+'excel-workbook');}catch(e){}route();};
 },
 notes:function(){var n=$('mn');n.value=get('notes','');n.oninput=function(){put('notes',n.value);$('mnm').textContent='सेव हो गया ✓';};},
 account:function(init){
@@ -977,6 +1345,9 @@ time:function(){
     var v=tx.value,s=Math.max(0,v.length-40),e=Math.min(tgt.length,s+260),h='',i,c;
     for(i=s;i<e;i++){c=esc(tgt[i]);h+=i<v.length?'<span class="'+(v[i]===tgt[i]?'ok':'bad')+'">'+c+'</span>':(i===v.length?'<span class="cur">'+c+'</span>':c);}
     $('tp2').innerHTML=h;
+    $('tpc2').textContent=v.length+' अक्षर';
+    var box=$('tp2').closest('.tpb'),cur=$('tp2').querySelector('.cur');                /* keep the letter to type in view inside the panel */
+    if(box&&cur){var top=cur.offsetTop,left=cur.offsetLeft;if(top<box.scrollTop+8||top>box.scrollTop+box.clientHeight-48)box.scrollTop=Math.max(0,top-34);if(left<box.scrollLeft||left>box.scrollLeft+box.clientWidth-30)box.scrollLeft=Math.max(0,left-30);}
   }
   function left(){return t0?Math.max(0,end-Date.now()):dur0;}
   function show(){var l=Math.ceil(left()/1000);$('tc').textContent=p2(Math.floor(l/60))+':'+p2(l%60);}
@@ -1001,6 +1372,7 @@ time:function(){
     tgt=mk();tx.value='';tx.disabled=false;$('trs').innerHTML='';show();paint();tx.focus();
   }
   tx.addEventListener('paste',function(e){e.preventDefault();});
+  $('tpgt').querySelector('.tpr').addEventListener('click',function(ev){if(ev.target!==tx&&!tx.disabled)tx.focus();});
   tx.addEventListener('input',function(){
     if(over)return;
     if(!t0){t0=Date.now();end=t0+dur0;tm=setInterval(function(){show();if(left()<=0)fin();},200);timers.push(tm);}
@@ -1031,18 +1403,42 @@ contact:function(){
 }
 };
 
-var NG=[[null,['home','dashboard']],['पढ़ाई',['routine','study-room','time']],['अभ्यास',['typing','typing-test','test']],['टूल्स',['planner','notes','career']],['कम्युनिटी',['leaderboard']],['खाता और मदद',['contact','account']]];
+var NG=[[null,['home','dashboard']],['पढ़ाई',['routine','study-room','time']],['अभ्यास',['typing','test']],['टूल्स',['planner','excel','notes','career']],['कम्युनिटी',['leaderboard']],['खाता और मदद',['contact','account']]];
+function navIcon(pid){
+  var paths={
+    home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+    dashboard:'<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/>',
+    routine:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+    'study-room':'<path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H12v17H5.5A2.5 2.5 0 0 0 3 22zM21 5.5A2.5 2.5 0 0 0 18.5 3H12v17h6.5a2.5 2.5 0 0 1 2.5 2z"/>',
+    time:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    typing:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h.01M10 9h.01M13 9h.01M16 9h.01M7 12h.01M10 12h.01M13 12h.01M16 12h.01M9 15h6"/>',
+    test:'<path d="M8 4h11v17H5V7z"/><path d="M8 3v4H4M9 12l2 2 4-4M9 17h6"/>',
+    planner:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 9h18M8 13h3M8 17h7"/>',
+    excel:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 8l4 8m0-8-4 8M14 8h3m-3 4h3m-3 4h3"',
+    notes:'<path d="M5 3h11l3 3v15H5z"/><path d="M15 3v4h4M8 11h8M8 15h8"/>',
+    career:'<path d="M4 19 19 4M9 4h10v10"/><path d="M4 8v12h12"/>',
+    leaderboard:'<path d="M4 19h16M6 16V9h3v7M11 16V5h3v11M16 16v-5h3v5"/>',
+    contact:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>',
+    account:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    logout:'<path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/>'
+  };
+  return '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[pid]||paths.notes)+'</svg>';
+}
 function navHTML(id,labelOf,extra){
-  var out='',k=0;
+  var out='';
   NG.forEach(function(g,gi){
     var items='';
     g[1].forEach(function(pid){
       var lab=labelOf(pid);if(!lab)return;
-      var m=lab.match(/^(\S+)\s+(.+)$/),ic=m?m[1]:'🏠',tx=m?m[2]:lab;
-      items+='<a href="#'+pid+'"'+(pid===id?' aria-current="page"':'')+'><span class="ni" style="--d:'+((k++)*0.17).toFixed(2)+'s" aria-hidden="true">'+ic+'</span><span>'+tx+'</span></a>';
+      var active=(pid===id);
+      items+='<a class="nav-link" href="#'+pid+'"'+(active?' aria-current="page"':'')+'><span class="ni">'+navIcon(pid)+'</span><span>'+lab+'</span></a>';
+      if(pid==='typing'){
+        var sub=labelOf('typing-test');
+        if(sub)items+='<div class="nav-sub"><a href="#typing"'+(id==='typing'?' aria-current="page"':'')+'><span class="subdot"></span><span>Practice</span></a><a href="#typing-test"'+(id==='typing-test'?' aria-current="page"':'')+'><span class="subdot"></span><span>Typing Test</span></a></div>';
+      }
     });
     if(gi===NG.length-1)items+=extra;
-    out+='<div class="ngw'+(gi===NG.length-1?' last':'')+'">'+(g[0]?'<div class="ng">'+g[0]+'</div>':'')+items+'</div>';
+    out+='<div class="ngw"'+(gi===NG.length-1?' last':'')+'>'+(g[0]?'<div class="ng">'+g[0]+'</div>':'')+items+'</div>';
   });
   return out;
 }
@@ -1095,9 +1491,9 @@ function route(){
   var PM={};PAGES.forEach(function(p){PM[p[0]]=p[1];});
   $('nav').innerHTML=navHTML(id,function(pid){
     var lab=PM[pid];
-    if(pid==='account'&&sb&&lab)lab=me?'👤 मेरा खाता':'🔐 Login / Sign up';
+    if(pid==='account'&&sb&&lab)lab=me?'मेरा खाता':'Login / Sign up';
     return lab;
-  },(sb&&me?'<a href="#logout"><span class="ni" aria-hidden="true">🚪</span><span>Logout</span></a>':''));
+  },(sb&&me?'<a class="nav-link" href="#logout"><span class="ni">'+navIcon('logout')+'</span><span>Logout</span></a>':''));
   closeMenu(false);showActive();
   app.innerHTML=gated?gate('📊 मेरा Dashboard'):V[id]();
   if(!gated&&I[id])I[id](init);
@@ -1724,7 +2120,8 @@ var FESTIVALS=(function(){
     lastKey=key();
     r.classList.toggle('fest',!!p);
     if(p){r.style.setProperty('--fa',p.ac);r.setAttribute('data-fest',p.id);}else{r.style.removeProperty('--fa');r.removeAttribute('data-fest');}
-    FX.theme(p?{fx:p.fx,pal:p.pal}:null);
+    /* Festival animation runs site-wide; the greeting banner remains Home-only. */
+    FX.theme(p && p.fx && p.fx!=='none' ? {fx:p.fx,pal:p.pal||[]} : null);
   }
   function watch(){                                       /* a page left open overnight changes by itself at midnight IST */
     if(key()===lastKey)return;
@@ -1742,6 +2139,22 @@ FESTIVALS.apply();
 window.addEventListener('hashchange',route);
 route();
 startRem();
+</script>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('themeToggle');
+  var saved=null;
+  try{saved=localStorage.getItem('aknest-theme');}catch(e){}
+  function applyTheme(theme){
+    theme=theme==='dark'?'dark':'light';
+    root.setAttribute('data-theme',theme);
+    if(btn){btn.textContent=theme==='dark'?'☀':'☾';btn.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');btn.title=theme==='dark'?'Light mode':'Dark mode';}
+    try{localStorage.setItem('aknest-theme',theme);}catch(e){}
+  }
+  applyTheme(saved||'light');
+  if(btn)btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+})();
 </script>
 </body>
 </html>
