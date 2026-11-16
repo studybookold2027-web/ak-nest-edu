@@ -497,30 +497,47 @@ footer{background:var(--card)!important;color:var(--mute)!important;border-top:1
 @media(max-width:640px){.excel-toolbar{gap:7px}.excel-toolbar .btn{flex:1 1 135px;font-size:14px;padding:9px 10px}.excel-table td[contenteditable="true"]{min-width:115px}}
 
 
-/* ===== AK NEST EDU verified update: transparent Home festival banner + site-wide animation ===== */
+/* ===== AK NEST EDU: cinematic festive greeting banner (Home only) ===== */
 .fb{
-  background:transparent!important;
-  color:var(--ink)!important;
-  border:1px solid color-mix(in srgb,var(--fa,#60A5FA) 48%,transparent)!important;
-  box-shadow:0 5px 18px rgba(15,35,65,.055)!important;
-  backdrop-filter:blur(2px);
-  animation:fbpulse 3.4s ease-in-out infinite!important;
+  position:relative!important;isolation:isolate;overflow:hidden;text-align:left!important;
+  min-height:190px;padding:34px 34px 30px!important;margin:0 0 20px!important;
+  color:#fff!important;border:1px solid rgba(255,210,130,.28)!important;border-radius:18px!important;
+  background:
+    radial-gradient(ellipse at 82% 66%,rgba(255,184,92,.82) 0%,rgba(255,143,65,.34) 8%,transparent 22%),
+    radial-gradient(ellipse at 76% 100%,rgba(170,82,42,.55) 0%,transparent 35%),
+    linear-gradient(180deg,#07142d 0%,#102752 48%,#24345f 70%,#563b45 100%)!important;
+  box-shadow:0 12px 30px rgba(3,12,32,.24)!important;backdrop-filter:none!important;
+  animation:fbpulse 3.8s ease-in-out infinite!important;
 }
-.fhi{
-  color:var(--fa,#2563EB)!important;
-  background:none!important;
-  -webkit-text-fill-color:var(--fa,#2563EB)!important;
-  filter:drop-shadow(0 0 5px color-mix(in srgb,var(--fa,#2563EB) 24%,transparent))!important;
-  text-shadow:none!important;
-  animation:shim 5s linear infinite!important;
+.fb::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.9;
+  background:
+    radial-gradient(circle at 82% 56%,rgba(255,211,132,.95) 0 3.6%,rgba(255,173,83,.34) 3.9% 7%,transparent 7.4%),
+    radial-gradient(circle at 18% 18%,rgba(255,255,255,.55) 0 1px,transparent 2px),
+    radial-gradient(circle at 36% 30%,rgba(255,220,160,.7) 0 1px,transparent 2px),
+    radial-gradient(circle at 61% 16%,rgba(255,255,255,.55) 0 1px,transparent 2px),
+    linear-gradient(180deg,transparent 0 66%,rgba(7,16,35,.28) 67% 100%);
 }
-.fen,.fn{color:var(--ink)!important;text-shadow:none!important}
-.fi{display:block!important}
-.fb .sp{display:block!important}
-#fx{display:none}
-html.fx-on #fx{display:block!important}
-:root[data-theme="dark"] .fb{background:transparent!important;border-color:color-mix(in srgb,var(--fa,#93C5FD) 55%,transparent)!important}
-:root[data-theme="dark"] .fhi{color:var(--fa,#93C5FD)!important;-webkit-text-fill-color:var(--fa,#93C5FD)!important}
+.fb::after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:31%;pointer-events:none;opacity:.88;
+  background:
+    linear-gradient(0deg,#071326 0 18%,transparent 19%),
+    linear-gradient(90deg,transparent 0 8%,rgba(5,14,31,.86) 8% 10%,transparent 10% 16%,rgba(5,14,31,.78) 16% 19%,transparent 19% 28%,rgba(5,14,31,.8) 28% 31%,transparent 31% 100%),
+    repeating-linear-gradient(0deg,rgba(255,190,112,.16) 0 1px,transparent 1px 10px);
+  mask-image:linear-gradient(to top,#000 0%,#000 72%,transparent 100%);
+}
+.fb.tri::before{height:auto;background:
+    radial-gradient(circle at 82% 56%,rgba(255,211,132,.95) 0 3.6%,rgba(255,173,83,.34) 3.9% 7%,transparent 7.4%),
+    radial-gradient(circle at 18% 18%,rgba(255,255,255,.55) 0 1px,transparent 2px),
+    linear-gradient(180deg,transparent 0 66%,rgba(7,16,35,.28) 67% 100%)}
+.fb .ft,.fb .fn,.fb .fo{position:relative;z-index:2;text-align:left!important;justify-content:flex-start!important;max-width:min(760px,82%)}
+.fhi{display:block!important;color:#fff!important;background:none!important;-webkit-text-fill-color:#fff!important;
+  font-size:clamp(1.8rem,5vw,3rem)!important;line-height:1.18!important;letter-spacing:.01em;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.55))!important;text-shadow:0 2px 10px rgba(0,0,0,.5)!important;animation:none!important}
+.fen{color:#ffe0a0!important;font-size:clamp(1.05rem,2.8vw,1.55rem)!important;text-shadow:0 2px 8px rgba(0,0,0,.65)!important}
+.fn{margin-top:9px!important;color:#fff!important;font-weight:600;text-shadow:0 2px 7px rgba(0,0,0,.7)!important;opacity:.96}
+.fo{gap:7px!important}.fo span{background:rgba(4,15,35,.48)!important;border-color:rgba(255,220,165,.35)!important;color:#fff!important}
+.fi{display:block!important}.fi i{z-index:1}.fb .sp{display:block!important;z-index:1}
+#fx{display:none}html.fx-on #fx{display:block!important}
+@media(max-width:600px){.fb{min-height:165px;padding:26px 18px 24px!important}.fb .ft,.fb .fn,.fb .fo{max-width:88%}.fi i{font-size:1.35rem}}
 @media(prefers-reduced-motion:reduce){.fb,.fhi,.fi i,.fb .sp{animation:none!important}}
 
 </style>
