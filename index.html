@@ -497,49 +497,62 @@ footer{background:var(--card)!important;color:var(--mute)!important;border-top:1
 @media(max-width:640px){.excel-toolbar{gap:7px}.excel-toolbar .btn{flex:1 1 135px;font-size:14px;padding:9px 10px}.excel-table td[contenteditable="true"]{min-width:115px}}
 
 
-/* ===== AK NEST EDU: cinematic festive greeting banner (Home only) ===== */
-.fb{
-  position:relative!important;isolation:isolate;overflow:hidden;text-align:left!important;
-  min-height:190px;padding:34px 34px 30px!important;margin:0 0 20px!important;
-  color:#fff!important;border:1px solid rgba(255,210,130,.28)!important;border-radius:18px!important;
-  background:
-    radial-gradient(ellipse at 82% 66%,rgba(255,184,92,.82) 0%,rgba(255,143,65,.34) 8%,transparent 22%),
-    radial-gradient(ellipse at 76% 100%,rgba(170,82,42,.55) 0%,transparent 35%),
-    linear-gradient(180deg,#07142d 0%,#102752 48%,#24345f 70%,#563b45 100%)!important;
-  box-shadow:0 12px 30px rgba(3,12,32,.24)!important;backdrop-filter:none!important;
-  animation:fbpulse 3.8s ease-in-out infinite!important;
-}
-.fb::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.9;
-  background:
-    radial-gradient(circle at 82% 56%,rgba(255,211,132,.95) 0 3.6%,rgba(255,173,83,.34) 3.9% 7%,transparent 7.4%),
-    radial-gradient(circle at 18% 18%,rgba(255,255,255,.55) 0 1px,transparent 2px),
-    radial-gradient(circle at 36% 30%,rgba(255,220,160,.7) 0 1px,transparent 2px),
-    radial-gradient(circle at 61% 16%,rgba(255,255,255,.55) 0 1px,transparent 2px),
-    linear-gradient(180deg,transparent 0 66%,rgba(7,16,35,.28) 67% 100%);
-}
-.fb::after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:31%;pointer-events:none;opacity:.88;
-  background:
-    linear-gradient(0deg,#071326 0 18%,transparent 19%),
-    linear-gradient(90deg,transparent 0 8%,rgba(5,14,31,.86) 8% 10%,transparent 10% 16%,rgba(5,14,31,.78) 16% 19%,transparent 19% 28%,rgba(5,14,31,.8) 28% 31%,transparent 31% 100%),
-    repeating-linear-gradient(0deg,rgba(255,190,112,.16) 0 1px,transparent 1px 10px);
-  mask-image:linear-gradient(to top,#000 0%,#000 72%,transparent 100%);
-}
-.fb.tri::before{height:auto;background:
-    radial-gradient(circle at 82% 56%,rgba(255,211,132,.95) 0 3.6%,rgba(255,173,83,.34) 3.9% 7%,transparent 7.4%),
-    radial-gradient(circle at 18% 18%,rgba(255,255,255,.55) 0 1px,transparent 2px),
-    linear-gradient(180deg,transparent 0 66%,rgba(7,16,35,.28) 67% 100%)}
-.fb .ft,.fb .fn,.fb .fo{position:relative;z-index:2;text-align:left!important;justify-content:flex-start!important;max-width:min(760px,82%)}
-.fhi{display:block!important;color:#fff!important;background:none!important;-webkit-text-fill-color:#fff!important;
-  font-size:clamp(1.8rem,5vw,3rem)!important;line-height:1.18!important;letter-spacing:.01em;
-  filter:drop-shadow(0 2px 8px rgba(0,0,0,.55))!important;text-shadow:0 2px 10px rgba(0,0,0,.5)!important;animation:none!important}
-.fen{color:#ffe0a0!important;font-size:clamp(1.05rem,2.8vw,1.55rem)!important;text-shadow:0 2px 8px rgba(0,0,0,.65)!important}
-.fn{margin-top:9px!important;color:#fff!important;font-weight:600;text-shadow:0 2px 7px rgba(0,0,0,.7)!important;opacity:.96}
-.fo{gap:7px!important}.fo span{background:rgba(4,15,35,.48)!important;border-color:rgba(255,220,165,.35)!important;color:#fff!important}
-.fi{display:block!important}.fi i{z-index:1}.fb .sp{display:block!important;z-index:1}
-#fx{display:none}html.fx-on #fx{display:block!important}
-@media(max-width:600px){.fb{min-height:165px;padding:26px 18px 24px!important}.fb .ft,.fb .fn,.fb .fo{max-width:88%}.fi i{font-size:1.35rem}}
-@media(prefers-reduced-motion:reduce){.fb,.fhi,.fi i,.fb .sp{animation:none!important}}
-
+/* ---- Focus & Break (AK NEST EDU) ---- */
+.fk-tc{text-align:center}
+.fk-mode{justify-content:center;margin-bottom:6px}
+.fk-time{display:flex;align-items:center;justify-content:center;gap:6px;margin:14px auto 0;padding:14px 10px;max-width:340px;border-radius:18px;background:linear-gradient(135deg,#1B1D6B,#2B2DA8 58%,#4A34C6);color:#fff;font:800 clamp(2.6rem,12vw,4.2rem)/1 "Baloo 2",Hind,sans-serif;font-variant-numeric:tabular-nums;box-shadow:0 10px 24px rgba(43,45,168,.25)}
+.fk-time i{font-style:normal;opacity:.7}
+.fk-unit{display:flex;justify-content:center;gap:34px;margin:6px 0 4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.fk-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.fk-btns .btn{margin:2px}
+.fk-btns .btn[disabled],.fk-mb .btn[disabled],.fk-calh .btn[disabled]{opacity:.45;cursor:not-allowed}
+.fk-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.fk-stat{text-align:center;padding:14px 10px}
+.fk-stat .fk-si{font-size:1.5rem;display:block}
+.fk-stat small{display:block;color:var(--mute);margin:2px 0}
+.fk-stat b{font:800 1.5rem/1.2 "Baloo 2",Hind,sans-serif;color:var(--ink)}
+.fk-bars{display:flex;gap:8px;align-items:flex-end;justify-content:space-between;margin-top:8px}
+.fk-bar{flex:1;text-align:center;min-width:0}
+.fk-bt{height:110px;display:flex;align-items:flex-end;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.fk-bt i{display:block;width:100%;background:var(--pri);min-height:2px;border-radius:6px 6px 0 0}
+.fk-bt i.ok{background:var(--ok)}
+.fk-bar b{display:block;font-size:.85rem;margin-top:4px}.fk-bar small{color:var(--mute)}
+.fk-calh{display:flex;align-items:center;justify-content:space-between;gap:8px}.fk-calh h3{margin:0}
+.fk-calh .btn{margin:0;padding:6px 14px}
+.fk-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px;text-align:center}
+.fk-cal>small{color:var(--mute);font-size:.75rem}
+.fk-c{display:inline-flex;align-items:center;justify-content:center;aspect-ratio:1;min-height:34px;border-radius:10px;font-size:.9rem;border:1px solid var(--line);background:var(--bg);color:var(--mute)}
+.fk-c.e{border:0;background:none}.fk-c.f{opacity:.45}
+.fk-c.p{background:rgba(255,159,28,.22);color:var(--ink);border-color:rgba(255,159,28,.5)}
+.fk-c.m{background:var(--ok);color:#fff;border-color:var(--ok);font-weight:700}
+.fk-c.t{outline:2px solid var(--pri);outline-offset:1px}
+.fk-leg .fk-c{min-height:22px;width:22px;font-size:.75rem;vertical-align:middle}
+.fk-mdl{position:fixed;inset:0;z-index:9500;display:flex;align-items:center;justify-content:center;background:rgba(10,12,40,.55);padding:16px}
+.fk-mbox{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;max-width:400px;width:100%;padding:22px;text-align:center;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.fk-mi{font-size:2.2rem}.fk-mbox h3{margin:6px 0}.fk-mb{margin-top:10px}
+/* lock screen */
+body.fxlk{overflow:hidden}
+.fk-ov{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;overflow-y:auto;padding:max(18px,env(safe-area-inset-top,0px)) 18px max(18px,env(safe-area-inset-bottom,0px));background:radial-gradient(circle at 20% 15%,#4A34C6 0%,transparent 45%),radial-gradient(circle at 85% 90%,#1F7A8C 0%,transparent 45%),linear-gradient(160deg,#14165A,#23269A 60%,#2B2DA8);color:#fff;text-align:center}
+.fk-oin{width:100%;max-width:460px;margin:auto}
+.fk-ic{font-size:2.4rem}
+.fk-t{margin:6px 0 4px;font:800 clamp(1.3rem,5vw,1.8rem)/1.25 "Baloo 2",Hind,sans-serif;color:#fff}
+.fk-ring{position:relative;width:min(72vw,270px);aspect-ratio:1;margin:12px auto}
+.fk-ring svg{width:100%;height:100%}
+.fk-r0{fill:rgba(255,255,255,.06);stroke:rgba(255,255,255,.18);stroke-width:7}
+.fk-r1{fill:none;stroke:var(--acc,#FF9F1C);stroke-width:7;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
+.fk-cd{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 clamp(2.4rem,13vw,3.6rem)/1 "Baloo 2",Hind,sans-serif;font-variant-numeric:tabular-nums}
+.fk-s{margin:4px 0;color:#DCE0FF;font-size:1.05rem}
+.fk-q{margin:10px auto 14px;max-width:380px;min-height:3em;color:#C9CEFF;font-style:italic}
+.fk-f{margin:6px auto 0;max-width:340px;text-align:left}
+.fk-f label{color:#E8EAFF}
+.fk-f input{background:rgba(255,255,255,.95);color:#14165A;border:0}
+.fk-fb{display:flex;gap:8px;margin-top:10px}.fk-fb>*{flex:1}
+.fk-b1,.fk-b2{border:0;border-radius:10px;padding:11px 16px;font:600 1rem Hind,sans-serif;cursor:pointer}
+.fk-b1{background:var(--acc,#FF9F1C);color:#1B1F3B}.fk-b2{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.fk-b1[disabled]{opacity:.6;cursor:wait}
+.fk-m{min-height:1.5em;margin:8px 0 0;color:#FFD6D6;font-size:.95rem}
+.fk-ov button:focus-visible,.fk-ov input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.fk-r1{transition:none}}
 </style>
 </head>
 <body>
@@ -560,7 +573,7 @@ footer{background:var(--card)!important;color:var(--mute)!important;border-top:1
 <script>window.supabase||document.write('<script src="https://unpkg.com/@supabase/supabase-js@2.78.0/dist/umd/supabase.js"><\/script>');</script>
 <script>
 var EMAIL='studybookold2027@gmail.com';
-var PAGES=[['home','Home'],['dashboard','Dashboard'],['routine','Routine'],['study-room','Study Room'],['time','Study Timer'],['typing','Typing'],['typing-test','Typing Test'],['test','Online Test'],['planner','Planner'],['excel','Excel'],['notes','Notes'],['career','Career'],['leaderboard','Leaderboard'],['contact','Contact'],['account','Account']];
+var PAGES=[['home','Home'],['dashboard','Dashboard'],['routine','Routine'],['time','Study Timer'],['focus','Focus & Break'],['typing','Typing'],['typing-test','Typing Test'],['test','Online Test'],['planner','Planner'],['excel','Excel'],['notes','Notes'],['career','Career'],['leaderboard','Leaderboard'],['contact','Contact'],['account','Account']];
 var mem={},UP='sba.';
 /* Local (on-device) data is kept per logged-in user: key = sba.u.<user id>.<name>. Nobody logged in -> nothing readable. */
 function get(k,d){if(UP===null)return d;try{var v=localStorage.getItem(UP+k);if(v!==null)return JSON.parse(v);}catch(e){}return (UP+k) in mem?mem[UP+k]:d;}
@@ -782,6 +795,7 @@ function idleLogout(){
 }
 function idleTick(){
   if(!me){idleHide();return;}
+  if(window.FOCUS&&FOCUS.locked()){idleMark();idleHide();return;}   /* Break lock is active: the lock screen already needs the password */
   var age=Date.now()-idleLast();
   if(age>=IDLE_MS){idleLogout();return;}
   if(age>=WARN_MS)idleShow(Math.max(1,Math.ceil((IDLE_MS-age)/1000)));else idleHide();
@@ -860,12 +874,7 @@ home:function(){
   /* Home page intentionally contains only the five requested elements:
      festival banner, hero, three primary actions, and IST clock.
      All other tools remain available through the sidebar navigation. */
-  return FESTIVALS.banner()+'<section class="hero"><span class="tag">LEARN · GROW · SUCCEED</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><div class="hero-actions"><a class="btn" href="#study-room">'+uiIcon('book')+'<span>Start Learning</span></a><a class="btn alt" href="#typing">'+uiIcon('keyboard')+'<span>Typing Practice</span></a><a class="btn alt" href="#test">'+uiIcon('test')+'<span>Online Test</span></a></div></section>'+clockCard();
-},
-'study-room':function(){
-  var h='<h2>📚 Study Room</h2><p class="lead">विषय चुनें, और नीचे दिए टाइमर से 25 मिनट बिना रुके पढ़ें।</p><div class="card" style="margin-bottom:18px;text-align:center"><div class="seg"><button id="m25" aria-pressed="true">Focus 25</button><button id="m5" aria-pressed="false">Break 5</button></div><div class="big" id="clock">25:00</div><button class="btn" id="go">Start</button><button class="btn alt" id="rs" style="color:var(--ink)">Reset</button><p class="msg" id="tmsg"></p></div><div class="grid">';
-  SUBJ.forEach(function(s){h+='<div class="card"><div class="ic">'+s[0]+'</div><h3>'+s[1]+'</h3><ul>'+s[2].map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div>';});
-  return h+'</div>';
+  return FESTIVALS.banner()+'<section class="hero"><span class="tag">LEARN · GROW · SUCCEED</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>यहाँ पढ़ाई करें, नई स्किल सीखें और अपने भविष्य को बेहतर बनाएँ।</p><div class="hero-actions"><a class="btn" href="#time">'+uiIcon('book')+'<span>Start Learning</span></a><a class="btn alt" href="#typing">'+uiIcon('keyboard')+'<span>Typing Practice</span></a><a class="btn alt" href="#test">'+uiIcon('test')+'<span>Online Test</span></a></div></section><section class="card" style="margin:18px 0;text-align:center"><h2 style="margin-top:0">⏱️ Focus &amp; Break Timer</h2><p class="lead">Focus पूरा होने पर Break लें। Break में Account Lock हो जाता है। <a href="#focus">समय सेट करें</a></p><div class="seg"><button id="home-m25" aria-pressed="true">Focus 25</button><button id="home-m5" aria-pressed="false">Break 5</button></div><div class="big" id="home-pom-clock">25:00</div><button class="btn" id="home-pom-go">Start</button><button class="btn alt" id="home-pom-reset" style="color:var(--ink)">Reset</button><p class="msg" id="home-pom-msg" role="status"></p></section>'+clockCard();
 },
 typing:function(){
   return '<h2>⌨️ Typing Practice</h2><p class="lead">बाईं तरफ़ का वाक्य दाईं तरफ़ के box में टाइप करें। हिंदी के लिए अपने कीबोर्ड पर हिंदी इनपुट चालू रखें।</p><div class="seg"><button id="lhi" aria-pressed="true">हिंदी</button><button id="len" aria-pressed="false">English</button></div>'+
@@ -952,15 +961,9 @@ contact:function(){
 };
 
 var I={
-home:function(){startClock();},
-'study-room':function(){
-  var secs=1500,mode=25,run=false;
-  function draw(){$('clock').textContent=String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0');}
-  function setM(m){mode=m;secs=m*60;run=false;$('go').textContent='Start';$('m25').setAttribute('aria-pressed',m===25);$('m5').setAttribute('aria-pressed',m===5);$('tmsg').textContent='';draw();}
-  $('m25').onclick=function(){setM(25);};$('m5').onclick=function(){setM(5);};
-  $('go').onclick=function(){run=!run;this.textContent=run?'Pause':'Start';};
-  $('rs').onclick=function(){setM(mode);};
-  timers.push(setInterval(function(){if(!run)return;secs--;if(secs<=0){secs=0;run=false;$('go').textContent='Start';$('tmsg').textContent=mode===25?'शाबाश! अब 5 मिनट का ब्रेक लें।':'ब्रेक खत्म, फिर से पढ़ाई शुरू करें।';}draw();},1000));
+home:function(){
+  startClock();
+  FOCUS.homeBind();   /* Home timer now runs on the real Focus & Break system (lock + report) */
 },
 typing:function(){
   var lang='hi',tgt='',t0=0,done=false,ta=$('ta');
@@ -981,7 +984,7 @@ typing:function(){
     if(!t0)t0=Date.now();
     var v=ta.value,ok=0;
     for(var i=0;i<v.length;i++)if(v[i]===tgt[i])ok++;
-    var m=Math.max((Date.now()-t0)/60000,1/60);
+    var m=Math.max((Date.now()-t0)/60000,1/600);
     $('wpm').textContent=Math.round(ok/5/m);
     $('acc').textContent=v.length?Math.round(ok/v.length*100):100;
     paint();
@@ -1420,13 +1423,12 @@ contact:function(){
 }
 };
 
-var NG=[[null,['home','dashboard']],['पढ़ाई',['routine','study-room','time']],['अभ्यास',['typing','test']],['टूल्स',['planner','excel','notes','career']],['कम्युनिटी',['leaderboard']],['खाता और मदद',['contact','account']]];
+var NG=[[null,['home','dashboard']],['पढ़ाई',['routine','time','focus']],['अभ्यास',['typing','test']],['टूल्स',['planner','excel','notes','career']],['कम्युनिटी',['leaderboard']],['खाता और मदद',['contact','account']]];
 function navIcon(pid){
   var paths={
     home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
     dashboard:'<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/>',
     routine:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
-    'study-room':'<path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H12v17H5.5A2.5 2.5 0 0 0 3 22zM21 5.5A2.5 2.5 0 0 0 18.5 3H12v17h6.5a2.5 2.5 0 0 1 2.5 2z"/>',
     time:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     typing:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h.01M10 9h.01M13 9h.01M16 9h.01M7 12h.01M10 12h.01M13 12h.01M16 12h.01M9 15h6"/>',
     test:'<path d="M8 4h11v17H5V7z"/><path d="M8 3v4H4M9 12l2 2 4-4M9 17h6"/>',
@@ -1437,6 +1439,7 @@ function navIcon(pid){
     leaderboard:'<path d="M4 19h16M6 16V9h3v7M11 16V5h3v11M16 16v-5h3v5"/>',
     contact:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>',
     account:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    focus:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
     logout:'<path d="M10 17l5-5-5-5M15 12H3"/><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7"/>'
   };
   return '<svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[pid]||paths.notes)+'</svg>';
@@ -1491,6 +1494,7 @@ function route(){
     document.body.classList.toggle('authonly',!me);
     if(!authReady){closeMenu(false);$('nav').innerHTML='';app.innerHTML='<div class="authbrand"><span class="lg" aria-hidden="true">AK</span><h1>AK NEST EDU</h1><div class="tl">Learn • Grow • Succeed</div><p>कृपया प्रतीक्षा करें…</p></div>';return;}
     if(!me){
+      if(window.FOCUS)FOCUS.clear();
       if(id!=='login'&&id!=='signup'&&id!=='forgot'){
         if(/(^|&)error(_code|_description)?=/.test(id))loginNote='यह लिंक पुराना हो गया है या सही नहीं है। कृपया Login करें, या नया कोड/लिंक मँगवाइए।';
         location.replace(LOGIN_URL);return;
@@ -1501,6 +1505,7 @@ function route(){
       window.scrollTo(0,0);return;
     }
     if(!recov&&(id==='login'||id==='signup'||id==='forgot'||/(^|&)(access_token|type|error)=/.test(id))){location.replace(location.pathname+location.search+'#dashboard');return;}
+    if(window.FOCUS)FOCUS.sync();
   }
   if(id==='login'||id==='signup'||id==='forgot'){init=id==='signup'?'up':(id==='forgot'?'fp':'in');id='account';}
   if(!V[id])id='home';
@@ -2137,8 +2142,7 @@ var FESTIVALS=(function(){
     lastKey=key();
     r.classList.toggle('fest',!!p);
     if(p){r.style.setProperty('--fa',p.ac);r.setAttribute('data-fest',p.id);}else{r.style.removeProperty('--fa');r.removeAttribute('data-fest');}
-    /* Festival animation runs site-wide; the greeting banner remains Home-only. */
-    FX.theme(p && p.fx && p.fx!=='none' ? {fx:p.fx,pal:p.pal||[]} : null);
+    FX.theme(null);
   }
   function watch(){                                       /* a page left open overnight changes by itself at midnight IST */
     if(key()===lastKey)return;
@@ -2152,6 +2156,384 @@ var FESTIVALS=(function(){
   return {at:at,today:todayISO,current:current,banner:banner,apply:apply,names:function(){return Object.keys(D);},years:function(){return Object.keys(CAL);}};
 })();
 FESTIVALS.apply();
+
+/* ===================== Focus & Break: custom timer, automatic break lock, daily report, streak =====================
+   REAL lock = Supabase (table focus_lock + restrictive RLS + Edge Function "focus-unlock" that checks the password on the server).
+   This screen is only the visible part of that lock and is never treated as the security itself.
+   The password is only sent to the Edge Function over HTTPS; it is never stored, cached or logged. */
+var FOCUS=(function(){
+  var ok=null,bad='',lk={locked:false,start:0,secs:0},off=0,ov=null,days=null,dayErr='',set={focus_min:25,break_min:5,target_min:120},setLoaded=false,
+      tab='timer',mode='focus',mon=null,lastSync=0,curUid=null,tickId=0,pollId=0,coolUntil=0,mdl=null,emOpen=false,P=null;
+  var QUOTES=['Rest is not a pause from success; it is part of it.','Small breaks build big focus.','Breathe in calm. Breathe out stress.','A fresh mind learns twice as fast.','Discipline today, freedom tomorrow.','आराम करना भी सफलता का हिस्सा है।','छोटे-छोटे कदम ही बड़ी मंज़िल तक पहुँचाते हैं।','Recharge now, so you can shine later.','Great things are built one focused session at a time.','शांत मन से पढ़ाई और भी बेहतर होती है।'];
+  var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function cl(v,a,b,d){v=parseInt(v,10);return v>=a&&v<=b?v:d;}
+  function normSet(o){o=o||{};return {focus_min:cl(o.focus_min,1,480,25),break_min:cl(o.break_min,1,60,5),target_min:cl(o.target_min,10,1440,120)};}
+  function nowS(){return Date.now()+off;}
+  function zero(){return {focus_sec:0,sessions:0,breaks:0,break_sec:0,emergency:0,target_min:set.target_min};}
+  function addDays(d,n){var t=new Date(d+'T00:00:00Z');t.setUTCDate(t.getUTCDate()+n);return t.toISOString().slice(0,10);}
+  function fm(sec){return dur(sec*1000);}
+  function mmss(sec){sec=Math.max(0,sec);return p2(Math.floor(sec/60))+':'+p2(sec%60);}
+  function shell(){return document.querySelector('.shell');}
+  /* ---------- focus timer state (per user, survives refresh; uses timestamps, not a counter) ---------- */
+  function fs(){
+    var s=get('fs',null),t=set.focus_min*60;
+    if(!s||typeof s!=='object'||['idle','running','paused'].indexOf(s.status)<0||!(s.total>0))s={status:'idle',total:t,left:t,endAt:0};
+    if(s.status==='idle'&&s.total!==t){s.total=t;s.left=t;}
+    return s;
+  }
+  function fsLeft(s){return s.status==='running'?Math.max(0,Math.ceil((s.endAt-Date.now())/1000)):s.left;}
+  function idleState(){var t=set.focus_min*60;return {status:'idle',total:t,left:t,endAt:0};}
+  /* ---------- server state ---------- */
+  async function refresh(){
+    if(!sb||!me)return;
+    var u=me.id;
+    try{
+      var r=await sb.rpc('focus_state');
+      if(!me||me.id!==u)return;
+      if(r.error)throw r.error;
+      var d=r.data||{};
+      ok=true;bad='';
+      off=d.server_now?new Date(d.server_now).getTime()-Date.now():0;
+      lk={locked:!!d.locked,start:d.break_started_at?new Date(d.break_started_at).getTime():0,secs:d.break_seconds||0};
+      put('flk',lk.locked?{locked:true,start:lk.start,secs:lk.secs,off:off}:{locked:false});
+      if(!setLoaded)await loadSet();
+    }catch(e){
+      var m=((e&&e.message)||'')+' '+((e&&e.code)||'');
+      if(/PGRST202|42883|404|schema cache|does not exist|Could not find/i.test(m)){ok=false;bad='setup';}
+      else if(ok!==true){ok=false;bad='net';}
+    }
+    applyLock();drawTimer();homeDraw();
+  }
+  async function loadSet(){
+    var c=get('fset',null);if(c)set=normSet(c);
+    if(sb&&me&&ok===true){
+      var r=await sb.from('focus_settings').select('focus_min,break_min,target_min').maybeSingle();
+      if(!r.error&&r.data){set=normSet(r.data);put('fset',set);}
+    }
+    setLoaded=true;
+  }
+  async function loadDays(){
+    if(!sb||!me||ok!==true){days=days||{};return;}
+    var r=await sb.from('focus_days').select('day,focus_sec,sessions,breaks,break_sec,emergency,target_min').order('day',{ascending:false}).limit(1000);
+    if(r.error){dayErr=r.error.message||'error';days={};return;}
+    dayErr='';days={};r.data.forEach(function(x){days[x.day]=x;});
+  }
+  /* ---------- lock screen ---------- */
+  function applyLock(){
+    var s=shell();
+    if(lk.locked){
+      ovBuild();ov.style.display='flex';document.body.classList.add('fxlk');
+      if(s){s.setAttribute('inert','');s.setAttribute('aria-hidden','true');}
+      closeM();ovTick(true);
+    }else{
+      if(ov){ov.style.display='none';ov._done=null;emOpen=false;var f=$('fk-f');if(f)f.hidden=true;var pw=$('fk-pw');if(pw)pw.value='';var m=$('fk-m');if(m)m.textContent='';}
+      document.body.classList.remove('fxlk');
+      if(s){s.removeAttribute('inert');s.removeAttribute('aria-hidden');}
+    }
+  }
+  function ovMsg(t){var m=$('fk-m');if(m)m.textContent=t||'';}
+  function ovBuild(){
+    if(ov)return;
+    ov=document.createElement('div');ov.id='fklock';ov.className='fk-ov';
+    ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-labelledby','fk-t');
+    ov.innerHTML='<div class="fk-oin"><div class="fk-ic" aria-hidden="true">🔒</div><h2 id="fk-t" class="fk-t"></h2>'
+     +'<div class="fk-ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54" class="fk-r0"/><circle id="fk-rp" cx="60" cy="60" r="54" class="fk-r1" stroke-dasharray="339.29" stroke-dashoffset="0" transform="rotate(-90 60 60)"/></svg><div id="fk-cd" class="fk-cd" role="timer">00:00</div></div>'
+     +'<p id="fk-s" class="fk-s"></p><p id="fk-q" class="fk-q"></p>'
+     +'<div id="fk-act"><button type="button" class="fk-b2" id="fk-em">Emergency Unlock</button></div>'
+     +'<form id="fk-f" class="fk-f" hidden autocomplete="off"><label for="fk-pw">Account Password</label><input id="fk-pw" type="password" autocomplete="current-password" maxlength="200" placeholder="Enter your password">'
+     +'<div class="fk-fb"><button class="fk-b1" id="fk-go" type="submit">Unlock</button><button type="button" class="fk-b2" id="fk-cn">Cancel</button></div><p id="fk-m" class="fk-m" role="alert"></p></form></div>';
+    document.body.appendChild(ov);
+    $('fk-em').onclick=function(){emOpen=true;ovTick(true);var p=$('fk-pw');if(p)p.focus();};
+    $('fk-cn').onclick=function(){emOpen=false;ovMsg('');var p=$('fk-pw');if(p)p.value='';ovTick(true);var e=$('fk-em');if(e)e.focus();};
+    $('fk-f').onsubmit=async function(ev){
+      ev.preventDefault();
+      var pi=$('fk-pw'),pw=pi.value;
+      if(!pw){ovMsg('कृपया अपना Password लिखें।');return;}
+      if(Date.now()<coolUntil)return;
+      var go=$('fk-go');go.disabled=true;ovMsg('Password जाँचा जा रहा है…');
+      var r=await unlock(pw);
+      pi.value='';pw='';go.disabled=false;
+      if(r.err){coolUntil=Date.now()+1500;ovMsg(r.err);pi.focus();}
+    };
+    ov.addEventListener('keydown',function(ev){
+      if(ev.key!=='Tab')return;
+      var f=[].filter.call(ov.querySelectorAll('button,input'),function(x){return !x.disabled&&x.offsetParent!==null;});
+      if(!f.length){ev.preventDefault();return;}
+      var a=document.activeElement,i=f.indexOf(a);
+      if(ev.shiftKey&&(i<=0)){ev.preventDefault();f[f.length-1].focus();}
+      else if(!ev.shiftKey&&(i<0||i===f.length-1)){ev.preventDefault();f[0].focus();}
+    });
+  }
+  function ovTick(force){
+    if(!lk.locked||!ov)return;
+    var rem=lk.secs-Math.floor((nowS()-lk.start)/1000),done=rem<=0,st=done?'d':'r';
+    $('fk-cd').textContent=mmss(rem);
+    $('fk-rp').style.strokeDashoffset=String(lk.secs>0?339.29*(1-Math.max(0,rem)/lk.secs):339.29);
+    var q=QUOTES[Math.floor(Date.now()/20000)%QUOTES.length];if($('fk-q').textContent!==q)$('fk-q').textContent=q;
+    if(force||ov._done!==st||ov._em!==emOpen){
+      var was=ov._done;ov._done=st;ov._em=emOpen;
+      $('fk-t').textContent=done?'Your Break is Complete. Enter Your Password to Continue.':'Your Account is Locked During Break';
+      $('fk-s').textContent=done?'Your account stays locked until the correct password is entered.':'Take a break, refresh your mind, and come back stronger.';
+      $('fk-act').style.display=(done||emOpen)?'none':'';
+      $('fk-f').hidden=!(done||emOpen);
+      $('fk-go').textContent=done?'Unlock':'Emergency Unlock';
+      $('fk-cn').style.display=done?'none':'';
+      if(done&&was==='r'){var p=$('fk-pw');if(p)p.focus();}
+      if(was==null){var t=(done||emOpen)?$('fk-pw'):$('fk-em');if(t)setTimeout(function(){t.focus();},50);}
+    }
+  }
+  async function unlock(pw){
+    var r;
+    try{r=await sb.functions.invoke('focus-unlock',{body:{password:pw}});}
+    catch(e){return {err:'सर्वर से कनेक्शन नहीं हो पाया। इंटरनेट जाँचकर दोबारा कोशिश करें।'};}
+    if(r.error){
+      var st=r.error.context&&r.error.context.status,code='';
+      try{var j=await r.error.context.json();code=(j&&j.error)||'';}catch(e){}
+      if(code==='wrong_password')return {err:'Password गलत है। Lock Screen बंद नहीं हुई, दोबारा कोशिश करें।'};
+      if(st===404)return {err:'Unlock सेवा (Edge Function "focus-unlock") अभी deploy नहीं हुई है, इसलिए Unlock नहीं हो सकता। FOCUS-SETUP.md देखें।'};
+      if(st===401)return {err:'Session खत्म हो गया है। कृपया दोबारा Login करें।'};
+      if(st===429)return {err:'बहुत ज़्यादा कोशिशें हो गईं। कुछ देर बाद दोबारा कोशिश करें।'};
+      if(!st)return {err:'सर्वर से कनेक्शन नहीं हो पाया। इंटरनेट जाँचकर दोबारा कोशिश करें।'};
+      return {err:'Unlock नहीं हो पाया ('+(code||st)+')। थोड़ी देर बाद दोबारा कोशिश करें।'};
+    }
+    await refresh();
+    try{localStorage.setItem('aknest.fkpulse',String(Date.now()));}catch(e){}
+    days=null;
+    return lk.locked?{err:'Server ने अभी Unlock confirm नहीं किया। दोबारा कोशिश करें।'}:{ok:true};
+  }
+  /* ---------- break start + reminders ---------- */
+  function closeM(){if(mdl){mdl.remove();mdl=null;}}
+  function askBreak(fromReminder){
+    closeM();
+    mdl=document.createElement('div');mdl.className='fk-mdl';mdl.setAttribute('role','alertdialog');mdl.setAttribute('aria-modal','true');mdl.setAttribute('aria-labelledby','fk-mt');
+    var b=set.break_min,box=document.createElement('div');box.className='fk-mbox';mdl.appendChild(box);
+    function step1(){
+      box.innerHTML='<div class="fk-mi" aria-hidden="true">🎉</div><h3 id="fk-mt">Focus Session पूरा हुआ!</h3><p>शाबाश! अब '+b+' मिनट का Break लेने का सुझाव है। Break तभी शुरू होगा जब आप खुद “Start Break” दबाएँगे।</p><div class="fk-mb"><button class="btn" id="fk-m1">Start Break</button><button class="btn alt" id="fk-m2" style="color:var(--ink)">Dismiss</button></div>';
+      $('fk-m1').onclick=step2;$('fk-m2').onclick=closeM;$('fk-m1').focus();
+    }
+    function step2(){
+      var act=fs().status!=='idle';
+      box.innerHTML='<div class="fk-mi" aria-hidden="true">🔒</div><h3 id="fk-mt">Break शुरू करें?</h3><p>Break शुरू होते ही आपका Account <b>Lock</b> हो जाएगा और '+b+' मिनट के बाद भी सिर्फ़ सही Password डालने पर खुलेगा।'+(act?' चल रहा Focus session Reset हो जाएगा।':'')+'</p><p class="msg" id="fk-mm" role="alert"></p><div class="fk-mb"><button class="btn" id="fk-m3">हाँ, Break शुरू करो</button><button class="btn alt" id="fk-m4" style="color:var(--ink)">वापस</button></div>';
+      $('fk-m3').onclick=async function(){
+        var e=$('fk-m3');e.disabled=true;
+        var r=await startBreak();
+        if(r){var m=$('fk-mm');if(m)m.textContent=r;e.disabled=false;}else closeM();
+      };
+      $('fk-m4').onclick=function(){fromReminder?step1():closeM();};$('fk-m4').focus();
+    }
+    document.body.appendChild(mdl);
+    (fromReminder?step1:step2)();
+    mdl.addEventListener('keydown',function(ev){if(ev.key==='Escape')closeM();});
+  }
+  async function startBreak(){
+    if(!sb||!me)return 'Login जरूरी है।';
+    if(!(set.break_min>=1&&set.break_min<=60))return 'Break 1 से 60 मिनट के बीच ही हो सकता है।';
+    if(ok!==true)return setupText();
+    var r=await sb.rpc('start_break',{p_minutes:set.break_min});
+    if(r.error)return 'Break शुरू नहीं हो पाया: '+(r.error.message||'error');
+    put('fs',idleState());
+    try{localStorage.setItem('aknest.fkpulse',String(Date.now()));}catch(e){}
+    await refresh();
+    return '';
+  }
+  function setupText(){
+    if(ok===null)return 'सर्वर से जाँच हो रही है, कुछ सेकंड बाद दोबारा दबाएँ।';
+    if(bad==='net')return 'सर्वर से कनेक्शन नहीं हो पाया। इंटरनेट जाँचकर पेज दोबारा खोलें।';
+    if(!sb)return 'Cloud account चालू नहीं है, इसलिए Break Lock नहीं चल सकता।';
+    return 'Backend setup बाकी है: supabase-focus-lock.sql चलाएँ और focus-unlock Edge Function deploy करें (FOCUS-SETUP.md)। तब तक Break Lock चालू नहीं होगा।';
+  }
+  async function complete(s){
+    put('fs',idleState());
+    var saved=false;
+    if(sb&&me&&ok===true){var r=await sb.rpc('focus_record_session',{p_sec:s.total});saved=!r.error;}
+    days=null;
+    toast(saved?'🎯 Focus Session पूरा हुआ! अब Break लेने का समय है।':'🎯 Focus Session पूरा हुआ! (Backend setup बाकी होने से Report में save नहीं हुआ)');
+    try{if(window.Notification&&window.Notification.permission==='granted')new window.Notification('AK NEST EDU',{body:'Focus Session पूरा हुआ! Break लें।'});}catch(e){}
+    if(!lk.locked)askBreak(true);
+    drawTimer();if(tab!=='timer'&&$('fk-body'))loadDays().then(render);
+  }
+  /* ---------- timer page ---------- */
+  function val(){
+    var f=$('fk-fm'),b=$('fk-bm'),t=$('fk-tg');if(!f)return {};
+    var fv=Number(f.value),bv=Number(b.value),tv=Number(t.value);
+    if(!(Number.isInteger(fv)&&fv>=1&&fv<=480))return {err:'Focus Time 1 से 480 मिनट के बीच रखें।'};
+    if(!(Number.isInteger(bv)&&bv>=1&&bv<=60))return {err:'Break 1 से 60 मिनट के बीच ही हो सकता है। 60 मिनट से ज़्यादा की अनुमति नहीं है।'};
+    if(!(Number.isInteger(tv)&&tv>=10&&tv<=1440))return {err:'Daily Target 10 से 1440 मिनट के बीच रखें।'};
+    return {f:fv,b:bv,t:tv};
+  }
+  function tabTimer(){
+    return '<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div class="card fk-tc">'
+     +'<div class="seg fk-mode" role="group" aria-label="Timer mode"><button type="button" id="fk-mf" aria-pressed="'+(mode==='focus')+'">🎯 Focus</button><button type="button" id="fk-mbk" aria-pressed="'+(mode==='break')+'">☕ Break</button></div>'
+     +'<div class="fk-time" id="fk-time" role="timer" aria-label="Timer"><span id="fk-tm">25</span><i>:</i><span id="fk-ts">00</span></div><div class="fk-unit"><span>Minutes</span><span>Seconds</span></div>'
+     +'<p class="msg" id="fk-st" role="status" style="text-align:center"></p>'
+     +'<div class="fk-btns"><button class="btn" id="fk-start" type="button">Start</button><button class="btn" id="fk-pause" type="button">Pause</button><button class="btn" id="fk-resume" type="button">Resume</button><button class="btn alt" id="fk-reset" type="button" style="color:var(--ink)">Reset</button></div>'
+     +'<p class="msg" id="fk-note" style="text-align:center"></p></div>'
+     +'<div class="card"><h3>Timer Settings</h3><label for="fk-fm">Focus Time (minutes)</label><input id="fk-fm" type="number" min="1" max="480" step="1" inputmode="numeric" value="'+set.focus_min+'">'
+     +'<label for="fk-bm">Break Time (1–60 minutes)</label><input id="fk-bm" type="number" min="1" max="60" step="1" inputmode="numeric" value="'+set.break_min+'">'
+     +'<label for="fk-tg">Daily Focus Target (minutes)</label><input id="fk-tg" type="number" min="10" max="1440" step="1" inputmode="numeric" value="'+set.target_min+'">'
+     +'<p class="msg" id="fk-sm" role="status"></p></div></div>';
+  }
+  function drawTimer(){
+    var tm=$('fk-tm');if(!tm)return;
+    var s=fs(),brk=mode==='break',sec=brk?set.break_min*60:fsLeft(s),run=s.status==='running',pa=s.status==='paused';
+    tm.textContent=p2(Math.floor(sec/60));$('fk-ts').textContent=p2(sec%60);
+    var v=val(),bad2=!!v.err;
+    var stt=brk?'Break शुरू करने पर Account Lock हो जाएगा।':(run?'Focus चल रहा है…':(pa?'Paused':'तैयार: Start दबाएँ'));
+    $('fk-st').textContent=stt;
+    $('fk-start').textContent=brk?'Start Break':'Start';
+    $('fk-start').disabled=brk?(ok!==true||bad2||!(set.break_min>=1)):(s.status!=='idle'||bad2);
+    $('fk-pause').disabled=brk||!run;$('fk-resume').disabled=brk||!pa;$('fk-reset').disabled=brk||s.status==='idle';
+    $('fk-fm').disabled=(s.status!=='idle');
+    $('fk-note').textContent=brk?(ok===true?'Break में Pause नहीं होता, क्योंकि Break शुरू होते ही Account Lock हो जाता है।':setupText()):(ok===false?(bad==='net'?'सर्वर से कनेक्शन नहीं है, इसलिए Focus Sessions अभी Report में save नहीं होंगे।':'Backend setup बाकी है, इसलिए Focus Sessions Report में save नहीं होंगे (FOCUS-SETUP.md)।'):'');
+  }
+  function showSM(t,isBad){var m=$('fk-sm');if(m){m.textContent=t;m.style.color=isBad?'var(--bad)':'var(--ok)';}}
+  function bindTimer(){
+    $('fk-mf').onclick=function(){mode='focus';render();};
+    $('fk-mbk').onclick=function(){mode='break';render();};
+    $('fk-start').onclick=function(){
+      if(mode==='break'){askBreak(false);return;}
+      var v=val();if(v.err){showSM(v.err,true);return;}
+      var s=fs();if(s.status!=='idle')return;
+      put('fs',{status:'running',total:set.focus_min*60,left:set.focus_min*60,endAt:Date.now()+set.focus_min*60000});drawTimer();
+    };
+    $('fk-pause').onclick=function(){var s=fs();if(s.status!=='running')return;s.left=fsLeft(s);s.status='paused';s.endAt=0;put('fs',s);drawTimer();};
+    $('fk-resume').onclick=function(){var s=fs();if(s.status!=='paused')return;s.status='running';s.endAt=Date.now()+s.left*1000;put('fs',s);drawTimer();};
+    $('fk-reset').onclick=function(){put('fs',idleState());drawTimer();};
+    function onSet(){
+      var v=val();if(v.err){showSM(v.err,true);drawTimer();return;}
+      showSM('',false);
+      if(v.f===set.focus_min&&v.b===set.break_min&&v.t===set.target_min){drawTimer();return;}
+      set={focus_min:v.f,break_min:v.b,target_min:v.t};put('fset',set);
+      if(sb&&me&&ok===true){
+        sb.from('focus_settings').upsert({user_id:me.id,focus_min:v.f,break_min:v.b,target_min:v.t,updated_at:new Date().toISOString()}).then(function(r){showSM(r.error?'Settings server पर save नहीं हो पाईं।':'✓ Settings save हो गईं',!!r.error);});
+      }else showSM('✓ Settings इस device पर save हुईं',false);
+      drawTimer();
+    }
+    ['fk-fm','fk-bm','fk-tg'].forEach(function(id){$(id).oninput=function(){var v=val();if(v.err)showSM(v.err,true);else showSM('',false);drawTimer();};$(id).onchange=onSet;});
+    drawTimer();
+  }
+  /* ---------- daily report ---------- */
+  function tabReport(){
+    if(!days)return '<div class="card"><p class="msg">Report load हो रही है…</p></div>';
+    var t=istDay(Date.now()),r=days[t]||zero(),tg=set.target_min*60,pct=Math.min(100,Math.round(r.focus_sec/tg*100)),i,d,x,bars='';
+    var lab=r.focus_sec>=tg?'Excellent 🌟 — आज का Target पूरा!':(pct>=70?'Very Good 👏 — Target के करीब':(pct>=40?'Good 🙂 — थोड़ा और Focus':(r.focus_sec>0?'अच्छी शुरुआत 🌱':'आज अभी Focus शुरू नहीं हुआ')));
+    var cards=[['⏱️','आज का Focus Time',fm(r.focus_sec)],['✅','Focus Sessions',r.sessions],['☕','Breaks लिए',r.breaks],['🕒','कुल Break Time',fm(r.break_sec)],['🚨','Emergency Unlocks',r.emergency]];
+    for(i=6;i>=0;i--){d=addDays(t,-i);x=days[d]||zero();var tgt=(d===t?set.target_min:x.target_min)*60,h=Math.min(100,Math.round(x.focus_sec/tgt*100));
+      bars+='<div class="fk-bar" title="'+d+': '+fm(x.focus_sec)+'"><div class="fk-bt"><i style="height:'+h+'%"'+(h>=100?' class="ok"':'')+'></i></div><b>'+Math.round(x.focus_sec/60)+'</b><small>'+WS[wdOf(d)]+'</small></div>';}
+    return (dayErr?'<p class="msg" style="color:var(--bad)">Report load नहीं हो पाई: '+esc(dayErr)+'</p>':'')
+     +'<div class="fk-stats">'+cards.map(function(c){return '<div class="card fk-stat"><span class="fk-si" aria-hidden="true">'+c[0]+'</span><small>'+c[1]+'</small><b>'+c[2]+'</b></div>';}).join('')+'</div>'
+     +'<div class="card" style="margin-top:14px"><h3>Daily Progress</h3><div class="row" style="justify-content:space-between;align-items:center"><span>'+fm(r.focus_sec)+' / '+set.target_min+' min</span><b>'+pct+'%</b></div><div class="prog"><i style="width:'+pct+'%"></i></div><p class="msg" style="margin-top:8px"><b>Focus Performance:</b> '+lab+'</p></div>'
+     +'<div class="card" style="margin-top:14px"><h3>पिछले 7 दिन (Focus minutes)</h3><div class="fk-bars">'+bars+'</div><p class="msg">सिर्फ़ पूरे हुए Focus Sessions गिने जाते हैं। रिकॉर्ड आपके Account के अनुसार सुरक्षित रहता है।</p></div>';
+  }
+  /* ---------- streak ---------- */
+  function metOn(d,t){var r=days[d];return !!r&&r.focus_sec>=(d===t?set.target_min:r.target_min)*60;}
+  function streaks(t){
+    var ks=Object.keys(days).filter(function(d){return metOn(d,t);}).sort(),best=0,run=0,prev=null,cur=0,d;
+    ks.forEach(function(k){run=(prev&&addDays(prev,1)===k)?run+1:1;if(run>best)best=run;prev=k;});
+    d=metOn(t,t)?t:addDays(t,-1);while(metOn(d,t)){cur++;d=addDays(d,-1);}
+    return {cur:cur,best:best,today:metOn(t,t)};
+  }
+  function tabStreak(){
+    if(!days)return '<div class="card"><p class="msg">Streak load हो रही है…</p></div>';
+    var t=istDay(Date.now()),S=streaks(t),m=mon||(mon={y:+t.slice(0,4),m:+t.slice(5,7)-1}),i,d,r,c,tg,cells='';
+    var lead=new Date(Date.UTC(m.y,m.m,1)).getUTCDay(),n=new Date(Date.UTC(m.y,m.m+1,0)).getUTCDate();
+    for(i=0;i<lead;i++)cells+='<span class="fk-c e"></span>';
+    for(i=1;i<=n;i++){
+      d=m.y+'-'+p2(m.m+1)+'-'+p2(i);r=days[d];tg=(d===t?set.target_min:(r?r.target_min:set.target_min))*60;
+      c=d>t?'f':(r&&r.focus_sec>=tg?'m':(r&&r.focus_sec>0?'p':'n'));
+      cells+='<span class="fk-c '+c+(d===t?' t':'')+'" title="'+d+(r?' · '+fm(r.focus_sec):'')+'">'+(c==='m'?'✓':i)+'</span>';
+    }
+    var isCur=(m.y+'-'+p2(m.m+1))===t.slice(0,7),left=Math.max(0,set.target_min-Math.floor(((days[t]||zero()).focus_sec)/60));
+    var hint=S.today?'आज का Target पूरा हो गया 🎉':(S.cur>0?'Streak बचाने के लिए आज '+left+' मिनट और Focus करें।':'आज '+set.target_min+' मिनट Focus करके Streak शुरू करें।');
+    return '<div class="fk-stats"><div class="card fk-stat"><span class="fk-si" aria-hidden="true">🔥</span><small>Current Streak</small><b>'+S.cur+' दिन</b></div><div class="card fk-stat"><span class="fk-si" aria-hidden="true">🏆</span><small>Best Streak</small><b>'+S.best+' दिन</b></div><div class="card fk-stat"><span class="fk-si" aria-hidden="true">🎯</span><small>Daily Target</small><b>'+set.target_min+' min</b></div></div>'
+     +'<p class="msg" style="margin:10px 0">'+hint+'</p>'
+     +'<div class="card" style="margin-top:8px"><div class="fk-calh"><button class="btn alt" id="fk-pm" type="button" aria-label="पिछला महीना" style="color:var(--ink)">‹</button><h3>'+MN[m.m]+' '+m.y+'</h3><button class="btn alt" id="fk-nm" type="button" aria-label="अगला महीना" style="color:var(--ink)"'+(isCur?' disabled':'')+'>›</button></div>'
+     +'<div class="fk-cal"><small>रवि</small><small>सोम</small><small>मंगल</small><small>बुध</small><small>गुरु</small><small>शुक्र</small><small>शनि</small>'+cells+'</div>'
+     +'<p class="msg fk-leg"><span class="fk-c m">✓</span> Target पूरा &nbsp; <span class="fk-c p">•</span> थोड़ा Focus &nbsp; <span class="fk-c n">•</span> नहीं</p></div>';
+  }
+  function render(){
+    var b=$('fk-body');if(!b)return;
+    var tabs=$('fk-tabs');if(tabs)[].forEach.call(tabs.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-t')===tab));});
+    if(tab==='timer'){b.innerHTML=tabTimer();bindTimer();}
+    else if(tab==='report'){b.innerHTML=tabReport();}
+    else{
+      b.innerHTML=tabStreak();
+      var p=$('fk-pm'),n=$('fk-nm');
+      if(p)p.onclick=function(){mon.m--;if(mon.m<0){mon.m=11;mon.y--;}render();};
+      if(n)n.onclick=function(){mon.m++;if(mon.m>11){mon.m=0;mon.y++;}render();};
+    }
+  }
+  function mount(){
+    tab=tab||'timer';
+    [].forEach.call($('fk-tabs').querySelectorAll('button'),function(x){x.onclick=function(){tab=x.getAttribute('data-t');render();if(tab!=='timer'&&days===null)loadDays().then(render);};});
+    render();
+    (P||Promise.resolve()).then(async function(){
+      if(!$('fk-body'))return;
+      if(!setLoaded)await loadSet();
+      if(days===null)await loadDays();
+      render();
+    });
+  }
+  /* ---------- Home page mini timer (same shared state as the Focus & Break page) ---------- */
+  function homeMsg(t){var m=$('home-pom-msg');if(m)m.textContent=t||'';}
+  function homeDraw(){
+    var c=$('home-pom-clock');if(!c)return;
+    var s=fs(),brk=mode==='break',sec=brk?set.break_min*60:fsLeft(s);
+    c.textContent=mmss(sec);
+    $('home-m25').textContent='Focus '+set.focus_min;$('home-m5').textContent='Break '+set.break_min;
+    $('home-m25').setAttribute('aria-pressed',String(!brk));$('home-m5').setAttribute('aria-pressed',String(brk));
+    $('home-pom-go').textContent=brk?'Start Break':(s.status==='running'?'Pause':(s.status==='paused'?'Resume':'Start'));
+    $('home-pom-reset').disabled=brk||s.status==='idle';
+  }
+  function homeBind(){
+    $('home-m25').onclick=function(){mode='focus';homeMsg('');homeDraw();};
+    $('home-m5').onclick=function(){mode='break';homeMsg(ok===true?'Break शुरू करने पर Account Lock हो जाएगा।':setupText());homeDraw();};
+    $('home-pom-go').onclick=function(){
+      if(mode==='break'){if(ok!==true){homeMsg(setupText());return;}askBreak(false);return;}
+      var s=fs();
+      if(s.status==='idle')put('fs',{status:'running',total:set.focus_min*60,left:set.focus_min*60,endAt:Date.now()+set.focus_min*60000});
+      else if(s.status==='running'){s.left=fsLeft(s);s.status='paused';s.endAt=0;put('fs',s);}
+      else{s.status='running';s.endAt=Date.now()+s.left*1000;put('fs',s);}
+      homeMsg('');homeDraw();
+    };
+    $('home-pom-reset').onclick=function(){put('fs',idleState());homeDraw();};
+    homeDraw();
+  }
+  /* ---------- global wiring ---------- */
+  function tickAll(){
+    if(!me)return;
+    var s=get('fs',null);
+    if(s&&s.status==='running'&&s.endAt<=Date.now()&&!lk.locked)complete(s);
+    if(lk.locked)ovTick();
+    drawTimer();homeDraw();
+  }
+  function sync(){
+    if(!sb||!me)return;
+    if(curUid!==me.id){curUid=me.id;ok=null;bad='';lk={locked:false,start:0,secs:0};days=null;setLoaded=false;set=normSet(get('fset',null));mon=null;
+      var c=get('flk',null);if(c&&c.locked){lk={locked:true,start:c.start,secs:c.secs};off=c.off||0;applyLock();}}
+    if(!tickId){
+      tickId=setInterval(tickAll,1000);
+      pollId=setInterval(function(){if(!document.hidden)refresh();},15000);
+    }
+    if(Date.now()-lastSync<2500&&P)return P;
+    lastSync=Date.now();P=refresh();return P;
+  }
+  function clear(){
+    if(tickId){clearInterval(tickId);tickId=0;}if(pollId){clearInterval(pollId);pollId=0;}
+    closeM();if(ov){ov.remove();ov=null;}
+    var s=shell();if(s){s.removeAttribute('inert');s.removeAttribute('aria-hidden');}
+    document.body.classList.remove('fxlk');
+    lk={locked:false,start:0,secs:0};ok=null;days=null;curUid=null;P=null;emOpen=false;setLoaded=false;
+  }
+  document.addEventListener('visibilitychange',function(){if(!document.hidden&&me)refresh();});
+  window.addEventListener('storage',function(ev){if(ev.key==='aknest.fkpulse'&&me)refresh();});
+  return {sync:sync,clear:clear,mount:mount,homeBind:homeBind,locked:function(){return lk.locked;}};
+})();
+V.focus=function(){
+  return '<h2>🎯 Focus &amp; Break</h2><p class="lead">अपना Focus और Break समय खुद तय करें। Focus पूरा होने पर Break का सुझाव मिलेगा; Break शुरू करने पर Account Lock होता है और सिर्फ़ सही Password से खुलता है।</p>'
+   +'<div class="seg" id="fk-tabs" role="group" aria-label="Focus sections"><button type="button" data-t="timer" aria-pressed="true">⏱ Timer</button><button type="button" data-t="report" aria-pressed="false">📊 Daily Report</button><button type="button" data-t="streak" aria-pressed="false">🔥 Streak</button></div><div id="fk-body" style="margin-top:14px"></div>';
+};
+I.focus=function(){FOCUS.mount();};
 
 window.addEventListener('hashchange',route);
 route();
